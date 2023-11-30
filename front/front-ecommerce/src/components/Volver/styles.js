@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { titleFont, textFont } from '../../styles/GlobalStyles';
+import { titleFont, textFont } from '../../assets/styles/GlobalStyles';
 
 const ContainerVolver = styled.div`
     max-width: 100%;

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Boton from '../elementos/Boton'
+import Boton from '../assets/elementos/Boton'
 
 export const FormIcioSecion = () => {
 
