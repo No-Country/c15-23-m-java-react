@@ -10,7 +10,7 @@ function App() {
       <Volver />
       <FormIcioSecion />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
