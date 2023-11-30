@@ -1,0 +1,82 @@
+version: '3'
+services:
+  config-server:
+    build: ./config-server
+    ports:
+      - "8888:8888"
+  auth-service:
+    build: ./auth-service
+    ports:
+      - "8081:8081"
+  eureka-server:
+    build: ./eureka-server
+    ports:
+      - "8082:8082"
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8083:8083"
+  user-service:
+    build: ./transaction-service
+    ports:
+      - "8084:8084"
+  transaction-service:
+    build: ./transaction-service
+    ports:
+      - "8085:8085"
+  product-service:
+    build: ./product-service
+    ports:
+      - "8086:8086"
+  # Definir otros servicios aquí de ser necesario
+
+  
+  
+  
+  
+
+  
+  # Definición de las bases de datos
+  users_db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE_USERS}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "33061:3306"
+    volumes:
+      - users_data:/var/lib/mysql
+
+  products_db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE_PRODUCTS}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "33062:3306"
+    volumes:
+      - products_data:/var/lib/mysql
+
+  transactions_db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE_TRANSACTIONS}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "33063:3306"
+    volumes:
+      - transactions_data:/var/lib/mysql
+
+# Definir otros servicios de base de datos aquí de ser necesario
+
+volumes:
+  users-data:
+  products-data:
+  transactions-data:
+  # Define volúmenes para otras bases de datos si es necesario
