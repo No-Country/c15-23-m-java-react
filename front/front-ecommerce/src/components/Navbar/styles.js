@@ -60,7 +60,7 @@ h2{
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    top: 54%;
+    top: 43%;
     left: 0;
     right: 0;
     text-align: center;
