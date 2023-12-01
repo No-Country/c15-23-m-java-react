@@ -1,6 +1,6 @@
+import { Footer } from "./components/Footer/Footer";
 import { FormIcioSecion } from "./components/FormInicioSecion";
 import { Navbar } from "./components/Navbar/Navbar";
-import SignUp from "./components/SignUp/SignUp";
 import Volver from "./components/Volver/Volver";
 import { Checkout } from "./pages/Checkout";
 import { SuccessfulPurchase } from "./pages/SuccessfulPurchase";
@@ -19,7 +19,7 @@ function App() {
       <br />
       <FormIcioSecion />
       <br />
-      <SignUp />
+      <Footer />
     </>
   );
 }

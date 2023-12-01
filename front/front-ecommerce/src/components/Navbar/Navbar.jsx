@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {NavContainer, BgDiv, Burguer}  from './styles';
-import Logo from '/images/logo-shopswifly 5.png'
+import Logo from '/images/logo.png'
 const Navbar = () => {
   const [clicked, setClicked] = useState(false)
   const handleClick = () => {
