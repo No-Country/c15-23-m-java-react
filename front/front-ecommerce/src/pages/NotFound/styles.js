@@ -20,7 +20,7 @@ const ContainerNotFound = styled.div`
         margin-block: 30px;
         
     }
-    button.sc-bqyKbq.jnAxvA{
+    button.sc-bqyKbq.bknaE{
         background-color: rgba(86, 201, 160, 1);
         font-size: 20px
     }
