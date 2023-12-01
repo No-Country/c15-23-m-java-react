@@ -56,11 +56,13 @@ h2{
   } 
   .links-right.active{
     width: 100%;
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    top: 43%;
+    top: 44.5%;
+   
     left: 0;
     right: 0;
     text-align: center;
