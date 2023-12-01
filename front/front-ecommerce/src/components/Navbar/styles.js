@@ -61,8 +61,7 @@ h2{
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    top: 44.5%;
-   
+    top: 54%;   
     left: 0;
     right: 0;
     text-align: center;
@@ -168,8 +167,8 @@ const Burguer = styled.div`
   transition-duration: 500ms; 
 }
 .nav-icon-5 span:nth-child(1){
-  top:0px;
-  left: 0px;
+  top:0;
+  left: 0;
 }
 .nav-icon-5 span:nth-child(2){
   top:13px;
@@ -181,13 +180,13 @@ const Burguer = styled.div`
   left: 0px;
 }
 .nav-icon-5:not(.open):hover span:nth-child(1){
-  transform: rotate(-4deg) scaleY(1.1);
+  transform: rotate(0deg) scaleY(1.1);
 }
 .nav-icon-5:not(.open):hover span:nth-child(2){
-  transform: rotate(4deg) scaleY(1.1);
+  transform: rotate(0deg) scaleY(1.1);
 }
 .nav-icon-5:not(.open):hover span:nth-child(3){
-  transform: rotate(-4deg) scaleY(1.1);
+  transform: rotate(0deg) scaleY(1.1);
 }
 .nav-icon-5.open span:nth-child(1){
   transform: rotate(45deg);
