@@ -1,14 +1,11 @@
-import { ContainerVolver, DivVolver, DivTitulo, Button } from './styles';
-import { FaArrowLeft } from "react-icons/fa";
+import BtnVolver from '../BtnVolver/BtnVolver.jsx';
+import { ContainerVolver, DivVolver, DivTitulo } from './styles';
 
 const Volver = () => {
   return (
     <ContainerVolver>
       <DivVolver> 
-        <Button>
-          <FaArrowLeft />
-          <p>Volver</p>
-        </Button>
+        <BtnVolver />
       </DivVolver>
       <DivTitulo>
         {/* aca se pasa por props el titulo de la pagina donde se esta */}
