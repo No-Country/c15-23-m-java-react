@@ -8,11 +8,20 @@ const ContainerVolver = styled.div`
     color: black;
     padding-inline:40px;
     @media (max-width: 576px) {
-        margin-inline: 0px
+        margin-inline: 0px;
+        padding-inline:20px;
     }
 `;
 
-const Div = styled.div`
+const DivVolver = styled.div`
+    height: 80px;
+    display: flex;
+    font-size: 2rem;
+    font-family: ${titleFont};
+    align-items: center;
+`;
+
+const DivTitulo = styled.div`
     height: 80px;
     display: flex;
     font-size: 2rem;
@@ -38,4 +47,4 @@ const Button = styled.button`
     }
 `;
 
-export { ContainerVolver, Div, Button}
+export { ContainerVolver, DivVolver, DivTitulo, Button}
