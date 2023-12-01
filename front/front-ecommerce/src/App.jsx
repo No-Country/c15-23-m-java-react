@@ -1,3 +1,4 @@
+import { Footer } from "./components/Footer/Footer";
 import { FormIcioSecion } from "./components/FormInicioSecion";
 import { Navbar } from "./components/Navbar/Navbar";
 import Volver from "./components/Volver/Volver";
@@ -17,6 +18,8 @@ function App() {
       <SuccessfulPurchase />
       <br />
       <FormIcioSecion />
+      <br />
+      <Footer />
     </>
   );
 }
