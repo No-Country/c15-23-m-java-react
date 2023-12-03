@@ -6,6 +6,8 @@ const textFont = 'Merriweather Sans, sans-serif';
 const colors = {
   primaryColor: 'rgba(86, 201, 160, 1)',
   primaryLightColor: 'rgba(86, 201, 160, 0.5)',
+  primaryText: '#213547',
+  grayBorders: ' #d9d9d9',
 };
 
 const GlobalStyles = createGlobalStyle`
