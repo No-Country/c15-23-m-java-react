@@ -12,7 +12,7 @@ const FormContainerSignUp = styled.nav `
    flex-direction: column;
    margin: 0 auto;
    @media(max-width: 768px){
-       width: 60%;     
+       width: 70%;     
     }
   
    h2{
