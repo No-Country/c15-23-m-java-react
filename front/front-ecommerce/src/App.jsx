@@ -8,6 +8,7 @@ import { Products } from './pages/AdminHome/Products';
 import { Checkout } from './pages/Checkout';
 import NotFound from './pages/NotFound/NotFound.jsx';
 import { SuccessfulPurchase } from './pages/SuccessfulPurchase';
+import SignUp from './components/SignUp/SignUp'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <br />
       <FormIcioSecion />
       <br />
+      <SignUp />
       <NotFound />
       <br />
       <Footer />
