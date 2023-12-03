@@ -1,17 +1,18 @@
-import { Footer } from "./components/Footer/Footer";
-import { FormIcioSecion } from "./components/FormInicioSecion";
-import { Navbar } from "./components/Navbar/Navbar";
-import Volver from "./components/Volver/Volver";
-import { Checkout } from "./pages/Checkout";
-import NotFound from "./pages/NotFound/NotFound.jsx";
-import { SuccessfulPurchase } from "./pages/SuccessfulPurchase";
+import { Footer } from './components/Footer/Footer';
+import { FormIcioSecion } from './components/FormInicioSecion';
+import { Navbar } from './components/Navbar/Navbar';
+import Volver from './components/Volver/Volver';
+import { AdminHome } from './pages/AdminHome';
+import { Checkout } from './pages/Checkout';
+import NotFound from './pages/NotFound/NotFound.jsx';
+import { SuccessfulPurchase } from './pages/SuccessfulPurchase';
 
 function App() {
-
   return (
     <>
       <Navbar />
       <br />
+      <AdminHome />
       <Volver />
       <br />
       <Checkout />
