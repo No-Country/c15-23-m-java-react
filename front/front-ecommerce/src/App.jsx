@@ -4,6 +4,7 @@ import { Navbar } from "./components/Navbar/Navbar";
 import Volver from "./components/Volver/Volver";
 import { Checkout } from "./pages/Checkout";
 import { SuccessfulPurchase } from "./pages/SuccessfulPurchase";
+import SignUp from './components/SignUp/SignUp'
 
 function App() {
 
@@ -18,6 +19,8 @@ function App() {
       <SuccessfulPurchase />
       <br />
       <FormIcioSecion />
+      <br />
+      <SignUp />
       <br />
       <Footer />
     </>
