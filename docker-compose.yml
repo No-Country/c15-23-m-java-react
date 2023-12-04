@@ -1,0 +1,132 @@
+version: "3.8"
+
+services:
+  user-service:
+    build:
+      context: ./user-service
+      dockerfile: src/main/docker/Dockerfile
+    restart: always
+    ports:
+      - "8084:8084"
+    depends_on:
+      - user_db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://user_db:3306/${MYSQL_DATABASE_USERS}?allowPublicKeyRetrieval=true&useSSL=false&useTimezone=true&serverTimezone=GMT&characterEncoding=UTF-8
+    networks:
+      - backend-network
+
+  user_db:
+    image: "mysql:8.0"
+    restart: always
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE_USERS}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    networks:
+      - backend-network
+
+networks:
+  backend-network:
+    driver: bridge
+
+  # product-service  products_db
+#  product-service:
+#    build:
+#      context: ./product-service
+#      dockerfile: src/main/docker/Dockerfile
+#    restart: always
+#    ports:
+#      - "8086:8086"
+#    depends_on:
+#      - products_db
+#    environment:
+#      - SPRING_DATASOURCE_URL=jdbc:mysql://products_db:3306/${MYSQL_DATABASE_USERS}?allowPublicKeyRetrieval=true&useSSL=false&useTimezone=true&serverTimezone=GMT&characterEncoding=UTF-8
+#    networks:
+#      - backend-network
+#
+#  products_db:
+#    image: "mysql:8.0"
+#    restart: always
+#    ports:
+#      - "3307:3306"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+#      MYSQL_DATABASE: ${MYSQL_DATABASE_PRODUCTS}
+#      MYSQL_USER: ${MYSQL_USER}
+#      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+#    networks:
+#      - backend-network
+#
+## transaction-service transactions_db
+#transaction-service:
+#  build:
+#    context: ./transaction-service
+#    dockerfile: src/main/docker/Dockerfile
+#  restart: always
+#  ports:
+#    - "8085:8085"
+#  depends_on:
+#    - transactions_db
+#  environment:
+#    - SPRING_DATASOURCE_URL=jdbc:mysql://transactions_db:3306/${MYSQL_DATABASE_USERS}?allowPublicKeyRetrieval=true&useSSL=false&useTimezone=true&serverTimezone=GMT&characterEncoding=UTF-8
+#  networks:
+#    - backend-network
+#transactions_db:
+#  image: "mysql:8.0"
+#  restart: always
+#  ports:
+#    - "3307:3306"
+#  environment:
+#    MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+#    MYSQL_DATABASE: ${MYSQL_DATABASE_PRODUCTS}
+#    MYSQL_USER: ${MYSQL_USER}
+#    MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+#  networks:
+#    - backend-network
+#
+## config-server
+#config-server:
+#  build:
+#    context: ./config-server
+#    dockerfile: src/main/docker/Dockerfile
+#  restart: always
+#  ports:
+#    - "8888:8888"
+#  networks:
+#    - backend-network
+#
+## api-gateway
+#api-gateway:
+#  build:
+#    context: ./api-gateway
+#    dockerfile: src/main/docker/Dockerfile
+#  restart: always
+#  ports:
+#    - "8083:8083"
+#  networks:
+#    - backend-network
+#
+## eureka-server
+#eureka-server:
+#  build:
+#    context: ./eureka-server
+#    dockerfile: src/main/docker/Dockerfile
+#  restart: always
+#  ports:
+#    - "8082:8082"
+#  networks:
+#    - backend-network
+#
+## auth-sercice
+#auth-sercice:
+#  build:
+#    context: ./auth-sercice
+#    dockerfile: src/main/docker/Dockerfile
+#  restart: always
+#  ports:
+#    - "8081:8081"
+#  networks:
+#    - backend-network
