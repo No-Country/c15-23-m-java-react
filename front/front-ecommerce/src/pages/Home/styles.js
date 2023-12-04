@@ -12,7 +12,7 @@ const MainContainer = styled.main`
     }
     display: flex;
     flex-direction: column;
-    gap-column:10px
+    gap: 10px;
 `;
 
 const Section = styled.section`
@@ -34,21 +34,20 @@ const WelcomeDiv = styled.div`
 const TextoDiv = styled.div`
     width: 50%;
     padding: 30px;
-
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
     & h1{
-    margin-block: 40px;
-    font-size: 62px;
-    font-family: ${titleFont};
+        font-size: 62px;
+        font-family: ${titleFont};
     };
     & h2{
-        margin-block: 40px;
         font-size: 44px;
         font-weight: 900; 
         word-wrap: break-word;
         font-family: ${titleFont};
     };
     & p{
-        margin-block: 40px;
         font-size: 26px;
         font-family: ${textFont};
     }

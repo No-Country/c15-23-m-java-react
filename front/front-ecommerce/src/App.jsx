@@ -1,3 +1,4 @@
+import Carousel from "./components/Carousel 02/Carousel.jsx";
 import { Footer } from "./components/Footer/Footer";
 import { FormIcioSecion } from "./components/FormInicioSecion";
 import { Navbar } from "./components/Navbar/Navbar";

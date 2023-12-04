@@ -1,5 +1,6 @@
 import React from 'react'
 import {MainContainer, Section, WelcomeDiv, TextoDiv, InputDiv, ImgDiv, Categorias} from './styles'
+import Carousel from '../../components/Carousel 02/Carousel'
 // import './style.css'
 
 const Home = () => {
@@ -26,6 +27,7 @@ const Home = () => {
           <h2>Categorías</h2>
         </Categorias>
         <div>
+          <Carousel />
           <p>aca va el slider</p>
         </div>
       </Section>  
