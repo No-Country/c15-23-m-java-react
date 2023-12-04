@@ -7,7 +7,7 @@ const ContainerVolver = styled.div`
     background-color: #D9D9D9;
     color: black;
     padding-inline:40px;
-    @media (max-width: 576px) {
+    @media (max-width: 768px) {
         margin-inline: 0px;
         padding-inline:20px;
     }

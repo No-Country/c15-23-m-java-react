@@ -1,6 +1,6 @@
 import React from 'react'
 import {MainContainer, Section, WelcomeDiv, TextoDiv, InputDiv, ImgDiv, Categorias} from './styles'
-import Carousel from '../../components/Carousel 02/Carousel'
+import Carousel from '../../components/Carousel/Carousel'
 // import './style.css'
 
 const Home = () => {
@@ -9,29 +9,25 @@ const Home = () => {
       <Section>
         <WelcomeDiv>
           <TextoDiv>
-            <h1>Bienvenido</h1>
-            <h2>Encuentra los mejores productos de la web</h2>
+            <strong><h1>Bienvenido</h1></strong>
+            <strong><h2>Encuentra los mejores productos de la web</h2></strong>
             <p>Compra por marcas u ofertas.</p>
-            <InputDiv>
-              <input type="search" placeholder='¿Qué estas buscando?'/>
-              <button>Buscar</button>
-            </InputDiv>
           </TextoDiv>
           <ImgDiv>
             <img src="/images/imgHome.jpg" alt="imagen de home" />
           </ImgDiv>
         </WelcomeDiv>
+          <InputDiv>
+            <input type="search" placeholder='¿Qué estas buscando?'/>
+            <button>Buscar</button>
+          </InputDiv>
       </Section>
       <Section>
         <Categorias>
           <h2>Categorías</h2>
         </Categorias>
-        <div>
-          <Carousel />
-          <p>aca va el slider</p>
-        </div>
+        <Carousel />
       </Section>  
-
     </MainContainer>
   )
 }
