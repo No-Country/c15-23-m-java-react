@@ -24,27 +24,14 @@ const DivVolver = styled.div`
 const DivTitulo = styled.div`
     height: 80px;
     display: flex;
-    font-size: 2rem;
     font-family: ${titleFont};
     align-items: center;
+    & h2{
+        font-size: 44px;
+    }
     @media (max-width: 576px) {
         justify-content: center
     }
 `;
 
-const Button = styled.button`
-    display: flex;
-    background-color: #D9D9D9;
-    color: black;
-    padding-inline: 0px;
-    cursor:pointer;
-    p{
-        padding-inline: 15px;
-        font-family: ${textFont};
-    }
-    &:hover{
-        border-color: black;
-    }
-`;
-
-export { ContainerVolver, DivVolver, DivTitulo, Button}
+export { ContainerVolver, DivVolver, DivTitulo }

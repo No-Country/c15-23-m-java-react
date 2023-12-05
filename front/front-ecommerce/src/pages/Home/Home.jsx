@@ -1,7 +1,10 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import {MainContainer, Section, WelcomeDiv, TextoDiv, InputDiv, ImgDiv, Categorias} from './styles'
 import Carousel from '../../components/Carousel/Carousel'
-// import './style.css'
+import CardItem from '../../components/CardItem/CardItem'
+import './Home.css'
+import Slider from '../../components/Slider/Slider'
 
 const Home = () => {
   return (
@@ -27,7 +30,24 @@ const Home = () => {
           <h2>Categorías</h2>
         </Categorias>
         <Carousel />
-      </Section>  
+      </Section>
+      <Section>
+        <Categorias>
+          <div className='trendingItem'>
+            <i><p>Productos en tendencias</p></i>
+          </div>
+        </Categorias>
+        <div className='CardContainer'>
+          <CardItem />
+          <CardItem />
+          <CardItem />
+          <CardItem />
+          <CardItem />
+          <CardItem />
+          <CardItem />
+          <CardItem />
+        </div>
+      </Section>
     </MainContainer>
   )
 }

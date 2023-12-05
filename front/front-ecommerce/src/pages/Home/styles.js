@@ -88,7 +88,6 @@ const TextoDiv = styled.div`
             left: 0px;
             opacity: 0.65;
         }
-
     }
 `;
 

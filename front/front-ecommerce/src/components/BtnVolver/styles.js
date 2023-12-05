@@ -7,12 +7,20 @@ const Button = styled.button`
     color: black;
     padding-inline: 0px;
     cursor:pointer;
+    border-radius: 8px;
+    text-align: center;
+    padding: 15px;
+    border-color: transparent;
+    gap:10px;
     p{
-        padding-inline: 15px;
         font-family: ${textFont};
+        margin: 0px;
     }
     &:hover{
         border-color: black;
+    }
+    & svg{
+        margin-top: 3px
     }
 `;
 
