@@ -1,6 +1,6 @@
 import { Footer } from './components/Footer/Footer';
-import { FormIcioSecion } from './components/FormInicioSecion';
 import { Navbar } from './components/Navbar/Navbar';
+import Login from './pages/Login/Login'
 import Volver from './components/Volver/Volver';
 import { AdminHome } from './pages/AdminHome';
 import { Customers } from './pages/AdminHome/Customers';
@@ -9,7 +9,7 @@ import { Checkout } from './pages/Checkout';
 import Home from "./pages/Home/Home.jsx";
 import NotFound from './pages/NotFound/NotFound.jsx';
 import { SuccessfulPurchase } from './pages/SuccessfulPurchase';
-import SignUp from './components/SignUp/SignUp'
+import SignUp from './pages/SignUp/SignUp'
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
       <br />
       <SuccessfulPurchase />
       <br />
-      <FormIcioSecion />
+      <Login />
       <br />
       <SignUp />
       <NotFound />
