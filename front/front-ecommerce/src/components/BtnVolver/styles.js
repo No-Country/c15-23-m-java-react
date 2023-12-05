@@ -2,6 +2,7 @@ import { styled } from 'styled-components';
 import { textFont } from '../../styles/GlobalStyles';
 
 const Button = styled.button`
+
   display: flex;
   background-color: #d9d9d9;
   // color: black;
