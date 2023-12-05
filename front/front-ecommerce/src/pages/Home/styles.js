@@ -161,4 +161,35 @@ const Categorias = styled.div`
     margin-block: 20px;
 `;
 
-export {MainContainer, Section, WelcomeDiv, TextoDiv, InputDiv, ImgDiv, Categorias}
+const CardContainer = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-basis: 1, 1, 0;
+    gap: 20px;
+    padding: 40px
+`;
+
+const TrendingItem = styled.div`
+    max-width: 800px;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    border-radius: 10px;
+    & a{
+        color: black;
+        text-decoration: none;
+    }
+    & p{
+        margin: 0px;
+        text-align: center;
+        padding-inline: 30px;
+        font-size: 14px;
+        opacity: 0.7;
+    }
+`;
+
+export {MainContainer, Section, WelcomeDiv, TextoDiv, InputDiv, ImgDiv, Categorias, CardContainer, TrendingItem}
