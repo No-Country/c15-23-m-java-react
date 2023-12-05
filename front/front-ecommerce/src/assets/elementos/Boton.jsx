@@ -8,12 +8,12 @@ const Boton = styled.button`
   border-radius: 10px;
   font-family: ${textFont};
   cursor: pointer;
-  font-size: 1.6rem;
+  font-size: 16px;
+  // font-size: 1.6rem;
   font-weight: 700;
   padding: 15px;
   text-align: center;
   width: 100%;
-
   &:hover {
     background-color: ${colors.buttonHover};
   }
