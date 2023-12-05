@@ -1,27 +1,35 @@
 import { styled } from 'styled-components';
-import { textFont } from '../../assets/styles/GlobalStyles';
+import { textFont } from '../../styles/GlobalStyles';
 
 const Button = styled.button`
-    display: flex;
-    background-color: #D9D9D9;
-    color: black;
-    padding-inline: 0px;
-    cursor:pointer;
-    border-radius: 8px;
-    text-align: center;
-    padding: 15px;
-    border-color: transparent;
-    gap:10px;
-    p{
-        font-family: ${textFont};
-        margin: 0px;
-    }
-    &:hover{
-        border-color: black;
-    }
-    & svg{
-        margin-top: 3px
-    }
+
+  display: flex;
+  background-color: #d9d9d9;
+  // color: black;
+  // padding-inline: 0px;
+  cursor: pointer;
+  p {
+    padding-inline: 15px;
+    font-family: ${textFont};
+  }
+  &:hover {
+    border-color: black;
+  }
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 0em;
+  font-size: 1em;
+  // font-weight: 500;
+  font-family: inherit;
+  // background-color: #1a1a1a;
+  transition: border-color 0.25s;
+  button:hover {
+  border-color: #646cff;
+  }
+  button:focus,
+  button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+  }
 `;
 
-export { Button }
+export { Button };

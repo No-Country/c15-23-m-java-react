@@ -22,6 +22,23 @@ const SummaryList = styled.div`
   }
 `;
 
+const ProductImage = styled.figure`
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    object-fit: contain;
+    filter: brightness(1.1);
+    mix-blend-mode: multiply;
+  }
+`;
+
 const SummaryItem = styled.div`
   width: 100%;
   padding: 5px 0;
@@ -32,22 +49,6 @@ const SummaryItem = styled.div`
   font-family: ${textFont};
   border-top: 1px solid white;
 
-  figure {
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 5px;
-    img {
-      width: 60px;
-      height: 60px;
-      border-radius: 5px;
-      object-fit: contain;
-      filter: brightness(1.1);
-      mix-blend-mode: multiply;
-    }
-  }
   div {
     width: 40%;
     font-family: ${textFont};
@@ -89,4 +90,4 @@ const OrderTotal = styled.article`
   }
 `;
 
-export { OrderSummaryCard, OrderTotal, SummaryItem, SummaryList };
+export { OrderSummaryCard, OrderTotal, SummaryItem, SummaryList, ProductImage };

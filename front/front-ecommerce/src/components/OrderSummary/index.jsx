@@ -1,6 +1,7 @@
 import {
   OrderSummaryCard,
   OrderTotal,
+  ProductImage,
   SummaryItem,
   SummaryList,
 } from './styles';
@@ -42,10 +43,10 @@ const OrderSummary = () => {
       <h3>Resumen de la compra</h3>
       <SummaryList>
         {products.map(({ name, img, category, quantity, price }) => (
-          <SummaryItem>
-            <figure>
+          <SummaryItem key={name}>
+            <ProductImage>
               <img alt='product image' src={img} />
-            </figure>
+            </ProductImage>
             <div>
               <p>{name}</p>
               <p>{category}</p>
