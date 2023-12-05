@@ -1,13 +1,8 @@
 import React from 'react';
-import {
-  Main,
-  CheckoutContainer,
-  ClientInfo,
-  ConfirmationButton,
-  PaymentMethod,
-} from './styles';
+import { Main, CheckoutContainer, ClientInfo, PaymentMethod } from './styles';
 import { FaUser } from 'react-icons/fa';
 import { OrderSummary } from '../../components/OrderSummary';
+import Button from '../../assets/elementos/Boton';
 
 const Checkout = () => {
   return (
@@ -36,7 +31,7 @@ const Checkout = () => {
             </label>
           </div>
         </PaymentMethod>
-        <ConfirmationButton>Realizar pedido</ConfirmationButton>
+        <Button>Realizar pedido</Button>
       </CheckoutContainer>
     </Main>
   );

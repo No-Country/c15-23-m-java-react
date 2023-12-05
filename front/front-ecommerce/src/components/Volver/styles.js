@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 import { titleFont, textFont } from '../../styles/GlobalStyles';
 
 const ContainerVolver = styled.div`
-  max-width: 100%;
+  width: 95%;
   margin: 40px;
   background-color: #d9d9d9;
   color: black;

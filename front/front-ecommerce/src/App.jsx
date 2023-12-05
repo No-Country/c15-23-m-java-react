@@ -8,13 +8,15 @@ import { Products } from './pages/AdminHome/Products';
 import { Checkout } from './pages/Checkout';
 import NotFound from './pages/NotFound/NotFound.jsx';
 import { SuccessfulPurchase } from './pages/SuccessfulPurchase';
-import SignUp from './components/SignUp/SignUp'
+import SignUp from './components/SignUp/SignUp';
+import { ShoppingCart } from './pages/ShoppingCart';
 
 function App() {
   return (
     <>
       <Navbar />
       <br />
+      <ShoppingCart />
       <AdminHome />
       <br />
       <Products />
