@@ -6,9 +6,10 @@ import { AdminHome } from './pages/AdminHome';
 import { Customers } from './pages/AdminHome/Customers';
 import { Products } from './pages/AdminHome/Products';
 import { Checkout } from './pages/Checkout';
-import Home from "./pages/Home/Home.jsx";
+import Home from './pages/Home/Home.jsx';
 import NotFound from './pages/NotFound/NotFound.jsx';
 import { SuccessfulPurchase } from './pages/SuccessfulPurchase';
+import { ShoppingCart } from './pages/ShoppingCart';
 import SignUp from './pages/SignUp/SignUp'
 
 function App() {
@@ -16,7 +17,9 @@ function App() {
     <>
       <Navbar />
       <br />
+      <ShoppingCart />
       <Home />
+
       <AdminHome />
       <br />
       <Products />

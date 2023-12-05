@@ -8,7 +8,7 @@ import {
   Delete,
 } from './styles';
 
-const products = [
+export const products = [
   {
     id: 1,
     name: 'Tennis',
