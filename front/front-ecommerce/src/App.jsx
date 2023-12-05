@@ -17,7 +17,7 @@ function App() {
     <>
       <Navbar />
       <br />
-
+      <ShoppingCart />
       <Home />
 
       <AdminHome />
