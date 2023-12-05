@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { textFont, titleFont } from '../../assets/styles/GlobalStyles';
+import { textFont, titleFont } from '../../styles/GlobalStyles';
 
 const Card = styled.div`
     text-align: center;

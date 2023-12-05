@@ -123,6 +123,7 @@ const InputDiv = styled.div`
         background-color: #56c9a0;
         width: 92px;
         font-size: 16px;
+        cursor:pointer;
         &:hover{
             border-color: black;
         };
