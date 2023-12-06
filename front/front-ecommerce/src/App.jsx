@@ -11,6 +11,7 @@ import NotFound from './pages/NotFound/NotFound.jsx';
 import { SuccessfulPurchase } from './pages/SuccessfulPurchase';
 import { ShoppingCart } from './pages/ShoppingCart';
 import SignUp from './pages/SignUp/SignUp'
+import { AddEditProduct } from './pages/AddEditProduct/AddEditProduct.jsx';
 
 function App() {
   return (
@@ -35,7 +36,10 @@ function App() {
       <Login />
       <br />
       <SignUp />
+      <br />
       <NotFound />
+      <br />
+      <AddEditProduct />
       <br />
       <Footer />
     </>
