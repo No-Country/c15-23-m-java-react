@@ -8,6 +8,7 @@ const colors = {
   primaryLightColor: 'rgba(86, 201, 160, 0.5)',
   primaryText: '#213547',
   grayBorders: ' #d9d9d9',
+  buttonHover: ' #39ad84',
 };
 
 const GlobalStyles = createGlobalStyle`

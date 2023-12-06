@@ -7,7 +7,9 @@ const OrderSummaryCard = styled.article`
   padding: 20px;
   border-radius: 15px;
   background-color: ${colors.primaryColor};
+  color: ${colors.primaryText};
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
   h3 {
     text-align: center;
     font-size: 2rem;

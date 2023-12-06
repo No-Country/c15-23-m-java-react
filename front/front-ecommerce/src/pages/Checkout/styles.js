@@ -43,6 +43,7 @@ const ClientInfo = styled.div`
 
 const PaymentMethod = styled.div`
   margin-top: 20px;
+  margin-bottom: 20px;
   width: 100%;
   padding: 10px 0;
   border-top: 1px solid #c8c8c8;
@@ -66,22 +67,6 @@ const PaymentMethod = styled.div`
   }
 `;
 
-const ConfirmationButton = styled.button`
-  width: 80%;
-  height: 45px;
-  font-size: 1.8rem;
-  font-family: ${textFont};
-  border-radius: 10px;
-  margin-top: 30px;
-  cursor: pointer;
-  border: none;
-  color: white;
-  background-color: #56c9a0;
-  &:hover {
-    background-color: #29b081;
-  }
-`;
-
 const Main = styled.main`
   width: 100%;
   padding: 40px 0;
@@ -90,10 +75,4 @@ const Main = styled.main`
   overflow-x: hidden;
 `;
 
-export {
-  CheckoutContainer,
-  ClientInfo,
-  ConfirmationButton,
-  Main,
-  PaymentMethod,
-};
+export { CheckoutContainer, ClientInfo, Main, PaymentMethod };
