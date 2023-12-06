@@ -12,7 +12,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/api/product")
 public class ProductController {
 
     @Autowired
@@ -28,6 +28,16 @@ public class ProductController {
     @PostMapping(path = "/")
     public ResponseEntity<Product> createNewProduct(@RequestBody Product product){
         return productService.createNewProduct(product);
+    }
+
+    @GetMapping(path = "/{id}")
+    public ResponseEntity<Product> getProductById(@PathVariable Long id){
+        return productService.getProductById(id);
+    }
+
+    @GetMapping(path = "/name/{name}")
+    public ResponseEntity<List<Product>> getProductsByName(@PathVariable String name){
+        return productService.getProductsByName(name);
     }
 
 

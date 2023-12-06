@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductService {
@@ -30,6 +31,25 @@ public class ProductService {
         try {
             List<Product> allProducts = productRepository.findAll();
             return new ResponseEntity<>(allProducts, HttpStatus.OK);
+        } catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    public ResponseEntity<Product> getProductById(Long id) {
+        try{
+
+            Product productFound = productRepository.findById(id).get();
+            return new ResponseEntity<>(productFound, HttpStatus.FOUND);
+        } catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    public ResponseEntity<List<Product>> getProductsByName(String name) {
+        try {
+            List<Product> productsFound = productRepository.findProductsByName(name);
+            return new ResponseEntity<>(productsFound, HttpStatus.OK);
         } catch (Exception e){
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }

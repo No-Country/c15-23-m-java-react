@@ -11,17 +11,19 @@ public class Product {
     @Column (name = "product_id")
     private Long id;
 
-
     private String name;
 
     private String brand;
 
     private String description;
 
+    private Double price;
+
     private Integer availableStock;
 
     private Boolean active;
 
+    //se calcula el precio descontado en frontend
     private Double discount;
 
     //Si puede tener varios tipos entonces debería hacer una relación con otra tabla
@@ -68,6 +70,14 @@ public class Product {
         this.description = description;
     }
 
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
     public Integer getAvailableStock() {
         return availableStock;
     }
@@ -76,12 +86,12 @@ public class Product {
         this.availableStock = availableStock;
     }
 
-    public Boolean getStatus() {
+    public Boolean getActive() {
         return active;
     }
 
-    public void setStatus(Boolean status) {
-        this.active = status;
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 
     public Double getDiscount() {
