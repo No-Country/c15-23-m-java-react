@@ -1,5 +1,6 @@
 import {FormContainerSignUp} from '../SignUp/styles'
 import Boton from '../../assets/elementos/Boton';
+import { NavLink } from 'react-router-dom';
 
 const Login = () => {
   return (
@@ -24,9 +25,9 @@ const Login = () => {
         <div>
            <p>¿No tienes una cuenta? Haga click aqúi para registrarse</p>
         </div>
-        <Boton type="submit">
+        <NavLink to="/home"><Boton type="submit">
            Ingresar
-        </Boton>
+        </Boton></NavLink>
         </FormContainerSignUp>  
       
   )
