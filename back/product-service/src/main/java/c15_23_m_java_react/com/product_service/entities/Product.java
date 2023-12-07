@@ -1,9 +1,6 @@
 package c15_23_m_java_react.com.product_service.entities;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name="products")
@@ -11,47 +8,35 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column (name = "product_id")
     private Long id;
 
-    @NotBlank
-    @JsonProperty("name")
     private String name;
 
-    @NotBlank
-    @JsonProperty("brand")
     private String brand;
 
-    @NotBlank
-    @JsonProperty("description")
     private String description;
 
-    @NotBlank
-    @JsonProperty("stock")
+    private Double price;
+
     private Integer availableStock;
 
-    @NotBlank
-    @JsonProperty("status")
-    private Boolean status;
+    private Boolean active;
 
-    @NotBlank
-    @JsonProperty("discount")
+    //se calcula el precio descontado en frontend
     private Double discount;
 
     //Si puede tener varios tipos entonces debería hacer una relación con otra tabla
-    @NotBlank
-    @JsonProperty("type")
-    private String type;
+    private String category;
 
-    @NotBlank
-    @JsonProperty("height")
     private Double height;
 
-    @NotBlank
-    @JsonProperty("width")
     private Double width;
 
     //TODO: {private String imageLink} Buscar una forma de almacenar el link de una imagen
 
+    public Product() {
+    }
 
     public Long getId() {
         return id;
@@ -85,6 +70,14 @@ public class Product {
         this.description = description;
     }
 
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
     public Integer getAvailableStock() {
         return availableStock;
     }
@@ -93,12 +86,12 @@ public class Product {
         this.availableStock = availableStock;
     }
 
-    public Boolean getStatus() {
-        return status;
+    public Boolean getActive() {
+        return active;
     }
 
-    public void setStatus(Boolean status) {
-        this.status = status;
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 
     public Double getDiscount() {
@@ -109,12 +102,12 @@ public class Product {
         this.discount = discount;
     }
 
-    public String getType() {
-        return type;
+    public String getCategory() {
+        return category;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public Double getHeight() {
