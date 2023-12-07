@@ -54,4 +54,99 @@ public class ProductService {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    public ResponseEntity<List<Product>> getProductsByCategory(String category) {
+        try {
+            List<Product> productsFound = productRepository.findProductsByCategory(category);
+            return new ResponseEntity<>(productsFound, HttpStatus.OK);
+        } catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    public ResponseEntity<List<Product>> getStockedProducts() {
+        try {
+            List<Product> productsFound = productRepository.getStockedProducts();
+            return new ResponseEntity<>(productsFound, HttpStatus.OK);
+        } catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    public ResponseEntity<List<Product>> getActiveProducts() {
+        try {
+            List<Product> productsFound = productRepository.getActiveProducts();
+            return new ResponseEntity<>(productsFound, HttpStatus.OK);
+        } catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    public ResponseEntity<Product> updateOneProduct(Long id, Product newProductData) {
+        try {
+            Optional<Product> productsFound = productRepository.findById(id);
+            if (!productsFound.isPresent()){
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+
+            //Actualizar cada campo del producto
+            Product updatedProduct = productsFound.get();
+            updatedProduct.setName(newProductData.getName());
+            updatedProduct.setBrand(newProductData.getBrand());
+            updatedProduct.setDescription(newProductData.getDescription());
+            updatedProduct.setPrice(newProductData.getPrice());
+            updatedProduct.setAvailableStock(newProductData.getAvailableStock());
+            updatedProduct.setActive(newProductData.getActive());
+            updatedProduct.setDiscount(newProductData.getDiscount());
+
+            //Cambiar cuando se puedan tener más de una categoría
+            updatedProduct.setCategory(newProductData.getCategory());
+
+            updatedProduct.setHeight(newProductData.getHeight());
+            updatedProduct.setWidth(newProductData.getWidth());
+
+
+            //Almacenar el nuevo producto actualizado
+            productRepository.save(updatedProduct);
+
+            return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
+        } catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
+    public ResponseEntity<String> deactivateOneProduct(Long id) {
+        try {
+            Optional<Product> productFound = productRepository.findById(id);
+            if (!productFound.isPresent()){
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+
+            Product product = productFound.get();
+            product.setActive(false);
+            productRepository.save(product);
+
+            return new ResponseEntity<>("Succesfully deactivated", HttpStatus.OK);
+        } catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    public ResponseEntity<String> activateOneProduct(Long id) {
+        try {
+            Optional<Product> productFound = productRepository.findById(id);
+            if (!productFound.isPresent()){
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+
+            Product product = productFound.get();
+            product.setActive(true);
+            productRepository.save(product);
+
+            return new ResponseEntity<>("Succesfully activated", HttpStatus.OK);
+        } catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

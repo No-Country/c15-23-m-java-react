@@ -40,5 +40,33 @@ public class ProductController {
         return productService.getProductsByName(name);
     }
 
+    @GetMapping(path = "/category/{category}")
+    public ResponseEntity<List<Product>> getProductsByCategory(@PathVariable String category) {
+        return productService.getProductsByCategory(category);
+    }
 
+    @GetMapping(path = "/stocked")
+    public ResponseEntity<List<Product>> getStockedProducts(){
+        return productService.getStockedProducts();
+    }
+
+    @GetMapping(path = "/active")
+    public ResponseEntity<List<Product>> getActiveProducts(){
+        return productService.getActiveProducts();
+    }
+
+    @PutMapping(path = "/{id}")
+    public ResponseEntity<Product> updateOneProduct(@PathVariable Long id, @RequestBody Product product){
+        return productService.updateOneProduct(id, product);
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public ResponseEntity<String> deactivateOneProduct(@PathVariable Long id){
+        return productService.deactivateOneProduct(id);
+    }
+
+    @PostMapping(path = "/{id}")
+    public ResponseEntity<String> activateOneProduct(@PathVariable Long id){
+        return productService.activateOneProduct(id);
+    }
 }
