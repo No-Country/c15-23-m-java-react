@@ -1,6 +1,4 @@
-import React from 'react';
 import { OrderSummary } from '../../components/OrderSummary';
-
 import { Card, Content, Main, Section, Summary } from './styles';
 
 const SuccessfulPurchase = () => {

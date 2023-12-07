@@ -1,5 +1,4 @@
 import { ProductsTable } from '../../components/Tables/ProductsTable';
-
 import { Section, Actions, SearchBar } from './styles';
 import { MdAdd } from 'react-icons/md';
 import { IoSearch } from 'react-icons/io5';
