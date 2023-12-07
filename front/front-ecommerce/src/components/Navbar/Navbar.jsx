@@ -12,12 +12,11 @@ const Navbar = () => {
   return (
     <div>
        <NavContainer>
-       <h2><img width={80} src={Logo}></img></h2>
+       <h2><NavLink to="/home"><img width={80} src={Logo}></img></NavLink></h2>
         <div className={`links-left ${clicked ? 'active' : ''}`}>
           <NavLink to="/home">Inicio</NavLink>
-          <a onClick={handleClick} href="#h">Categorias</a>
-          <a onClick={handleClick} href="#h">Productos</a>
-          <a onClick={handleClick} href="#h">Shop</a>
+          <NavLink to="/products">Productos</NavLink>
+          <NavLink to="/shop">Shop</NavLink>
         </div>
         <div className={`links-right ${clicked ? 'active' : ''}`}>
           <NavLink to="/sign-up"><a >Registro</a></NavLink>

@@ -1,7 +1,6 @@
 import {FormContainerSignUp} from './styles'
 import Boton from '../../assets/elementos/Boton'
 
-
 const SignUp = () => {
   return (
   
