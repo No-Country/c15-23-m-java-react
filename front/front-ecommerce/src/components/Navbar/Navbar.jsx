@@ -17,6 +17,7 @@ const Navbar = () => {
           <NavLink to="/home">Inicio</NavLink>
           <NavLink to="/products">Productos</NavLink>
           <NavLink to="/shop">Shop</NavLink>
+          <NavLink to="/home-admin">Categorias</NavLink>
         </div>
         <div className={`links-right ${clicked ? 'active' : ''}`}>
           <NavLink to="/sign-up"><a >Registro</a></NavLink>
