@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import {NavContainer, BgDiv, Burguer}  from './styles';
 import Logo from '/images/logo.png'
+import { NavLink } from 'react-router-dom';
+
 const Navbar = () => {
   const [clicked, setClicked] = useState(false)
   const handleClick = () => {
@@ -10,23 +12,19 @@ const Navbar = () => {
   return (
     <div>
        <NavContainer>
-       <h2><img width={80} src={Logo}></img></h2>
+       <h2><NavLink to="/home"><img width={80} src={Logo}></img></NavLink></h2>
         <div className={`links-left ${clicked ? 'active' : ''}`}>
-          <a onClick={handleClick} href="#h">Inicio</a>
-          <a onClick={handleClick} href="#h">Categorias</a>
-          <a onClick={handleClick} href="#h">Productos</a>
-          <a onClick={handleClick} href="#h">Shop</a>
+          <NavLink to="/home">Inicio</NavLink>
+          <NavLink to="/products">Productos</NavLink>
+          <NavLink to="/shop">Shop</NavLink>
         </div>
         <div className={`links-right ${clicked ? 'active' : ''}`}>
-          <a onClick={handleClick} href="#h">Registro</a>
-          <a onClick={handleClick} href="#h">Inicio Sesion</a>
-         {/*  <a onClick={handleClick} href="#h">Productos</a>
-          <a onClick={handleClick} href="#h">Shop</a>
-          <a onClick={handleClick} href="#h">Cerrar Sesion</a> */}
+          <NavLink to="/sign-up"><a >Registro</a></NavLink>
+          <NavLink to="/login"><a >Inicio Sesion</a></NavLink>
         </div>
         <div className='burguer'>
         <Burguer>
-      <div  onClick={handleClick} 
+      <div onClick={handleClick} 
             className={`icon nav-icon-5 ${clicked ? 'open' : ''}`}
       >
         <span></span>

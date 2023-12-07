@@ -9,6 +9,7 @@ import {
 import { MdAdd, MdRemove, MdDelete } from 'react-icons/md';
 import { products } from '../Tables/ProductsTable';
 import Button from '../../assets/elementos/Boton';
+import { NavLink } from 'react-router-dom';
 
 const Cart = () => {
   return (
@@ -46,7 +47,7 @@ const Cart = () => {
           </li>
         ))}
       </List>
-      <Button>Checkout</Button>
+      <NavLink to="/checkout"><Button>Verificar</Button></NavLink>
     </CartContainer>
   );
 };

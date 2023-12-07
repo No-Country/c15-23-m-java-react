@@ -1,14 +1,14 @@
-import React from 'react';
 import { Main, CheckoutContainer, ClientInfo, PaymentMethod } from './styles';
 import { FaUser } from 'react-icons/fa';
 import { OrderSummary } from '../../components/OrderSummary';
 import Button from '../../assets/elementos/Boton';
+import { NavLink } from 'react-router-dom';
 
 const Checkout = () => {
   return (
     <Main>
       <CheckoutContainer>
-        <h2>Checkout</h2>
+        <h2>Verificar</h2>
         <ClientInfo>
           <FaUser />
           <p>Nombre del Usuario Cliente</p>
@@ -31,7 +31,8 @@ const Checkout = () => {
             </label>
           </div>
         </PaymentMethod>
-        <Button>Realizar pedido</Button>
+        <NavLink to="/successfulPurchase"><Button>Realizar pedido</Button></NavLink>
+        
       </CheckoutContainer>
     </Main>
   );
