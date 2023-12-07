@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { titleFont, textFont } from '../../assets/styles/GlobalStyles';
+import { titleFont, textFont } from '../../styles/GlobalStyles';
 
 const MainContainer = styled.main`
     max-width: 100%;
