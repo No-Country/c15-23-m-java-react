@@ -1,5 +1,4 @@
 import { styled } from 'styled-components';
-import { textFont, titleFont } from '../../styles/GlobalStyles';
 
 const List = styled.div`
     height: auto;
