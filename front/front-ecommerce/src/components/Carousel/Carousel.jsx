@@ -11,20 +11,48 @@ import 'swiper/css/autoplay';
 
 import arrowLeft from "/images/arrow-left.svg";
 import arrowRight from "/images/arrow-right.svg";
-import image1 from "/images/300x300.jpg";
-import image2 from "/images/300x300.jpg";
-import image3 from "/images/300x300.jpg";
-import image4 from "/images/300x300.jpg";
-import image5 from "/images/300x300.jpg";
-import image6 from "/images/300x300.jpg";
-import image7 from "/images/300x300.jpg";
-import image8 from "/images/300x300.jpg";
+
+import image1 from "/images/image1.jpg";
+import image2 from '/images/image2.jpg'
+import image3 from '/images/image3.jpg'
+import image4 from '/images/image4.jpg'
+
+const cards = [
+  {
+    id: 1,
+    title: "Producto 1",
+    image: image4,
+  },
+  {
+    id: 2,
+    title: "Producto 2",
+    image: image1,
+  },
+  {
+    id: 3,
+    title: "Producto 3",
+    image: image3,
+  },
+  {
+    id: 4,
+    title: "Producto 1",
+    image: image4,
+  },
+  {
+    id: 5,
+    title: "Producto 3",
+    image: image3,
+  },
+  {
+    id: 6,
+    title: "Producto 2",
+    image: image2,
+  },
+];
 
 
 function Carousel() {
 
-const slides = [image1, image2, image3, image4, image5, image6, image7, image8];
-  
   return (
     <Swiper
       modules={[EffectCoverflow, Navigation, Pagination, Autoplay]}
@@ -53,10 +81,11 @@ const slides = [image1, image2, image3, image4, image5, image6, image7, image8];
       }}
     >
       {/* HAY QUE PROGRAMAR EL LINK DE LAS IMAGENES */}
-      {slides.map((slide, index) => (
+      {/* {cards.map(({ image}) => ( */}
+      {cards.map(({image}, index) => (
         <SwiperSlide key={index} className="slide-inner">
           <a href="">
-            <img src={slide} alt="" />
+            <img src={image} alt="" />
           </a>
         </SwiperSlide>
       ))}

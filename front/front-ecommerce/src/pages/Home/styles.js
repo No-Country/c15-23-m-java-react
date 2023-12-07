@@ -97,7 +97,7 @@ const InputDiv = styled.div`
     padding: 20px;
     width: 100%;
     & input{
-        height: 46px;
+        height: 54px;
         width: 40%;
         border-radius: 10px;
         border: none;
@@ -116,17 +116,21 @@ const InputDiv = styled.div`
         }
     };
     & button{
+
+        background-color: #56c9a0;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 15px;
+        text-align: center;
         margin-inline: 20px;
-        height: 46px;
         border-radius: 10px;
         font-family: ${textFont};
-        background-color: #56c9a0;
-        width: 92px;
-        font-size: 16px;
-        cursor:pointer;
         &:hover{
-            border-color: black;
-        };
+            background-color: #39ad84;
+        }
     };
     @media(max-width: 900px){
         justify-content: center;

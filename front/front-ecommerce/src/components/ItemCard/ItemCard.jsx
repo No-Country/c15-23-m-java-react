@@ -15,12 +15,14 @@ function ItemCard({ imageSource, title, text,  }) {
             ? text
             : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam deserunt fuga ."}
         </p>
-        <a
-          href=""
-          className="btn btn-outline-secondary border-0"
-          rel="noreferrer">
-          <button>Ver más</button>
-        </a>
+        <div>
+          <a
+            href=""
+            className=" border-0"
+            rel="noreferrer">
+            <button>Ver más</button>
+          </a>
+        </div>
       </ItemBodyCard>
     </Card>
   );

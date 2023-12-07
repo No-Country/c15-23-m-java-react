@@ -24,15 +24,27 @@ const ItemBodyCard = styled.div`
         font-size: 16px;
         font-family: ${textFont}
     }
-    & a{
-        & button{
-            background-color: #56c9a0;
-            padding: 10px;
-            border-radius: 10px;
-            border-color: transparent;
-            cursor:pointer;
-            &:hover{
-                background-color: #97dec5;
+    & div{
+        width: 80px;
+        justify-content: center;
+        display: flex;
+        width:100%;
+        & a{
+            & button{
+                background-color: #56c9a0;
+                width:100%;
+                border: none;
+                color: #fff;
+                border-radius: 10px;
+                font-family: Merriweather Sans,sans-serif;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: 700;
+                padding: 15px;
+                text-align: center;
+                &:hover{
+                    background-color: #39ad84;
+                }
             }
         }
     }
