@@ -9,7 +9,8 @@ import javax.validation.constraints.NotBlank;
 import c15_23_m_java_react.com.user_service.roles.Role;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -17,6 +18,7 @@ import javax.validation.constraints.NotNull;
 public class UserEntity {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotBlank

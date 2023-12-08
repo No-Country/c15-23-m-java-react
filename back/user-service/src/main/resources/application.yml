@@ -2,23 +2,31 @@ spring:
   main:
     show-banner: false
   server:
-    port: 8086
+    port: ${SERVER_PORT:8084}
   datasource:
-    url: jdbc:mysql://localhost:3306/users_db?allowPublicKeyRetrieval=true&useSSL=false&useTimezone=true&serverTimezone=GMT&characterEncoding=UTF-8
-    username: root
-    password: root
+    url: jdbc:mysql://users_db:3306/users_db?allowPublicKeyRetrieval=true&useSSL=false&useTimezone=true&serverTimezone=GMT&characterEncoding=UTF-8
+    username: docjp
+    password: j3HFEQPn5Kkjf2
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL8Dialect
     show-sql: true
     properties:
       hibernate:
         format_sql: true
         use_sql_comments: true
-        type: trace
+        jdbc:
+          time_zone: UTC
+    generate-ddl: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
   thymeleaf:
     cache: false
+  security:
+    user:
+      name: user
+      password: user
 
 debug: true
 
@@ -26,7 +34,23 @@ logging:
   level:
     org:
       hibernate:
+        SQL: DEBUG
         type:
           descriptor:
             sql: trace
+
+springdoc:
+  swagger-ui:
+    use-root-path: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
 

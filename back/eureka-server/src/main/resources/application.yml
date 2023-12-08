@@ -1,10 +1,15 @@
-# See http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
-spring:
-  thymeleaf.cache: false
-  main.show-banner: false
-  server:
-  port: 8082
+server:
+  port: 8761
 
-  
-  
-  
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    enableSelfPreservation: false # For development, disable in production
+
+spring:
+  application:
+    name: eureka-server

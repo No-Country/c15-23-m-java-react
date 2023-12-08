@@ -1,82 +1,127 @@
-version: '3'
+version: "3.8"
+
 services:
-  config-server:
-    build: ./config-server
-    ports:
-      - "8888:8888"
-  auth-service:
-    build: ./auth-service
-    ports:
-      - "8081:8081"
-  eureka-server:
-    build: ./eureka-server
-    ports:
-      - "8082:8082"
-  api-gateway:
-    build: ./api-gateway
-    ports:
-      - "8083:8083"
   user-service:
-    build: ./transaction-service
+    build:
+      context: ./user-service
+      dockerfile: src/main/docker/Dockerfile
+    restart: always
     ports:
       - "8084:8084"
-  transaction-service:
-    build: ./transaction-service
-    ports:
-      - "8085:8085"
-  product-service:
-    build: ./product-service
-    ports:
-      - "8086:8086"
-  # Definir otros servicios aquí de ser necesario
+    depends_on:
+      - user_db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://user_db:3306/${MYSQL_DATABASE_USERS}?allowPublicKeyRetrieval=true&useSSL=false&useTimezone=true&serverTimezone=GMT&characterEncoding=UTF-8
+    networks:
+      - backend-network
 
-  
-  
-  
-  
-
-  
-  # Definición de las bases de datos
-  users_db:
-    image: mysql:8.0
+  user_db:
+    image: "mysql:8.0"
+    restart: always
+    ports:
+      - "3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE_USERS}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-    ports:
-      - "33061:3306"
-    volumes:
-      - users_data:/var/lib/mysql
+    networks:
+      - backend-network
 
-  products_db:
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE_PRODUCTS}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-    ports:
-      - "33062:3306"
-    volumes:
-      - products_data:/var/lib/mysql
+# Uncomment and configure these services when they are ready
+# product-service:
+#   build:
+#     context: ./product-service
+#     dockerfile: src/main/docker/Dockerfile
+#   restart: always
+#   ports:
+#     - "8086:8086"
+#   depends_on:
+#     - products_db
+#   environment:
+#     SPRING_DATASOURCE_URL: jdbc:mysql://products_db:3306/${MYSQL_DATABASE_PRODUCTS}?allowPublicKeyRetrieval=true&useSSL=false&useTimezone=true&serverTimezone=GMT&characterEncoding=UTF-8
+#   networks:
+#     - backend-network
+# products_db:
+#   image: "mysql:8.0"
+#   restart: always
+#   ports:
+#     - "3307:3306"
+#   environment:
+#     MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+#     MYSQL_DATABASE: ${MYSQL_DATABASE_PRODUCTS}
+#     MYSQL_USER: ${MYSQL_USER}
+#     MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+#   networks:
+#     - backend-network
 
-  transactions_db:
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE_TRANSACTIONS}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-    ports:
-      - "33063:3306"
-    volumes:
-      - transactions_data:/var/lib/mysql
+# transaction-service:
+#   build:
+#     context: ./transaction-service
+#     dockerfile: src/main/docker/Dockerfile
+#   restart: always
+#   ports:
+#     - "8085:8085"
+#   depends_on:
+#     - transactions_db
+#   environment:
+#     SPRING_DATASOURCE_URL: jdbc:mysql://transactions_db:3306/${MYSQL_DATABASE_TRANSACTIONS}?allowPublicKeyRetrieval=true&useSSL=false&useTimezone=true&serverTimezone=GMT&characterEncoding=UTF-8
+#   networks:
+#     - backend-network
 
-# Definir otros servicios de base de datos aquí de ser necesario
+# transactions_db:
+#   image: "mysql:8.0"
+#   restart: always
+#   ports:
+#     - "3308:3306" # Ensure this port does not conflict with other services
+#   environment:
+#     MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+#     MYSQL_DATABASE: ${MYSQL_DATABASE_TRANSACTIONS}
+#     MYSQL_USER: ${MYSQL_USER}
+#     MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+#   networks:
+#     - backend-network
 
-volumes:
-  users-data:
-  products-data:
-  transactions-data:
-  # Define volúmenes para otras bases de datos si es necesario
+# config-server:
+#   build:
+#     context: ./config-server
+#     dockerfile: src/main/docker/Dockerfile
+#   restart: always
+#   ports:
+#     - "8888:8888"
+#   networks:
+#     - backend-network
+
+# api-gateway:
+#   build:
+#     context: ./api-gateway
+#     dockerfile: src/main/docker/Dockerfile
+#   restart: always
+#   ports:
+#     - "8083:8083"
+#   networks:
+#     - backend-network
+
+# eureka-server:
+#   build:
+#     context: ./eureka-server
+#     dockerfile: src/main/docker/Dockerfile
+#   restart: always
+#   ports:
+#     - "8761:8761"
+#   networks:
+#     - backend-network
+
+# auth-service:
+#   build:
+#     context: ./auth-service
+#     dockerfile: src/main/docker/Dockerfile
+#   restart: always
+#   ports:
+#     - "8081:8081"
+#   networks:
+#     - backend-network
+
+networks:
+  backend-network:
+    driver: bridge
