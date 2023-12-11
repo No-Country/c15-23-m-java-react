@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { textFont, titleFont } from '../../styles/GlobalStyles';
+import { colors, textFont, titleFont } from '../../styles/GlobalStyles';
 
 const CheckoutContainer = styled.section`
   width: 100%;
@@ -14,6 +14,22 @@ const CheckoutContainer = styled.section`
     font-family: ${titleFont};
     margin-bottom: 20px;
     color: #29b081;
+  }
+  a {
+    width: 100%;
+    background-color: ${colors.primaryColor};
+    color: white;
+    border-radius: 10px;
+    font-family: ${textFont};
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    &:hover {
+      background-color: ${colors.buttonHover};
+    }
   }
 
   @media (min-width: 900px) {
@@ -38,6 +54,7 @@ const ClientInfo = styled.div`
     font-family: ${textFont};
     font-size: 1.4rem;
     margin-left: 10px;
+    margin-bottom: 0;
   }
 `;
 

@@ -11,6 +11,7 @@ const Main = styled.main`
     font-size: 2.5rem;
     font-family: ${titleFont};
     color: ${colors.primaryText};
+    font-weight: bold;
   }
 `;
 
@@ -28,6 +29,7 @@ const Section = styled.section`
     width: 95%;
     text-align: left;
     margin-bottom: 20px;
+    font-weight: bold;
     @media (min-width: 900px) {
       width: 80%;
     }
