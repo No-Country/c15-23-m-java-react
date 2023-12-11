@@ -31,8 +31,7 @@ const Checkout = () => {
             </label>
           </div>
         </PaymentMethod>
-        <NavLink to="/successfulPurchase"><Button>Realizar pedido</Button></NavLink>
-        
+        <NavLink to='/successfulPurchase'>Realizar pedido</NavLink>
       </CheckoutContainer>
     </Main>
   );
