@@ -30,6 +30,7 @@ const Router = () => {
         <Route path='home-admin/products' element={<Products />} />
         <Route path='home-admin/customers' element={<Customers />} />
         <Route path='purchase-history' element={<PurchaseHistory />} />
+        <Route path='user-profile' element={<UserProfile />} />
         {/*  Faltan otras Rutas */}
       </Routes>
     </>

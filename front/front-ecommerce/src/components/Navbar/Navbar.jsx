@@ -17,6 +17,8 @@ const Navbar = () => {
           <NavLink to="/home">Inicio</NavLink>
           <NavLink to="/products">Productos</NavLink>
           <NavLink to="/shop">Shop</NavLink>
+          <NavLink to="/purchase-history">Compras Realizadas</NavLink>
+          <NavLink to="/user-profile">Perfil Usuario</NavLink>
           <NavLink to="/home-admin">Categorias</NavLink>
         </div>
         <div className={`links-right ${clicked ? 'active' : ''}`}>
