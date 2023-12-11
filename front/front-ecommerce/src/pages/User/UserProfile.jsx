@@ -4,7 +4,7 @@ import userImag from '../../assets/img/user.svg'
 import infoPersonal from '../../assets/img/infoPersonal.svg'
 import flecha from '../../assets/img/flecha.svg'
 import creditCard from '../../assets/img/creditCard.svg'
-import idCard from '../../assets/img/idcard.svg'
+import idCard from '../../assets/img/idCard.svg'
 import map from '../../assets/img/map.svg'
 
 export const UserProfile = () => {
