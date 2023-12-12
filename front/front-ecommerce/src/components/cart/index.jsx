@@ -6,26 +6,44 @@ import {
   ProductImg,
   Quantity,
 } from './styles';
+import { useEffect, useState } from 'react'
 import { MdAdd, MdRemove, MdDelete } from 'react-icons/md';
-import { products } from '../Tables/ProductsTable';
 import Button from '../../assets/elementos/Boton';
 import { NavLink } from 'react-router-dom';
 
 const Cart = () => {
+  const [products, setProducts] = useState([])
+    const getFetch = async ()=>{  
+        try{
+            const url = 'https://64ee10061f87218271424186.mockapi.io/data'
+            const prodJson = await fetch(url)
+            const prod = await prodJson.json()
+            return prod
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }  
+    useEffect(()=>{
+        getFetch()
+        .then(products => setProducts(products))
+        .catch(err => err)
+    },[])
+
   return (
     <CartContainer>
       <h2>Mi orden</h2>
       <List>
-        {products.map(({ id, name, category, price, img }) => (
+        {products.map(({ id, titulo, categoria, precio, imagen }) => (
           <li key={id}>
             <Item>
               <Product>
                 <ProductImg>
-                  <img src={img} alt='product image' />
+                  <img src={imagen} alt='product image' />
                 </ProductImg>
                 <div>
-                  <p>{name}</p>
-                  <p>{category}</p>
+                  <p>{titulo}</p>
+                  <p>{categoria}</p>
                 </div>
               </Product>
               <Quantity>
@@ -42,7 +60,7 @@ const Cart = () => {
                   <MdDelete />
                 </button>
               </Quantity>
-              <p>$20.00</p>
+              <p>${precio}</p>
             </Item>
           </li>
         ))}
