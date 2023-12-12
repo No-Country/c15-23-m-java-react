@@ -20,17 +20,18 @@ const ItemBodyCard = styled.div`
     padding: 2rem 0;
     background-color: white;
     gap: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     & p{
         font-size: 16px;
         font-family: ${textFont}
     }
     & div{
-        width: 80px;
+        width: 120px;
         justify-content: center;
         display: flex;
-        width:100%;
-        & a{
-            & button{
+        align-self: center;
+        & button{
                 background-color: #56c9a0;
                 width:100%;
                 border: none;
@@ -45,7 +46,6 @@ const ItemBodyCard = styled.div`
                 &:hover{
                     background-color: #39ad84;
                 }
-            }
         }
     }
 `;
@@ -59,10 +59,12 @@ const ItemTitleCard = styled.div`
 const ItemImgCard = styled.div`
     overflow: hidden;
     max-width: 338px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     & img{
         transform: scale(1);
         transition: all 0.2s ease-in-out;
-        width: 350xp;
+        width: 350px;
         height: 280px;
         &:hover{
             transform: scale(1.8);
