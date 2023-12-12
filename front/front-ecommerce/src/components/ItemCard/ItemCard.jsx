@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
 import {Card, ItemBodyCard, ItemTitleCard, ItemImgCard} from './styles'
 import { useState } from "react";
 import ModalItemCard from "../Modal/Modal";
 
-function ItemCard({ imageSource, title, text }) {
+function ItemCard({ imagen, titulo, descripcion }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -12,20 +13,20 @@ function ItemCard({ imageSource, title, text }) {
   return (
     <Card>
       <ItemImgCard>
-        <img src={imageSource} alt="a wallpaper" className="itemImg" />
+        <img src={imagen} alt="a wallpaper" className="itemImg" />
       </ItemImgCard>
       <ItemBodyCard>
         <ItemTitleCard/>
-        <p><strong>{title}</strong></p>
+        <p><strong>{titulo}</strong></p>
         <p className="">
-          {text
-            ? text
+          {descripcion
+            ? descripcion
             : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam deserunt fuga ."}
         </p>
         <div>
           <button onClick={handleShow}>Ver más</button>
         </div>
-          <ModalItemCard handleShow={handleShow} handleClose={handleClose} show={show} imageSource={imageSource} title={title} text={text}></ModalItemCard>
+          <ModalItemCard handleShow={handleShow} handleClose={handleClose} show={show} imagen={imagen} titulo={titulo} descripcion={descripcion}></ModalItemCard>
       </ItemBodyCard>
     </Card> 
   );
