@@ -1,28 +1,25 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import {MainContainer, Section, WelcomeDiv, TextoDiv, InputDiv, ImgDiv, Categorias, CardContainer, TrendingItem} from './styles'
+import {MainContainer, Section, WelcomeDiv, TextoDiv, InputDiv, ImgDiv, Categorias, CardContainer, TrendingItem, SectionWelcome} from './styles'
 import Carousel from '../../components/Carousel/Carousel'
 import ListCard from '../../components/ListCard/ListCard'
 
 const Home = () => {
   return (
     <MainContainer>
-      <Section>
+      <SectionWelcome>
         <WelcomeDiv>
           <TextoDiv>
             <strong><h1>Bienvenido</h1></strong>
             <strong><h2>Encuentra los mejores productos de la web</h2></strong>
             <p>Compra por marcas u ofertas.</p>
           </TextoDiv>
-          <ImgDiv>
-            <img src="/images/imgHome.jpg" alt="imagen de home" />
-          </ImgDiv>
         </WelcomeDiv>
           <InputDiv>
             <input type="search" placeholder='¿Qué estas buscando?'/>
             <button>Buscar</button>
           </InputDiv>
-      </Section>
+      </SectionWelcome>
       <Section>
         <Categorias>
           <h2>Categorías</h2>
