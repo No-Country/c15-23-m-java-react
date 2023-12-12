@@ -36,18 +36,21 @@ const FormContainerSignUp = styled.nav `
       border: none;
       border-radius: 10px ;
       padding: 5px;
-      width: 15vw;      
+      width: 31vw;      
       padding-left: 10px;
       outline: none;
       border: 1px solid ${colors.primaryLightColor};
       @media(max-width: 768px){
-         width: 40vw;     
+         width: 61vw;     
     }
    }
    p{
       font-size: 12px;
       margin-bottom:20px;
       margin-top: 10px;
+   }
+  p strong{
+      text-decoration: none;
    }
 }
 `
