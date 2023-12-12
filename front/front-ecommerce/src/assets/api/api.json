@@ -1,0 +1,167 @@
+[
+    {
+      "id": "1",
+      "imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/708975.jpg",
+      "titulo": "AL BORDE DE LA CAIDA",
+      "autor": "SERLE, REBECCA",
+      "activo": true,
+      "categoria": "Suspenso",
+      "precio": 4490,
+      "stock": 100,
+      "descripcion": "Caggie, criada en la élite de Manhattan, se ve envuelta en la fama no deseada después de salvar a una chica. Mientras lucha con su pasado y la llegada de Astor, descubre que su salvación solo puede venir de sí misma."
+    },
+    {
+      "id": "2",
+      "imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/708977.jpg",
+      "titulo": "EL AMOR DERRIBA MUROS",
+      "autor": "BAILEY, TESSA",
+      "activo": true,
+      "categoria": "Romántica",
+      "precio": 5790,
+      "stock": 200,
+      "descripcion": "Rosie y Dominic, una pareja que pasa de la rutina a la terapia de pareja hippie, descubren que enfrentar sus problemas los fortalece, hasta que un secreto amenaza con cambiarlo todo."
+    },
+    {
+      "id": "3",
+      "imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/708972.jpg",
+      "titulo": "LA HUERFANA ROBADA",
+      "autor": "HALLS, STACEY",
+      "activo": true,
+      "categoria": "Drama",
+      "precio": 6590,
+      "stock": 80,
+      "descripcion": "En el Londres de 1754, Bess busca desesperadamente a su hija ilegítima, mientras una joven viuda, atrapada en su pasado, enfrenta la llegada de una nodriza que podría cambiarlo todo. La huérfana robada promete ser una obra fascinante de ficción histórica."
+    },
+    {
+      "id": "4",
+      "imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/706192.jpg",
+      "titulo": "EL VIENTO CONOCE MI NOMBRE",
+      "autor": "ALLENDE, ISABEL",
+      "activo": true,
+      "categoria": "Latinoamericana",
+      "precio": 9990,
+      "stock": 180,
+      "descripcion": "Samuel huye del Holocausto en Viena, 1938. Anita enfrenta la separación en la frontera en Arizona, 2019. 'El viento conoce mi nombre' entrelaza sacrificios, resiliencia infantil y esperanza en tiempos oscuros."
+    },
+    {
+      "id": "5",
+      "imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/708970.jpg",
+      "titulo": "EL JUEGO DE LOS DESEOS",
+      "autor": "SCHAFFER, MEG",
+      "activo": true,
+      "categoria": "Drama",
+      "precio": 6890,
+      "stock": 120,
+      "descripcion": "Un autor solitario organiza un concurso para su nuevo libro en la Isla del Reloj. Lucy, anhelando una familia, compite enfrentando desafíos y rivales. La historia destaca el poder de un buen libro para cambiar vidas."
+    },
+    {
+      "id": "6",
+      "imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/706213.jpg",
+      "titulo": "NOSOTROS DOS EN LA TORMENTA",
+      "autor": "SACHERI, EDUARDO",
+      "activo": true,
+      "categoria": "Latinoamericana",
+      "precio": 8999,
+      "stock": 10,
+      "descripcion": "En 1975, dos militantes enfrentan dilemas en medio de la violencia revolucionaria. Novela inquietante sobre pasiones políticas extremas y humanidad."
+    },
+    {
+      "id": "7",
+      "imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/709564.jpg",
+      "titulo": "EBANO SALVAJE",
+      "autor": "SMITH, CRYSTAL",
+      "activo": true,
+      "categoria": "Suspenso",
+      "precio": 13999,
+      "stock": 60,
+      "descripcion": "Aurelia despierta en un ataúd mágico, busca recuperar su vida perdida y enfrenta secretos oscuros en el Ebonwilde para evitar un apocalipsis."
+    },
+    {
+      "id": "8",
+      "imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/679908.jpg",
+      "titulo": "LOS SIETE MARIDOS DE EVELYN HUGO",
+      "autor": "JENKINS REID, TAYLOR",
+      "activo": true,
+      "categoria": "Romántica",
+      "precio": 10799,
+      "stock": 70,
+      "descripcion": "Evelyn Hugo, una estrella de Hollywood retirada, elige a Monique Grant para contar su vida de glamour, escándalos y siete matrimonios. Monique, sorprendida y con su propia historia, descubre una conexión trágica e irreversible con la actriz."
+    },
+    {
+      "id": "9",
+      "imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/709175.jpg",
+      "titulo": "EL VUELO DE LA LIBELULA",
+      "autor": "EXILART, GABRIELA",
+      "activo": true,
+      "categoria": "Romántica",
+      "precio": 8799,
+      "stock": 202,
+      "descripcion": "Clara busca su pasado en el Monte Cervantes, enfrentando desafíos en Ushuaia. 'El vuelo de la libélula' es una novela histórica y romántica que destaca la fortaleza de una mujer en el hundimiento del crucero Monte Cervantes."
+    },
+    {
+      "id": "10",
+      "imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/709221.jpg",
+      "titulo": "LA CASA DE LOS SUICIDIOS",
+      "autor": "DONLEA, CHARLIE",
+      "activo": true,
+      "categoria": "Suspenso",
+      "precio": 9500,
+      "stock": 70,
+      "descripcion": "En el internado Westmont, una residencia abandonada es testigo de misteriosas muertes. La investigadora Rory Moore y el psicólogo Lane Phillips se sumergen en un caso perturbador, descubriendo secretos tenebrosos."
+    },
+    {
+      "id": "11",
+      "imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/706564.jpg",
+      "titulo": "DRACULA",
+      "autor": "STOKER, BRAM",
+      "activo": true,
+      "categoria": "Clasicos",
+      "precio": 4500,
+      "stock": 40,
+      "descripcion": "'Drácula', la icónica obra del vampirismo, sigue al abogado Jonathan Harker en su descubrimiento de los oscuros secretos del conde Drácula en Inglaterra, donde busca nuevas víctimas, incluida Mina, prometida de Harker."
+    },
+    {
+      "id": "12",
+      "imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/691873.jpg",
+      "titulo": "CUENTOS Y RELATOS OBRA COMPLETA",
+      "autor": "POE, EDGAR ALLAN",
+      "activo": true,
+      "categoria": "Clasicos",
+      "precio": 4650,
+      "stock": 29,
+      "descripcion": "Este estuche reúne la obra completa de Poe en tres tomos: cuentos, relatos cortos, nouvelle y poesía. Poe, pionero del cuento de terror moderno, desafió convenciones literarias, influyendo en la literatura fantástica."
+    },
+    {
+      "id": "13",
+      "imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/624536.jpg",
+      "titulo": "LOS TRES MOSQUETEROS",
+      "autor": "DUMAS, ALEJANDRO",
+      "activo": true,
+      "categoria": "Clasicos",
+      "precio": 12950,
+      "stock": 70,
+      "descripcion": "En la Francia de 1625, D'Artagnan se adentra en intrigas y luchas por gloria. Este clásico, introducido por Roger Nimier y traducido por Torcuato Tasso Serra, es una vibrante obra maestra elogiada por Robert Louis Stevenson."
+    },
+    {
+      "id": "14",
+      "imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/707248.jpg",
+      "titulo": "EL SABUESO DE LOS BASKERVILLE",
+      "autor": "CONAN DOYLE, SIR ARTHUR",
+      "activo": true,
+      "categoria": "Suspenso",
+      "precio": 9800,
+      "stock": 50,
+      "descripcion": "En 1625, D'Artagnan se sumerge en intrigas palaciegas y luchas por gloria en esta épica aventura. Introducción de Roger Nimier, traducción clásica de Torcuato Tasso Serra, alabada por Robert Louis Stevenson."
+    },
+    {
+      "id": "15",
+      "imagen": "https://www.tematika.com/media/catalog/Ilhsa/Imagenes/621109.jpg",
+      "titulo": "GUERRA Y PAZ",
+      "autor": "TOLSTOI, LEON",
+      "activo": true,
+      "categoria": "Clasicos",
+      "precio": 4600,
+      "stock": 0,
+      "descripcion": "'Guerra y paz' presenta un extenso elenco, incluyendo personajes históricos como Napoleón y Alejandro I. La trama se centra en cinco familias aristocráticas rusas durante la invasión napoleónica de 1812."
+    }
+]

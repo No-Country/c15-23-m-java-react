@@ -1,10 +1,35 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {MainContainer, Section, WelcomeDiv, TextoDiv, InputDiv, ImgDiv, Categorias, CardContainer, TrendingItem} from './styles'
 import Carousel from '../../components/Carousel/Carousel'
 import ListCard from '../../components/ListCard/ListCard'
 
 const Home = () => {
+
+  
+  const [products, setProducts] = useState([])
+
+    const getFetch = async ()=>{  
+        try{
+            const url = 'https://64ee10061f87218271424186.mockapi.io/data'
+            const prodJson = await fetch(url)
+            const prod = await prodJson.json()
+            // setProducts(products)
+            return prod
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+  
+    // console.log(products);
+
+    useEffect(()=>{
+        getFetch()
+        .then(products => setProducts(products))
+        .catch(err => err)
+    },[])
+
   return (
     <MainContainer>
       <Section>
@@ -35,7 +60,7 @@ const Home = () => {
             <i><p><a href="">Productos en tendencias</a></p></i>
           </TrendingItem>
         </Categorias>
-        <ListCard></ListCard>
+        <ListCard products={products}></ListCard>
       </Section>
     </MainContainer>
   )
