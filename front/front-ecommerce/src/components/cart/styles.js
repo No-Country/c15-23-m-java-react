@@ -97,6 +97,7 @@ const Quantity = styled.div`
       overflow: hidden;
       text-overflow: ellipsis;
       text-align: center;
+      margin: 0;
     }
   }
   & ~ p {

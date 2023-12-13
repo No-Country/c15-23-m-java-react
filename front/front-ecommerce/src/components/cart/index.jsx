@@ -6,44 +6,36 @@ import {
   ProductImg,
   Quantity,
 } from './styles';
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 import { MdAdd, MdRemove, MdDelete } from 'react-icons/md';
 import Button from '../../assets/elementos/Boton';
 import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { AppContext } from '../../context/AppContext';
 
 const Cart = () => {
-  const [products, setProducts] = useState([])
-    const getFetch = async ()=>{  
-        try{
-            const url = 'https://64ee10061f87218271424186.mockapi.io/data'
-            const prodJson = await fetch(url)
-            const prod = await prodJson.json()
-            return prod
-        }
-        catch (err) {
-            console.log(err);
-        }
-    }  
-    useEffect(()=>{
-        getFetch()
-        .then(products => setProducts(products))
-        .catch(err => err)
-    },[])
+  const {
+    state: { cart },
+    incrementQuantity,
+    removeFromCart,
+  } = useContext(AppContext);
 
   return (
     <CartContainer>
       <h2>Mi orden</h2>
       <List>
-        {products.map(({ id, titulo, categoria, precio, imagen }) => (
-          <li key={id}>
+        {cart.map((product) => (
+          <li key={product.id}>
             <Item>
               <Product>
                 <ProductImg>
-                  <img src={imagen} alt='product image' />
+                  <img src={product.img} alt='product image' />
                 </ProductImg>
                 <div>
-                  <p>{titulo}</p>
-                  <p>{categoria}</p>
+                  <p>
+                    {product.name}, {product.brand}
+                  </p>
+                  <p>{product.category}</p>
                 </div>
               </Product>
               <Quantity>
@@ -51,21 +43,25 @@ const Cart = () => {
                   <button>
                     <MdRemove />
                   </button>
-                  <p>2</p>
-                  <button>
+                  <p>{product.quantity}</p>
+                  <button
+                    onClick={() => incrementQuantity(product)}
+                    disabled={product.quantity >= product.availableStock}>
                     <MdAdd />
                   </button>
                 </div>
                 <button>
-                  <MdDelete />
+                  <MdDelete onClick={() => removeFromCart(product)} />
                 </button>
               </Quantity>
-              <p>${precio}</p>
+              <p>${product.price}</p>
             </Item>
           </li>
         ))}
       </List>
-      <NavLink to="/checkout"><Button>Verificar</Button></NavLink>
+      <NavLink to='/checkout'>
+        <Button>Verificar</Button>
+      </NavLink>
     </CartContainer>
   );
 };
