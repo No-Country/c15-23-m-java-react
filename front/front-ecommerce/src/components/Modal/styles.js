@@ -7,6 +7,8 @@ const ContainerBodyModal = styled.div`
     display: flex;
     flex-direction: column;
     height: auto;
+    justify-content: center;
+    gap: 10px;
     & div:nth-child(1){
         font-size: 16px;
     }
@@ -15,7 +17,13 @@ const ContainerBodyModal = styled.div`
         height: 60px;
         width: 200px;
         overflow-y:auto;
-    } 
+        @media (max-width: 570px){
+            width: 100%;
+        }
+    }
+    @media (max-width: 570px){
+        text-align: center;
+    }
 `;
 
 const ModalBody = styled.div`
