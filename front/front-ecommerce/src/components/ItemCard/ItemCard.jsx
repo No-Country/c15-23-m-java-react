@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
-import {Card, ItemBodyCard, ItemTitleCard, ItemImgCard} from './styles'
+import {Card, ItemBodyCard, ItemImgCard} from './styles'
 import { useState } from "react";
 import ModalItemCard from "../Modal/Modal";
 
-function ItemCard({ imagen, titulo, descripcion }) {
+function ItemCard({ titulo, imagen, descripcion, precio, autor, activo, categoria, stock, id }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -16,17 +16,19 @@ function ItemCard({ imagen, titulo, descripcion }) {
         <img src={imagen} alt="a wallpaper" className="itemImg" />
       </ItemImgCard>
       <ItemBodyCard>
-        <ItemTitleCard/>
-        <p><strong>{titulo}</strong></p>
-        <p className="">
-          {descripcion
-            ? descripcion
-            : "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam deserunt fuga ."}
-        </p>
-        <div>
-          <button onClick={handleShow}>Ver más</button>
-        </div>
-          <ModalItemCard handleShow={handleShow} handleClose={handleClose} show={show} imagen={imagen} titulo={titulo} descripcion={descripcion}></ModalItemCard>
+        {/* <ItemTitleCard/> */}
+          <h3><strong>{titulo}</strong></h3>
+          <i><p className="">
+            {descripcion
+              ? descripcion
+              : "No hay descripción del artículo"}
+          </p></i>
+          <ItemBodyCard>
+            <div>
+              <button onClick={handleShow}>Ver más</button>
+            </div>
+          </ItemBodyCard>
+          <ModalItemCard handleShow={handleShow} handleClose={handleClose} show={show} titulo={titulo} imagen={imagen} descripcion={descripcion} precio={precio} autor={autor} activo={activo} categoria={categoria} stock={stock}></ModalItemCard>
       </ItemBodyCard>
     </Card> 
   );

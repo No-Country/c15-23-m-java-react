@@ -72,6 +72,7 @@ const ProductImg = styled(ImgCell)`
 const Quantity = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   button {
     margin: 0 5px;
     width: 25px;
@@ -97,6 +98,7 @@ const Quantity = styled.div`
       overflow: hidden;
       text-overflow: ellipsis;
       text-align: center;
+      margin-bottom:0px;
     }
   }
   & ~ p {
