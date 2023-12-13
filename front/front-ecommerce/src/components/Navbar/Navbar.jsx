@@ -2,9 +2,18 @@ import { useState } from 'react';
 import { NavContainer, BgDiv, Burguer } from './styles';
 import Logo from '/images/logo.png'
 import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { AppContext } from '../../context/AppContext';
+
 
 const Navbar = () => {
+  const {
+    state: { user },
+  } = useContext(AppContext);
+
+  
   const [clicked, setClicked] = useState(false)
+  
   const handleClick = () => {
     //Cuando esta true lo pasa a false y vice versa
     setClicked(!clicked)
@@ -21,10 +30,11 @@ const Navbar = () => {
           <NavLink to="/user-profile">Perfil Usuario</NavLink>
           <NavLink to="/home-admin">Categorias</NavLink> */}
         </div>
-        {/* <div className={`links-right ${clicked ? 'active' : ''}`}>
-          <NavLink to="/sign-up"><a >Registro</a></NavLink>
-          <NavLink to="/login"><a >Inicio Sesion</a></NavLink>
-        </div> */}
+         <div className={`links-right ${clicked ? 'active' : ''}`}>
+          <a>
+             {user?.nombre.charAt(0).toUpperCase() + user?.nombre.slice(1)} {user.apellido.charAt(0).toUpperCase() + user?.apellido.slice(1)}    
+          </a>
+        </div> 
         <div className='burguer'>
           <Burguer>
             <div onClick={handleClick}
