@@ -5,8 +5,7 @@ const MainContainer = styled.main`
     display: flex;
     flex-direction: column;
     text-align: center;
-    // text-shadow: 0 0 35px #fff;
-    // color: #f0f0f0;
+    background-color: #56c9a0;
 
     @media (max-width: 768px) {
         padding:0px;
@@ -19,7 +18,7 @@ const SectionWelcome = styled.section`
     background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
     url('../../../public/images/fondo.png');
     background-size: cover;
-    background-attachment: fixed;
+    // background-attachment: fixed;
     background-position: center center;
 
 
@@ -40,24 +39,6 @@ const Section = styled.section`
         padding-inline:0px;
     }
 `;
-
-// const Section = styled.section`
-//     padding: 40px 0 60px 0;
-//     background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
-//     url('../../../public/images/fondo.png');
-//     background-size: cover;
-//     background-attachment: fixed;
-//     background-repeat: no-repeat;
-//     background-position: center center;
-
-//     @media (max-width: 900px){
-//         padding: 0px;
-//         padding-block: 20px;
-//         margin-inline: 0px;
-//         width: 100%;
-//         height: 100%;
-//     }
-// `;
 
 const WelcomeDiv = styled.div`
     display: flex;
@@ -245,4 +226,4 @@ const TrendingItem = styled.div`
     }
 `;
 
-export {MainContainer, Section, WelcomeDiv, TextoDiv, InputDiv, ImgDiv, Categorias, CardContainer, TrendingItem, SectionWelcome}
+export {MainContainer, Section, WelcomeDiv, TextoDiv, InputDiv, ImgDiv, Categorias, CardContainer, TrendingItem, SectionWelcome};
