@@ -71,7 +71,7 @@ const initialState = {
 const useInitialState = () => {
   const [state, setState] = React.useState(initialState);
 
-  //Al agregar un producto, la cantidad de ese producto en el cart es 1
+  //When the customer adds a product, the quantity of that product is 1 by default
   const addToCart = (payload) => {
     const product = { ...payload, quantity: 1 };
     setState({
@@ -80,20 +80,39 @@ const useInitialState = () => {
     });
   };
 
-  //Se crea un nuevo cart sin el producto que se eliminó.
+  //Creates a new cart without the deleted product
   const removeFromCart = (payload) => {
     const newCart = state.cart.filter((product) => product.id !== payload.id);
     setState({ ...state, cart: newCart });
   };
 
+  //Finds the product by its id and increments/decrements its quantity value
+  const updateQuantity = (array, id, quantity) => {
+    const product = array.find((product) => product.id === id);
+    if (!(quantity > 0 && product.availableStock <= product.quantity)) {
+      product.quantity += quantity;
+    }
+  };
+
+  //Both update the quantity in the cart global state
   const incrementQuantity = (payload) => {
     const newCart = [...state.cart];
-    const product = newCart.find((product) => product.id === payload.id);
-    product.quantity = product.quantity + 1;
+    updateQuantity(newCart, payload.id, 1);
+    setState({ ...state, cart: newCart });
+  };
+  const decrementQuantity = (payload) => {
+    const newCart = [...state.cart];
+    updateQuantity(newCart, payload.id, -1);
     setState({ ...state, cart: newCart });
   };
 
-  return { addToCart, removeFromCart, incrementQuantity, state };
+  return {
+    addToCart,
+    removeFromCart,
+    incrementQuantity,
+    decrementQuantity,
+    state,
+  };
 };
 
 export { useInitialState };

@@ -11,6 +11,7 @@ const CartContainer = styled.article`
     width: 60%;
   }
   h2 {
+    font-weight: bold;
     padding: 20px;
     font-size: 2.5rem;
     font-family: ${titleFont};
@@ -50,12 +51,17 @@ const Product = styled.div`
     p {
       text-overflow: ellipsis;
       overflow: hidden;
+      margin: 0;
     }
     p:nth-child(2) {
       font-weight: 300;
     }
     p:first-child {
       font-weight: bold;
+    }
+    p:last-child {
+      font-weight: 500;
+      color: ${colors.primaryText};
     }
   }
 `;
@@ -89,6 +95,9 @@ const Quantity = styled.div`
     &:hover {
       background-color: ${colors.buttonHover};
     }
+    &:disabled {
+      opacity: 0.5;
+    }
   }
   div {
     display: flex;
@@ -106,4 +115,28 @@ const Quantity = styled.div`
   }
 `;
 
-export { CartContainer, Item, List, Product, ProductImg, Quantity };
+const EmptyCart = styled.div`
+  figure {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    img {
+      width: 80%;
+    }
+  }
+  p {
+    font-size: 1.8rem;
+    font-family: ${textFont};
+    text-align: center;
+    color: ${colors.primaryText};
+  }
+  @media (min-width: 900px) {
+    figure {
+      img {
+        width: 50%;
+      }
+    }
+  }
+`;
+
+export { CartContainer, Item, List, Product, ProductImg, Quantity, EmptyCart };
