@@ -13,22 +13,22 @@ import { NavLink } from 'react-router-dom';
 
 const Cart = () => {
   const [products, setProducts] = useState([])
-    const getFetch = async ()=>{  
-        try{
-            const url = 'https://64ee10061f87218271424186.mockapi.io/data'
-            const prodJson = await fetch(url)
-            const prod = await prodJson.json()
-            return prod
-        }
-        catch (err) {
-            console.log(err);
-        }
-    }  
-    useEffect(()=>{
-        getFetch()
-        .then(products => setProducts(products))
-        .catch(err => err)
-    },[])
+  const getFetch = async () => {
+    try {
+      const url = 'https://64ee10061f87218271424186.mockapi.io/data'
+      const prodJson = await fetch(url)
+      const prod = await prodJson.json()
+      return prod
+    }
+    catch (err) {
+      console.log(err);
+    }
+  }
+  useEffect(() => {
+    getFetch()
+      .then(products => setProducts(products))
+      .catch(err => err)
+  }, [])
 
   return (
     <CartContainer>
@@ -65,7 +65,7 @@ const Cart = () => {
           </li>
         ))}
       </List>
-      <NavLink to="/checkout"><Button>Verificar</Button></NavLink>
+      <NavLink to="/checkout"><Button>Comprar ahora</Button></NavLink>
     </CartContainer>
   );
 };
