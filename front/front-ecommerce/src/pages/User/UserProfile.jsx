@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import userImag from '../../assets/img/user.svg'
-import infoPersonal from '../../assets/img/infoPersonal.svg'
-import flecha from '../../assets/img/flecha.svg'
-import creditCard from '../../assets/img/creditCard.svg'
-import idCard from '../../assets/img/idCard.svg'
-import map from '../../assets/img/map.svg'
+import userImag from '../../../public/img/user.svg'
+import infoPersonal from '../../../public/img/infoPersonal.svg'
+import flecha from '../../../public/img/flecha.svg'
+import creditCard from '../../../public/img/creditCard.svg'
+import idCard from '../../../public/img/idCard.svg'
+import map from '../../../public/img/map.svg'
 
 export const UserProfile = () => {
     return (
