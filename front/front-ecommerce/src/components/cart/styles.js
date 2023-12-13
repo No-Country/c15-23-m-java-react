@@ -72,6 +72,7 @@ const ProductImg = styled(ImgCell)`
 const Quantity = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   button {
     margin: 0 5px;
     width: 25px;

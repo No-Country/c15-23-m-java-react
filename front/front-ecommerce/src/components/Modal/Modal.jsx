@@ -7,7 +7,7 @@ import { MdAdd, MdRemove, MdDelete } from 'react-icons/md';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function ModalItemCard({handleClose, show, imageSource, title, text}) {
+function ModalItemCard({handleClose, show,  titulo, imagen, descripcion, precio, autor, activo, categoria, stock, id }) {
 
   return (
     <>
@@ -22,22 +22,18 @@ function ModalItemCard({handleClose, show, imageSource, title, text}) {
         </Modal.Header>
         <ModalBody>
           <ItemImgCard>
-              <img src={imageSource}/>
+              <img src={imagen}/>
           </ItemImgCard>
           <ContainerBodyModal>
             <div>
-              <h3>{title}</h3>
-              <p>Marca</p>
+              <h2>{titulo}</h2>
+              <p>{autor}</p>
             </div>
             <div>
-              <i><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum totam beatae quod expedita inventore</p></i>
+              <i><p>{descripcion}</p></i>
             </div>
             <div>
-              <div>
-                <strong>Precio</strong>
-                {/* poner el descuento */}
-                <i> (Desc)</i>
-              </div>
+              <h2><strong>${precio}</strong></h2>
               <Quantity>
                 <div>
                   <button>
@@ -52,8 +48,8 @@ function ModalItemCard({handleClose, show, imageSource, title, text}) {
                   <MdDelete />
                 </button>
               </Quantity>
-              <p>Stock</p>
-              <p>Categoria</p>
+              <p>Disponibilidad {stock} u.</p>
+              <p>{categoria}</p>
             </div>
             <AddButton>Agregar</AddButton>
           </ContainerBodyModal>

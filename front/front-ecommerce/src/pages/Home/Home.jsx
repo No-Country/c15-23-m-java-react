@@ -5,7 +5,6 @@ import Carousel from '../../components/Carousel/Carousel'
 import ListCard from '../../components/ListCard/ListCard'
 
 const Home = () => {
-
   
   const [products, setProducts] = useState([])
 

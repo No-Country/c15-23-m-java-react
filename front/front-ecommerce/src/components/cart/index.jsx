@@ -60,7 +60,7 @@ const Cart = () => {
         ))}
       </List>
       <NavLink to='/checkout'>
-        <Button>Verificar</Button>
+        <Button>Comprar ahora</Button>
       </NavLink>
     </CartContainer>
   );
