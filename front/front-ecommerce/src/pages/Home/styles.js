@@ -18,7 +18,7 @@ const SectionWelcome = styled.section`
     background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
     url('../../../public/images/fondo.png');
     background-size: cover;
-    // background-attachment: fixed;
+    background-attachment: fixed;
     background-position: center center;
 
 
@@ -98,74 +98,7 @@ const TextoDiv = styled.div`
     }
 `;
 
-const InputDiv = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-    // padding: 10px 0 30px 0;
-    // margin-bottom: 90px;
-   
 
-    & input{
-        margin-inline: 10px;
-        width: 50%;
-        height: 40px;
-        border-radius: 10px;
-        border: none;
-        outline: none;
-        padding-inline: 30px 10px;
-        font-family: ${textFont};
-        &::placeholder{
-            padding-inline: 30px 10px;
-            font-size: 16px;
-            background-image: url(/images/search.svg);
-            background-size: 18px 18px;
-            background-repeat: no-repeat;
-            background-position: 10px center;
-        };
-
-        &:hover{
-            background-color: #f0f0f0;
-        }
-    };
-
-    & button{
-        background-color: #56c9a0;
-        border: none;
-        color: #fff;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: 500;
-        padding: 11px;
-        text-align: center;
-        margin-inline: 5px;
-        border-radius: 10px;
-        font-family: ${textFont};
-        &:hover{
-            background-color: #39ad84;
-        }
-    };
-
-    @media(max-width: 900px){
-        display: flex;
-
-        & input{
-            width: 65%;
-            height: 40px;
-            font-size: 14px;
-            padding-inline: 5px 5px;
-           
-        & button{
-            width: 40%;
-            height: 20px;
-            font-size: 10px;
-            padding-inline: 10px 10px;
-
-        }
-    }
-`;
 
 const ImgDiv = styled.div`
     width: 50%;
@@ -226,4 +159,4 @@ const TrendingItem = styled.div`
     }
 `;
 
-export {MainContainer, Section, WelcomeDiv, TextoDiv, InputDiv, ImgDiv, Categorias, CardContainer, TrendingItem, SectionWelcome};
+export {MainContainer, Section, WelcomeDiv, TextoDiv, ImgDiv, Categorias, CardContainer, TrendingItem, SectionWelcome};

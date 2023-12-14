@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import {MainContainer, Section, WelcomeDiv, TextoDiv, InputDiv, ImgDiv, Categorias, CardContainer, TrendingItem, SectionWelcome} from './styles'
+import {MainContainer, Section, WelcomeDiv, TextoDiv, ImgDiv, Categorias, CardContainer, TrendingItem, SectionWelcome} from './styles'
 import Carousel from '../../components/Carousel/Carousel'
 import ListCard from '../../components/ListCard/ListCard'
+import { SearchBar } from '../../components/Search/SearchBar'
 
 const Home = () => {
   return (
@@ -15,17 +16,18 @@ const Home = () => {
             <p>Compra por marcas u ofertas.</p>
           </TextoDiv>
         </WelcomeDiv>
-          <InputDiv>
-            <input type="search" placeholder='¿Qué estas buscando?'/>
-            <button>Buscar</button>
-          </InputDiv>
+
+        <SearchBar />
+  
       </SectionWelcome>
+
       <Section>
         <Categorias>
           <h2>Categorías</h2>
         </Categorias>
         <Carousel />
       </Section>
+
       <Section>
         <Categorias>
           <TrendingItem>
