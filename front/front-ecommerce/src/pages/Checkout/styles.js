@@ -8,7 +8,7 @@ const CheckoutContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  align-self: center;
   h2 {
     font-size: 2.4rem;
     font-family: ${titleFont};
@@ -90,6 +90,7 @@ const Main = styled.main`
   display: flex;
   justify-content: center;
   overflow-x: hidden;
+  flex-direction: column;
 `;
 
 export { CheckoutContainer, ClientInfo, Main, PaymentMethod };

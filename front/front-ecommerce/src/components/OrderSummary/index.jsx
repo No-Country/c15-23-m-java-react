@@ -5,8 +5,10 @@ import {
   SummaryItem,
   SummaryList,
 } from './styles';
+import { useContext } from 'react';
+import { AppContext } from '../../context/AppContext';
 
-const products = [
+/* const products = [
   {
     name: 'Tennis',
     description: 'Comfortable and stylish Nike sports shoes.',
@@ -39,38 +41,40 @@ const products = [
     price: 10.77,
     quantity: 2,
   },
-];
+]; */
 
 const OrderSummary = () => {
+  const {
+    state: { cart }
+  } = useContext(AppContext);
+  const total = cart.reduce((acc, el) => acc + el.price, 0)
+  const quantity = cart.map((product) => product.quantity)
+
   return (
-    <OrderSummaryCard>
+    <OrderSummaryCard> 
       <h3>Resumen de la compra</h3>
       <SummaryList>
-        {products.map(({ name, img, category, quantity, price }) => (
-          <SummaryItem key={name}>
+        {cart.map((product) => (
+          <SummaryItem key={product.id}>
             <ProductImage>
-              <img alt='product image' src={img} />
+              <img alt='product image' src={product.imagen} />
             </ProductImage>
             <div>
-              <p>{name}</p>
-              <p>{category}</p>
+              <p>{product.name}</p>
+              <p>{product.category}</p>
             </div>
-            <p>{quantity}</p>
-            <p>$ {price}</p>
+            <p>{product.quantity}</p>
+            <p>$ {product.price * product.quantity}</p>
           </SummaryItem>
         ))}
       </SummaryList>
+      
       <OrderTotal>
         <div>
-          <p>Subtotal:</p> <p>$35.17</p>
-        </div>
-        <div>
-          <p>Impuestos:</p> <p>$3.24</p>
-        </div>
-        <div>
-          <p>Total:</p> <p>$38.41</p>
-        </div>
+          <p>Total:</p> <p>$ { quantity > 1 ? total * quantity: total}</p>
+        </div>    
       </OrderTotal>
+    
     </OrderSummaryCard>
   );
 };

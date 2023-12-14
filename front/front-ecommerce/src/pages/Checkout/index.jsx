@@ -4,22 +4,23 @@ import { OrderSummary } from '../../components/OrderSummary';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 import { getUser } from '../../api/getUser'; 
-/* import { useContext } from 'react';
-import { AppContext } from '../../context/AppContext'; */
-
+import Volver from '../../components/Volver/Volver';
 
 const Checkout = () => {
- /*  const {
-    state: { cart },
-   
-  } = useContext(AppContext) */;
-    const [user, setUser] = useState(null) 
+    const [user, setUser] = useState(null)
+    const [topping, setTopping] = useState("Efectivo")
+    const onOptionChange = e => {
+      console.log(e.target.value)
+      setTopping(e.target.value)
+    } 
        useEffect(()=>{   
          getUser()
         .then(user => setUser(user))
         .catch(err => err)   
   }, [])
   return (
+    <>
+      <Volver titulo="Resumen"/>
     <Main>
       <CheckoutContainer>
         <h2>Verificar</h2>
@@ -36,15 +37,15 @@ const Checkout = () => {
           <h3>Opciones de pago</h3>
           <div>
             <label>
-              <input type='radio' value='Efectivo' />
+              <input type='radio' value='Efectivo' name="topping" id="efectivo" checked={topping === "Efectivo"} onChange={onOptionChange} />
               Efectivo
             </label>
             <label>
-              <input type='radio' value='Crédito' />
+              <input type='radio' value='Crédito' name="topping" id="credito" checked={topping === "Crédito"} onChange={onOptionChange} />
               Tarjeta de crédito
             </label>
             <label>
-              <input type='radio' value='Débito' />
+              <input type='radio' value='Débito' name="topping" id="debito" checked={topping === "Débito"} onChange={onOptionChange} />
               Tarjeta de débito
             </label>
           </div>
@@ -52,6 +53,7 @@ const Checkout = () => {
         <NavLink to='/successfulPurchase'>Confirmar compra</NavLink>
       </CheckoutContainer>
     </Main>
+    </>
   );
 };
 

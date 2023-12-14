@@ -1,7 +1,22 @@
 import { OrderSummary } from '../../components/OrderSummary';
 import { Card, Content, Main, Section, Summary } from './styles';
+import { useContext } from 'react';
+import { AppContext } from '../../context/AppContext';
+import { useEffect, useState } from 'react'
+import { getUser } from '../../api/getUser'; 
 
 const SuccessfulPurchase = () => {
+  const {
+    state: { cart }
+  } = useContext(AppContext);
+  const total = cart.reduce((acc, el) => acc + el.price, 0)
+  const quantity = cart.map((product) => product.quantity)
+  const [user, setUser] = useState(null)
+       useEffect(()=>{   
+         getUser()
+        .then(user => setUser(user))
+        .catch(err => err)   
+  }, [])
   return (
     <Main>
       <Section>
@@ -19,7 +34,7 @@ const SuccessfulPurchase = () => {
                 <p>Resumen de la compra</p>
                 <p>Orden número: 38380 </p>
                 <p>Fecha: 20 Diciembre 2023 </p>
-                <p>Total: $47.33</p>
+                <p>Total: $ { quantity > 1 ? total * quantity: total}</p>
               </div>
               <div>
                 <p>Método de pago</p>
@@ -29,8 +44,11 @@ const SuccessfulPurchase = () => {
 
             <div>
               <div>
-                <p>Dirección de la tienda</p>
-                <p>John Doe 123 Main Street City, State 12345</p>
+                <p>Dirección</p>
+                <p>{user && (
+                    <p>{user?.direccion?.charAt(0).toUpperCase() + user?.direccion?.slice(1)}
+               </p>)}
+              </p>
               </div>
               <div>
                 <p>¿Alguna pregunta? </p>
