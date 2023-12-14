@@ -75,11 +75,12 @@ const useInitialState = () => {
 
   //When the customer adds a product, the quantity of that product is 1 by default
   const addToCart = (payload) => {
-    const product = { ...payload, quantity: 1 };
+    const products = { ...payload, quantity: 1 };
     setState({
       ...state,
-      cart: [...state.cart, product],
+      cart: [...state.cart, products],
     });
+    console.log("producto agregado");
   };
 
   //Creates a new cart without the deleted product
