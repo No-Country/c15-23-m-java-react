@@ -1,7 +1,9 @@
 import React from 'react';
 
 const initialState = {
-  user: {},
+  user: [
+    {}
+  ],
   cart: [
     {
       id: 1,
