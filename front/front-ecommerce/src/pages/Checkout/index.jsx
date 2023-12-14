@@ -4,8 +4,15 @@ import { OrderSummary } from '../../components/OrderSummary';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react'
 import { getUser } from '../../api/getUser'; 
+/* import { useContext } from 'react';
+import { AppContext } from '../../context/AppContext'; */
+
 
 const Checkout = () => {
+ /*  const {
+    state: { cart },
+   
+  } = useContext(AppContext) */;
     const [user, setUser] = useState(null) 
        useEffect(()=>{   
          getUser()
