@@ -6,6 +6,7 @@ const getFetch = async ()=>{
         // setProducts(products)
         return prod
     }
+
     catch (err) {
         console.log(err);
     }

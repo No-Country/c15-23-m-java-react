@@ -4,7 +4,7 @@ import {Card, ItemBodyCard, ItemImgCard} from './styles'
 import { useState } from "react";
 import ModalItemCard from "../Modal/Modal";
 
-function ItemCard({ titulo, imagen, descripcion, precio, autor, activo, categoria, stock, id }) {
+function ItemCard({ products, name, imagen, description, price, brand, active, category, availableStock, quantity, id }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -17,10 +17,10 @@ function ItemCard({ titulo, imagen, descripcion, precio, autor, activo, categori
       </ItemImgCard>
       <ItemBodyCard>
         {/* <ItemTitleCard/> */}
-          <h3><strong>{titulo}</strong></h3>
+          <h3><strong>{name}</strong></h3>
           <i><p className="">
-            {descripcion
-              ? descripcion
+            {description
+              ? description
               : "No hay descripción del artículo"}
           </p></i>
           <ItemBodyCard>
@@ -28,7 +28,7 @@ function ItemCard({ titulo, imagen, descripcion, precio, autor, activo, categori
               <button onClick={handleShow}>Ver más</button>
             </div>
           </ItemBodyCard>
-          <ModalItemCard handleShow={handleShow} handleClose={handleClose} show={show} titulo={titulo} imagen={imagen} descripcion={descripcion} precio={precio} autor={autor} activo={activo} categoria={categoria} stock={stock}></ModalItemCard>
+          <ModalItemCard products={products} handleShow={handleShow} handleClose={handleClose} show={show} name={name} imagen={imagen} description={description} price={price} brand={brand} active={active} category={category} availableStock={availableStock} quantity={quantity}></ModalItemCard>
       </ItemBodyCard>
     </Card> 
   );

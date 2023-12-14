@@ -14,7 +14,7 @@ const ContainerBodyModal = styled.div`
     }
     & div:nth-child(2){
         /* font-size: 10px; */
-        height: 60px;
+        height: 100px;
         width: 200px;
         overflow-y:auto;
         @media (max-width: 570px){

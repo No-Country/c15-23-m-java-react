@@ -6,9 +6,9 @@ function ListCard({products}) {
   return (
     <List>
       <ListMapCard>
-        {products.map(({ titulo, imagen, descripcion, precio, autor, activo, categoria, stock, id }) => (
+        {products.map(({ name, imagen, description, price, brand, active, category, availableStock, quantity, id }) => (
           <div className="listColumn" key={id}>
-            <ItemCard titulo={titulo} imagen={imagen} descripcion={descripcion} precio={precio} autor={autor} activo={activo} categoria={categoria} stock={stock}/>
+            <ItemCard products={products} name={name} imagen={imagen} description={description} price={price} brand={brand} active={active} category={category} availableStock={availableStock} quantity={quantity}/>
           </div>
         ))}
       </ListMapCard>

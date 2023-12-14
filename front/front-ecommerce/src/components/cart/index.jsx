@@ -62,7 +62,7 @@ const Cart = () => {
                         disabled={product.quantity < 2}>
                         <MdRemove />
                       </button>
-                      <p>{product.quantity}</p>
+                      <p>1</p>
                       <button
                         onClick={() => incrementQuantity(product)}
                         disabled={product.quantity >= product.availableStock}>
@@ -87,4 +87,4 @@ const Cart = () => {
   );
 };
 
-export { Cart };
+export { Cart, Quantity };

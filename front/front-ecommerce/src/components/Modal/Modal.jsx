@@ -1,13 +1,25 @@
 /* eslint-disable react/prop-types */
 // import { useState } from 'react';
 import {ItemImgCard} from '../ItemCard/styles'
-import {Quantity} from '../../components/cart/styles'
+// import {Quantity} from '../../components/cart/styles'
 import {ContainerBodyModal, ModalBody, AddButton} from './styles';
 import { MdAdd, MdRemove, MdDelete } from 'react-icons/md';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import {Quantity} from '../cart/index'
+import { AppContext } from '../../context/AppContext';
+import { useContext } from 'react';
 
-function ModalItemCard({handleClose, show,  titulo, imagen, descripcion, precio, autor, activo, categoria, stock, id }) {
+
+
+function ModalItemCard({products, handleClose, show, name, imagen, description, price, brand, active, category, availableStock, quantity, id }) {
+
+  const {
+    state: { cart },
+    incrementQuantity,
+    decrementQuantity,
+    removeFromCart,
+  } = useContext(AppContext);
 
   return (
     <>
@@ -26,30 +38,16 @@ function ModalItemCard({handleClose, show,  titulo, imagen, descripcion, precio,
           </ItemImgCard>
           <ContainerBodyModal>
             <div>
-              <h2>{titulo}</h2>
-              <p>{autor}</p>
+              <h2>{name}</h2>
+              <p>{brand}</p>
             </div>
             <div>
-              <i><p>{descripcion}</p></i>
+              <i><p>{description}</p></i>
             </div>
             <div>
-              <h2><strong>${precio}</strong></h2>
-              <Quantity>
-                <div>
-                  <button>
-                    <MdRemove />
-                  </button>
-                  <p>2</p>
-                  <button>
-                    <MdAdd />
-                  </button>
-                </div>
-                <button>
-                  <MdDelete />
-                </button>
-              </Quantity>
-              <p>Disponibilidad {stock} u.</p>
-              <p>{categoria}</p>
+              <h2><strong>${price}</strong></h2>
+              <p>Disponibilidad {availableStock} u.</p>
+              <p>{category}</p>
             </div>
             <AddButton>Agregar</AddButton>
           </ContainerBodyModal>
