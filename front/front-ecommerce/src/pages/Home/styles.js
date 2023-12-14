@@ -16,7 +16,7 @@ const MainContainer = styled.main`
 const SectionWelcome = styled.section`
     padding: 40px 0 60px 0;
     background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
-    url('../../../public/images/fondo.png');
+    url('../../../public/images/foto1.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;

@@ -67,7 +67,7 @@ export const SearchBar = () => {
 
     useEffect(() => {
         handleSearch();
-    })
+    },[])
 
 
   return (
