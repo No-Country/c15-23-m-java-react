@@ -1,20 +1,9 @@
 import React from 'react';
 
 const initialState = {
-  user: 
-    {
-      id: 1,
-      username: "john.doe",
-      nombre: "john",
-      apellido: "doe",
-      password: "$2a$10$DHwOuxuWe3yOLD0OnneIiu6imxAQ7r8oWOjFNjRkapKt2fz6C3nXO",
-      email: "john.doe@exacmple.com",
-      dni: 37781734,
-      direccion: "Angeleri",
-      estado: true,
-      role: null
-    },
-    
+  user: [
+    {}
+  ],
   cart: [
     {
       id: 1,

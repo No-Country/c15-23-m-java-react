@@ -54,7 +54,7 @@ h2{
       display: block;
     }
   } 
-  .links-right.active{
+  ${'' /* .links-right.active{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -72,7 +72,7 @@ h2{
       margin-top: 1rem;
       color: #213547;
     }
-  }
+  } */}
   .links-left{
     position: absolute;
     top: -700px;

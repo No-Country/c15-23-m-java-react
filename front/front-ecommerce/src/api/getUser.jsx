@@ -1,13 +1,14 @@
 
 const getUser = async () =>{  
-    try{
+    try{    
         const url = 'https://shopswiftly-user-service-com.onrender.com/users/1'
         const userJson = await fetch(url)
         const user = await userJson.json()
-        return user
+        return user    
     }
     catch (err) {
         console.log(err);
     }
 }
+
 export { getUser }

@@ -1,16 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { NavContainer, BgDiv, Burguer } from './styles';
 import Logo from '/images/logo.png'
 import { NavLink } from 'react-router-dom';
-import { useContext } from 'react';
-import { AppContext } from '../../context/AppContext';
-
+import { getUser } from '../../api/getUser'; 
 
 const Navbar = () => {
-  const {
-    state: { user },
-  } = useContext(AppContext);
-
+  const [user, setUser] = useState([]) 
+     useEffect(()=>{   
+       getUser()
+      .then(user => setUser(user))
+      .catch(err => err)   
+}, [])
   
   const [clicked, setClicked] = useState(false)
   
@@ -31,9 +31,7 @@ const Navbar = () => {
           <NavLink to="/home-admin">Categorias</NavLink> */}
         </div>
          <div className={`links-right ${clicked ? 'active' : ''}`}>
-          <a>
-             {user?.nombre.charAt(0).toUpperCase() + user?.nombre.slice(1)} {user.apellido.charAt(0).toUpperCase() + user?.apellido.slice(1)}    
-          </a>
+          <a>{user?.nombre?.charAt(0).toUpperCase() + user?.nombre?.slice(1)} {user?.apellido?.charAt(0).toUpperCase() + user?.apellido?.slice(1)}</a>      
         </div> 
         <div className='burguer'>
           <Burguer>
