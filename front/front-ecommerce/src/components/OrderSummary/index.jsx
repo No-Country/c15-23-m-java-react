@@ -47,8 +47,9 @@ const OrderSummary = () => {
   const {
     state: { cart }
   } = useContext(AppContext);
-  const total = cart.reduce((acc, el) => acc + el.price, 0)
-  const quantity = cart.map((product) => product.quantity)
+  const totalPrice = cart.reduce((acc, el) => 
+     acc + el.quantity * el.price, 0
+  )
 
   return (
     <OrderSummaryCard> 
@@ -71,7 +72,7 @@ const OrderSummary = () => {
       
       <OrderTotal>
         <div>
-          <p>Total:</p> <p>$ { quantity > 1 ? total * quantity: total}</p>
+         <p>Total:</p><p>$ {totalPrice}</p> 
         </div>    
       </OrderTotal>
     
