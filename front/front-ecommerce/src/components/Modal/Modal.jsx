@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
 import {ItemImgCard} from '../ItemCard/styles'
 import {ContainerBodyModal, ModalBody, AddButton} from './styles';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import { AppContext } from '../../context/AppContext';
 import { useContext } from 'react';
+import { AppContext } from '../../context/AppContext';
+import Modal from 'react-bootstrap/Modal';
 
 function ModalItemCard({ handleClose, show, name, imagen, description, price, brand, active, category, availableStock, id }) {
 
@@ -57,10 +56,9 @@ function ModalItemCard({ handleClose, show, name, imagen, description, price, br
           </ContainerBodyModal>
         </ModalBody>
         <Modal.Footer>
-          <Button variant="success" onClick={handleClose}>
+          <AddButton variant="success" onClick={handleClose}>
             Cerrar
-          </Button>
-          {/* <Button variant="primary">Understood</Button> */}
+          </AddButton>
         </Modal.Footer>
       </Modal>
     </>

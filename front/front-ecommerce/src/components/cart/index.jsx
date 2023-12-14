@@ -43,7 +43,7 @@ const Cart = () => {
                 <Item>
                   <Product>
                     <ProductImg>
-                      <img src={product.img} alt='product image' />
+                      <img src={product.imagen} alt='product image' />
                     </ProductImg>
                     <div>
                       <p>
@@ -87,4 +87,4 @@ const Cart = () => {
   );
 };
 
-export { Cart, Quantity };
+export { Cart };
