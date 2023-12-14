@@ -9,8 +9,9 @@ const SuccessfulPurchase = () => {
   const {
     state: { cart }
   } = useContext(AppContext);
-  const total = cart.reduce((acc, el) => acc + el.price, 0)
-  const quantity = cart.map((product) => product.quantity)
+  const totalPrice = cart.reduce((acc, el) => 
+     acc + el.quantity * el.price, 0
+  )
   const [user, setUser] = useState(null)
        useEffect(()=>{   
          getUser()
@@ -34,7 +35,7 @@ const SuccessfulPurchase = () => {
                 <p>Resumen de la compra</p>
                 <p>Orden número: 38380 </p>
                 <p>Fecha: 20 Diciembre 2023 </p>
-                <p>Total: $ { quantity > 1 ? total * quantity: total}</p>
+                <p>Total: $ {totalPrice}</p>
               </div>
               <div>
                 <p>Método de pago</p>
