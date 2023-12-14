@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Navigation, Pagination, Autoplay } from "swiper/modules";
+import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -55,7 +55,7 @@ function Carousel() {
 
   return (
     <Swiper
-      modules={[EffectCoverflow, Navigation, Pagination, Autoplay]}
+      modules={[EffectCoverflow, Navigation, Pagination]}
       navigation={{
         prevEl: ".button-prev",
         nextEl: ".button-next",
@@ -72,13 +72,13 @@ function Carousel() {
       slidesPerView={"auto"}
       centeredSlides
       effect={"coverflow"}
-      coverflowEffect={{
-        rotate: 50,
-        stretch: 0,
-        depth: 100, 
-        modifier: 1,
-        slideShadows: true,
-      }}
+      // coverflowEffect={{
+      //   rotate: 50,
+      //   stretch: 0,
+      //   depth: 100, 
+      //   modifier: 1,
+      //   slideShadows: true,
+      // }}
     >
       {/* HAY QUE PROGRAMAR EL LINK DE LAS IMAGENES */}
       {/* {cards.map(({ image}) => ( */}

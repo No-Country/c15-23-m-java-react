@@ -2,23 +2,38 @@ import { styled } from 'styled-components';
 import { titleFont, textFont } from '../../styles/GlobalStyles';
 
 const MainContainer = styled.main`
-    max-width: 100%;
-    background-color: #FFFFFF;
-    color: black;
-    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #56c9a0;
+
     @media (max-width: 768px) {
         padding:0px;
         padding-block: 20px;
     }
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+`;
+
+const SectionWelcome = styled.section`
+    padding: 40px 0 60px 0;
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+    url('../../../public/images/fondo.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+
+
+    @media (max-width: 900px){
+        padding: 0px;
+        padding-block: 20px;
+        margin-inline: 0px;
+        width: 100%;
+        height: 100%;
+    }
 `;
 
 const Section = styled.section`
-    margin-block: 10px;
-    background-color: #D9D9D9;
-    padding-inline:20px;
+    // margin-block: 10px;
+    background-color: #f0f0f0;
     @media (max-width: 900px) {
         margin-inline: 0px;
         padding-inline:0px;
@@ -37,13 +52,17 @@ const WelcomeDiv = styled.div`
 `;
 
 const TextoDiv = styled.div`
-    height: auto;
-    position: relative;
-    width: 50%;
+    width: 100%;
     padding: 30px;
-    gap: 30px;
+    gap: 40px;
     display: flex;
     flex-direction: column;
+    font-weight: bold;
+    font-size: 5.5rem;
+    text-align: center;
+    text-shadow: 0 0 35px #fff;
+    color: #f0f0f0;
+
     & h1{
         font-size: 62px;
         font-family: ${titleFont};
@@ -76,67 +95,10 @@ const TextoDiv = styled.div`
         width:100%;
         height: 350px;
         text-align: center;
-        background-color: white;
-        &::before{
-            content: "";
-            background-image: url('/images/imgHome.jpg');
-            background-size: cover;
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            bottom: 0px;
-            left: 0px;
-            opacity: 0.65;
-        }
     }
 `;
 
-const InputDiv = styled.div`
-    display: flex;
-    flex-direction: row;
-    padding: 20px;
-    width: 100%;
-    & input{
-        height: 54px;
-        width: 40%;
-        border-radius: 10px;
-        border: none;
-        font-family: ${textFont};
-        padding-inline: 10px 10px;
-        &::placeholder{
-            padding-inline: 30px 10px;
-            font-size: 16px;
-            background-image: url(/images/search.svg);
-            background-size: 18px 18px;
-            background-repeat: no-repeat;
-            background-position: 10px center;
-        };
-        @media(max-width: 900px){
-            width: 80%;
-        }
-    };
-    & button{
 
-        background-color: #56c9a0;
-        border: none;
-        color: #fff;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: 700;
-        padding: 15px;
-        text-align: center;
-        margin-inline: 20px;
-        border-radius: 10px;
-        font-family: ${textFont};
-        &:hover{
-            background-color: #39ad84;
-        }
-    };
-    @media(max-width: 900px){
-        justify-content: center;
-        width:100%
-    }
-`;
 
 const ImgDiv = styled.div`
     width: 50%;
@@ -197,4 +159,4 @@ const TrendingItem = styled.div`
     }
 `;
 
-export {MainContainer, Section, WelcomeDiv, TextoDiv, InputDiv, ImgDiv, Categorias, CardContainer, TrendingItem}
+export {MainContainer, Section, WelcomeDiv, TextoDiv, ImgDiv, Categorias, CardContainer, TrendingItem, SectionWelcome};
