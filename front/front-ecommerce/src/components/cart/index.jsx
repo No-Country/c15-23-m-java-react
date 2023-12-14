@@ -25,7 +25,6 @@ const Cart = () => {
   return (
     <CartContainer>
       <h2>Mi orden</h2>
-
       {!cart.length && (
         <EmptyCart>
           <figure>

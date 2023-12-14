@@ -1,17 +1,28 @@
 import { Main, CheckoutContainer, ClientInfo, PaymentMethod } from './styles';
 import { FaUser } from 'react-icons/fa';
 import { OrderSummary } from '../../components/OrderSummary';
-import Button from '../../assets/elementos/Boton';
 import { NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react'
+import { getUser } from '../../api/getUser'; 
 
 const Checkout = () => {
+    const [user, setUser] = useState(null) 
+       useEffect(()=>{   
+         getUser()
+        .then(user => setUser(user))
+        .catch(err => err)   
+  }, [])
   return (
     <Main>
       <CheckoutContainer>
         <h2>Verificar</h2>
         <ClientInfo>
           <FaUser />
-          <p>Nombre del Usuario Cliente</p>
+          {user && (
+          <p>{user?.nombre?.charAt(0).toUpperCase() + user?.nombre?.slice(1)} {''} 
+             {user?.apellido?.charAt(0).toUpperCase() + user?.apellido?.slice(1)} 
+          </p>      
+         )}
         </ClientInfo>
         <OrderSummary />
         <PaymentMethod>
