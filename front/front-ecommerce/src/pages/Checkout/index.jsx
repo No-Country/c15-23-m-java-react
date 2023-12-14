@@ -3,9 +3,12 @@ import { FaUser } from 'react-icons/fa';
 import { OrderSummary } from '../../components/OrderSummary';
 import Button from '../../assets/elementos/Boton';
 import { NavLink } from 'react-router-dom';
+import Volver from '../../components/Volver/Volver';
 
 const Checkout = () => {
   return (
+    <>
+      <Volver titulo="Resumen"/>
     <Main>
       <CheckoutContainer>
         <h2>Verificar</h2>
@@ -31,10 +34,10 @@ const Checkout = () => {
             </label>
           </div>
         </PaymentMethod>
-        <NavLink to="/successfulPurchase"><Button>Realizar pedido</Button></NavLink>
-        
+        <NavLink to='/successfulPurchase'>Confirmar compra</NavLink>
       </CheckoutContainer>
     </Main>
+    </>
   );
 };
 

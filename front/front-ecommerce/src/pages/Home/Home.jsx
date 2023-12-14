@@ -1,11 +1,20 @@
-/* eslint-disable no-unused-vars */
-import React from 'react'
-import {MainContainer, Section, WelcomeDiv, TextoDiv, ImgDiv, Categorias, CardContainer, TrendingItem, SectionWelcome} from './styles'
+
+import React, { useEffect, useState } from 'react'
+import {getFetch} from '../../api/getFetch'
+import {MainContainer, Section, WelcomeDiv, TextoDiv, InputDiv, ImgDiv, Categorias, CardContainer, TrendingItem, SectionWelcome} from './styles'
 import Carousel from '../../components/Carousel/Carousel'
 import ListCard from '../../components/ListCard/ListCard'
 import { SearchBar } from '../../components/Search/SearchBar'
 
 const Home = () => {
+  
+  const [products, setProducts] = useState([])
+    useEffect(()=>{
+        getFetch()
+        .then(products => setProducts(products))
+        .catch(err => err)
+    },[])
+
   return (
     <MainContainer>
       <SectionWelcome>
@@ -34,7 +43,7 @@ const Home = () => {
             <i><p><a href="">Productos en tendencias</a></p></i>
           </TrendingItem>
         </Categorias>
-        <ListCard></ListCard>
+        <ListCard products={products}></ListCard>
       </Section>
     </MainContainer>
   )

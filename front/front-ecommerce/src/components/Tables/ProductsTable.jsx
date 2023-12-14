@@ -7,7 +7,7 @@ import {
   Edit,
   Delete,
 } from './styles';
-
+import { TiDelete } from 'react-icons/ti';
 export const products = [
   {
     id: 1,
@@ -17,6 +17,7 @@ export const products = [
     price: 10.77,
     quantity: 2,
     active: true,
+    description: 'Comfortable and stylish Nike sports shoes.',
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ export const products = [
     price: 10.77,
     quantity: 2,
     active: true,
+    description: 'High-quality camera for capturing memorable moments.',
   },
   {
     id: 3,
@@ -35,6 +37,7 @@ export const products = [
     price: 10.77,
     quantity: 2,
     active: false,
+    description: 'Festive red holiday boot for a touch of Christmas spirit.',
   },
   {
     id: 4,
@@ -44,6 +47,7 @@ export const products = [
     price: 10.77,
     quantity: 2,
     active: true,
+    description: "Classic Rubik's Cube for hours of puzzle-solving fun.",
   },
   {
     id: 5,
@@ -53,6 +57,8 @@ export const products = [
     price: 299.99,
     quantity: 3,
     active: true,
+    description:
+      'Experience the thrill of off-road exploration with our cutting-edge mountain bike. Designed for exceptional performance on rugged trails and winding paths, this bike combines durability, comfort, and advanced technology.',
   },
 ];
 
@@ -101,7 +107,9 @@ const ProductsTable = () => {
                   <Edit href='#'>Editar</Edit>
                 </td>
                 <td>
-                  <Delete>Eliminar</Delete>
+                  <Delete>
+                    <TiDelete />
+                  </Delete>
                 </td>
               </TableItem>
             )

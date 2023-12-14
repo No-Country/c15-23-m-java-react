@@ -5,7 +5,7 @@ import { Main } from './styles';
 const ShoppingCart = () => {
   return (
     <Main>
-      <Volver />
+      <Volver titulo="Mi Carrito"/>
       <Cart />
     </Main>
   );
