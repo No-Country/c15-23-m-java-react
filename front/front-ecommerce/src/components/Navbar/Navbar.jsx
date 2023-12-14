@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { getUser } from '../../api/getUser'; 
 
 const Navbar = () => {
-  const [user, setUser] = useState([]) 
+  const [user, setUser] = useState(null) 
      useEffect(()=>{   
        getUser()
       .then(user => setUser(user))
@@ -31,7 +31,11 @@ const Navbar = () => {
           <NavLink to="/home-admin">Categorias</NavLink> */}
         </div>
          <div className={`links-right ${clicked ? 'active' : ''}`}>
-          <a>{user?.nombre?.charAt(0).toUpperCase() + user?.nombre?.slice(1)} {user?.apellido?.charAt(0).toUpperCase() + user?.apellido?.slice(1)}</a>      
+         {user && (
+          <a>{user?.nombre?.charAt(0).toUpperCase() + user?.nombre?.slice(1)} {''} 
+             {user?.apellido?.charAt(0).toUpperCase() + user?.apellido?.slice(1)} 
+          </a>      
+         )}
         </div> 
         <div className='burguer'>
           <Burguer>
