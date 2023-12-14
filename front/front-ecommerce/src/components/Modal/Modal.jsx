@@ -5,9 +5,8 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { AppContext } from '../../context/AppContext';
 import { useContext } from 'react';
-// import {useInitialState} from '../../hooks/useInitialState'
 
-function ModalItemCard({products, handleClose, show, name, imagen, description, price, brand, active, category, availableStock, id }) {
+function ModalItemCard({ handleClose, show, name, imagen, description, price, brand, active, category, availableStock, id }) {
 
   const {
     addToCart
@@ -41,7 +40,20 @@ function ModalItemCard({products, handleClose, show, name, imagen, description, 
               <p>Disponibilidad {availableStock} u.</p>
               <p>{category}</p>
             </div>
-            <AddButton onClick={()=>addToCart(products)}>Agregar</AddButton>
+            <AddButton onClick={() => {
+              addToCart({
+                id,
+                name,
+                imagen,
+                description,
+                price,
+                brand,
+                active,
+                category,
+                availableStock,
+                quantity: 1,
+              });
+            }}>Agregar</AddButton>
           </ContainerBodyModal>
         </ModalBody>
         <Modal.Footer>
