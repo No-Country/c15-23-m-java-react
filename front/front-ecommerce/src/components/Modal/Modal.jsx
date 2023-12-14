@@ -1,24 +1,15 @@
 /* eslint-disable react/prop-types */
-// import { useState } from 'react';
 import {ItemImgCard} from '../ItemCard/styles'
-// import {Quantity} from '../../components/cart/styles'
 import {ContainerBodyModal, ModalBody, AddButton} from './styles';
-import { MdAdd, MdRemove, MdDelete } from 'react-icons/md';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import {Quantity} from '../cart/index'
 import { AppContext } from '../../context/AppContext';
 import { useContext } from 'react';
 
-
-
-function ModalItemCard({products, handleClose, show, name, imagen, description, price, brand, active, category, availableStock, quantity, id }) {
+function ModalItemCard({ handleClose, show, name, imagen, description, price, brand, active, category, availableStock, id }) {
 
   const {
-    state: { cart },
-    incrementQuantity,
-    decrementQuantity,
-    removeFromCart,
+    addToCart
   } = useContext(AppContext);
 
   return (
@@ -49,7 +40,20 @@ function ModalItemCard({products, handleClose, show, name, imagen, description, 
               <p>Disponibilidad {availableStock} u.</p>
               <p>{category}</p>
             </div>
-            <AddButton>Agregar</AddButton>
+            <AddButton onClick={() => {
+              addToCart({
+                id,
+                name,
+                imagen,
+                description,
+                price,
+                brand,
+                active,
+                category,
+                availableStock,
+                quantity: 1,
+              });
+            }}>Agregar</AddButton>
           </ContainerBodyModal>
         </ModalBody>
         <Modal.Footer>
