@@ -14,7 +14,7 @@ function ItemCard({ products, name, imageLink, description, price, brand, active
   return (
     <Card>
       <ItemImgCard data-tip data-for="itemTooltip">
-        <img style={{width: '200px', height: '200px'}} src={imageLink} alt="a wallpaper" className="itemImg" />
+        <img style={{width: '250px', height: '200px'}} src={imageLink} alt="a wallpaper" className="itemImg" />
       </ItemImgCard>
       <ItemBodyCard>
           <h3><strong>{brand}</strong></h3>
