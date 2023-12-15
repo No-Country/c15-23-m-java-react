@@ -120,11 +120,15 @@ export const StyledProductItem = styled.li`
 `;
 
 export const StyledProductImage = styled.img`
-    max-width: 50%;
+    max-width: 100px;
     height: 100px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 5px;
     margin-right : 10px;
+    & img {
+        width:100px;
+        height: 100px;
+    }
 `;
 
 export const StyledLink = styled.a`
