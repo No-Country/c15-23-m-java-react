@@ -20,9 +20,9 @@ const ProductList = ( filteredProducts ) => {
 
   return (
     <StyledProductList>
-      {foundProducts.map(({ name, imagen, description, price, brand, active, category, availableStock, quantity, id }) => (
+      {foundProducts.map(({ name, imageLink, description, price, brand, active, category, availableStock, quantity, id }) => (
         <StyledProductItem key={id}>
-          <StyledProductImage src={imagen} alt={name} />
+          <StyledProductImage src={imageLink} alt={name} />
 
           {name} <br /> {category}
 
@@ -33,7 +33,7 @@ const ProductList = ( filteredProducts ) => {
             handleClose={handleClose}
             show={showModal[id] || false}
             name={name}
-            imagen={imagen}
+            imageLink={imageLink}
             description={description}
             price={price}
             brand={brand}
