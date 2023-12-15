@@ -3,7 +3,7 @@ import { titleFont, textFont } from '../../styles/GlobalStyles';
 
 const ContainerVolver = styled.div`
   width: 95%;
-  margin: 40px;
+  margin: 20px;
   background-color: #d9d9d9;
   color: black;
   padding-inline: 40px;
