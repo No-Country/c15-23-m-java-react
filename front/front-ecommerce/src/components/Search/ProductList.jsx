@@ -1,33 +1,53 @@
-/* eslint-disable react/prop-types */
-// eslint-disable-next-line react/prop-types
-
 import { useState } from "react";
 import ModalItemCard from "../Modal/Modal";
 import { StyledProductImage, StyledProductItem, StyledProductList } from "./styles";
 
+const ProductList = ( filteredProducts ) => {
+  const [showModal, setShowModal] = useState({});
 
-const ProductList = ({ products }) => {
-  const [show, setShow] = useState(false);
+  const handleClose = () => {
+    setShowModal({});
+  };
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  
-    return (
-      <StyledProductList>
-        {products.map(products => (
-          < StyledProductItem key={products.id}>
-             <StyledProductImage src={products.imagen} alt={products.name} />
-             
-             {products.name} <br /> {products.category} 
+  const handleShow = (productId) => {
+    setShowModal((prevShowModal) => ({
+      ...prevShowModal,
+      [productId]: true,
+    }));
+  };
 
-             <button onClick={handleShow}>Ver más</button>
-             <ModalItemCard products={products} handleShow={handleShow} handleClose={handleClose} show={show} name={products.name} imagen={products.imagen} description={products.description} price={products.price} brand={products.brand} active={products.active} category={products.category} availableStock={products.availableStock} quantity={products.quantity} id={products.id}></ModalItemCard>
+  const foundProducts = filteredProducts.products;
 
-          </StyledProductItem>
-          
-        ))} 
-      </StyledProductList>
-    )
-}
+  return (
+    <StyledProductList>
+      {foundProducts.map(({ name, imagen, description, price, brand, active, category, availableStock, quantity, id }) => (
+        <StyledProductItem key={id}>
+          <StyledProductImage src={imagen} alt={name} />
+
+          {name} <br /> {category}
+
+          <ModalItemCard
+            key={id}
+            foundProducts={foundProducts}
+            handleShow={() => handleShow(id)}
+            handleClose={handleClose}
+            show={showModal[id] || false}
+            name={name}
+            imagen={imagen}
+            description={description}
+            price={price}
+            brand={brand}
+            active={active}
+            category={category}
+            availableStock={availableStock}
+            quantity={quantity}
+            id={id}
+          ></ModalItemCard>
+          <button onClick={() => handleShow(id)}>Ver más</button>
+        </StyledProductItem>
+      ))}
+    </StyledProductList>
+  );
+};
 
 export default ProductList;

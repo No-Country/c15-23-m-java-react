@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import {getFetch} from '../../api/getFetch'
 import {MainContainer, Section, WelcomeDiv, TextoDiv, ImgDiv, Categorias, CardContainer, TrendingItem, SectionWelcome} from './styles'
 import Carousel from '../../components/Carousel/Carousel'
@@ -26,7 +26,7 @@ const Home = () => {
           </TextoDiv>
         </WelcomeDiv>
 
-        <SearchBar />
+        <SearchBar products={products}/>
   
       </SectionWelcome>
 
