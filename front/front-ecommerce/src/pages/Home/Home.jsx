@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import {getFetch} from '../../api/getFetch'
-import {MainContainer, Section, WelcomeDiv, TextoDiv, Categorias, TrendingItem, SectionWelcome} from './styles'
+import {MainContainer, Section, WelcomeDiv, TextoDiv, ImgDiv, Categorias, CardContainer, TrendingItem, SectionWelcome} from './styles'
 import Carousel from '../../components/Carousel/Carousel'
 import ListCard from '../../components/ListCard/ListCard'
 import { SearchBar } from '../../components/Search/SearchBar'
@@ -27,7 +27,7 @@ const Home = () => {
           </TextoDiv>
         </WelcomeDiv>
 
-        <SearchBar />
+        <SearchBar products={products}/>
   
       </SectionWelcome>
 

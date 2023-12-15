@@ -1,89 +1,65 @@
-import{ useEffect, useState } from 'react';
-// import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { InputDiv } from '../Search/styles';
 import ProductList from './ProductList';
-
+import { getFetch } from '../../api/getFetch';
 
 export const SearchBar = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [isListVisible, setListVisibility] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
-    const [searchTerm, setSearchTerm] = useState('');
-    const [products, setProducts] = useState([]);
-    const [isListVisible, setListVisibility] = useState(false);
+  const handleChange = (event) => {
+    const newSearchTerm = event.target.value;
+    setSearchTerm(newSearchTerm);
+    filterResults(newSearchTerm);
+    if (newSearchTerm.trim().length === 0) {
+                    setListVisibility(false);
+                } else {
+                    setListVisibility(true);
+                }
+  };
 
-    const handleSearch = async () => {
+  const filterResults = (searchTerm) => {
+    const lowerSearchTerm = searchTerm.toLowerCase();
+    const filtered = products.filter((product) => {
+      return (
+        product.name.toLowerCase().includes(lowerSearchTerm) ||
+        product.category.toLowerCase().includes(lowerSearchTerm)
+      );
+    });
 
-        const URL_API = 'https://64ee10061f87218271424186.mockapi.io/data';
+    setFilteredProducts(filtered);
+    setSelectedIndex(filtered.id)
 
-        try {
-            const response = await fetch(`${URL_API}?search=${searchTerm}`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error('Error en la petición');
-        }
-        
-        const data = await response.json();
-            setProducts(data);
-        } catch (error) {
-            return error;
-        }
-
-    };
-
-    const handleChange = (event) => {
-        setSearchTerm(event.target.value);
-        filterResults(event.target.value);
-
-        if (event.target.value.trim().length === 0) {
-            setListVisibility(false);
-        } else {
-            setListVisibility(true);
-        }
-
+    if (searchTerm.trim().length === 0) {
+      setFilteredProducts(products);
     }
+  };
 
-    const filterResults = (searchTerm) => {
-        const filteredProducts = products.filter((product) => {
-            if (product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            product.category.toLowerCase().includes(searchTerm.toLowerCase())
-            ) {
-                return product;
-            }
-        });
 
-        setProducts(filteredProducts)
-
-        
-        if (event.target.value.trim().length === 0) {
-            setListVisibility(false);
-        } else {
-            setListVisibility(true);
-        }
-    };
-
-    useEffect(() => {
-        handleSearch();
-    },[])
+  useEffect(() => {
+    getFetch()
+      .then((fetchedProducts) => {
+        setProducts(fetchedProducts);
+        setFilteredProducts(fetchedProducts);
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
 
   return (
     <>
-        <InputDiv>
+      <InputDiv>
         <input
-            placeholder="¿Qué estás buscando?"
-            value={searchTerm}
-            onChange={handleChange}
+          placeholder="¿Qué estás buscando?"
+          value={searchTerm}
+          onChange={handleChange}
         />
+      </InputDiv>
 
-        <button value={searchTerm} onClick={handleSearch}>Buscar</button>
-        </InputDiv>
-
-        { isListVisible && products && <ProductList products={products} /> }
+      { isListVisible && filteredProducts.length > 0 && <ProductList products={filteredProducts} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />}
     </>
-    
- )
-}
+  );
+};

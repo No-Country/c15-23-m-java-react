@@ -77,23 +77,46 @@ export const StyledProductList = styled.ul`
     align-items: center;
     margin-rigth: 100px;
     list-style-type: none;
-    // padding: 0;
+    padding: 0;
     height: 100%;
     width: 100%;
     border-radius: 5px;
 `;
 
 export const StyledProductItem = styled.li`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 50%;
-  padding: 5px;
-  border: 1px solid #56C9A0;
-  margin: 5px;
-  background-color: #D9D9D9;
-  border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    padding-inline: 4%;
+    border: 1px solid #56C9A0;
+    margin: 5px;
+    background-color: #D9D9D9;
+    border-radius: 5px;
+    @media (max-width: 768px){
+        width: 80%;
+    }
+    @media (max-width: 576px){
+        width: 90%;
+        padding-inline: 1%;
+    }
+    & button {
+        background-color: #56c9a0;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 11px;
+        text-align: center;
+        margin-inline: 5px;
+        border-radius: 10px;
+        font-family: ${textFont};
+        &:hover{
+            background-color: #39ad84;
+        }
+    }
 `;
 
 export const StyledProductImage = styled.img`
