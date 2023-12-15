@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 import { useEffect, useState } from 'react'
-import {getFetch} from '../../api/getFetch'
+import {getProducts} from '../../api/getProducts'
 import {MainContainer, Section, WelcomeDiv, TextoDiv, ImgDiv, Categorias, CardContainer, TrendingItem, SectionWelcome} from './styles'
 import Carousel from '../../components/Carousel/Carousel'
 import ListCard from '../../components/ListCard/ListCard'
@@ -11,7 +11,7 @@ const Home = () => {
   
   const [products, setProducts] = useState([])
     useEffect(()=>{
-        getFetch()
+        getProducts()
         .then(products => setProducts(products))
         .catch(err => err)
     },[])

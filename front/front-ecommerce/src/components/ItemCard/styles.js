@@ -25,7 +25,7 @@ const ItemBodyCard = styled.div`
     gap: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    height: 260px;
+    height: 320px;
     @media (max-width: 570px){
         height: 300px;
     }

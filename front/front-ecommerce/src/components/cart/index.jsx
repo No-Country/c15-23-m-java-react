@@ -42,7 +42,7 @@ const Cart = () => {
                 <Item>
                   <Product>
                     <ProductImg>
-                      <img src={product.imagen} alt='product image' />
+                      <img src={product.imageLink} alt='product image' />
                     </ProductImg>
                     <div>
                       <p>

@@ -58,7 +58,7 @@ const OrderSummary = () => {
         {cart.map((product) => (
           <SummaryItem key={product.id}>
             <ProductImage>
-              <img alt='product image' src={product.imagen} />
+              <img alt='product image' src={product.imageLink} />
             </ProductImage>
             <div>
               <p>{product.name}</p>

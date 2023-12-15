@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 import Modal from 'react-bootstrap/Modal';
 
-function ModalItemCard({ handleClose, show, name, imagen, description, price, brand, active, category, availableStock, id }) {
+function ModalItemCard({ handleClose, show, name, imageLink, description, price, brand, active, category, availableStock, id }) {
 
   const {
     addToCart
@@ -24,12 +24,12 @@ function ModalItemCard({ handleClose, show, name, imagen, description, price, br
         </Modal.Header>
         <ModalBody>
           <ItemImgCard>
-              <img src={imagen}/>
+              <img style={{width: '150px', height: '150px'}} src={imageLink}/>
           </ItemImgCard>
           <ContainerBodyModal>
             <div>
-              <h2>{name}</h2>
-              <p>{brand}</p>
+              <h2>{brand}</h2>
+              {/* <p>{brand}</p> */}
             </div>
             <div>
               <i><p>{description}</p></i>
@@ -43,7 +43,7 @@ function ModalItemCard({ handleClose, show, name, imagen, description, price, br
               addToCart({
                 id,
                 name,
-                imagen,
+                imageLink,
                 description,
                 price,
                 brand,
