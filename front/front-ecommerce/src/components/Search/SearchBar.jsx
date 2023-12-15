@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { InputDiv } from '../Search/styles';
 import ProductList from './ProductList';
-import { getFetch } from '../../api/getFetch';
+import { getProducts } from '../../api/getProducts';
 
 export const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -40,7 +40,7 @@ export const SearchBar = () => {
 
 
   useEffect(() => {
-    getFetch()
+    getProducts()
       .then((fetchedProducts) => {
         setProducts(fetchedProducts);
         setFilteredProducts(fetchedProducts);
