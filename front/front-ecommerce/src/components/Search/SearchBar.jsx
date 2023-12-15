@@ -38,6 +38,7 @@ export const SearchBar = () => {
     }
   };
 
+
   useEffect(() => {
     getFetch()
       .then((fetchedProducts) => {
@@ -46,6 +47,7 @@ export const SearchBar = () => {
       })
       .catch((err) => console.error(err));
   }, []);
+
 
   return (
     <>

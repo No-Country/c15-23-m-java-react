@@ -28,7 +28,7 @@ function ItemCard({ products, name, imagen, description, price, brand, active, c
               <button onClick={handleShow}>Ver más</button>
             </div>
           </ItemBodyCard>
-          <ModalItemCard key={id} products={products} handleShow={handleShow} handleClose={handleClose} show={show} name={name} imagen={imagen} description={description} price={price} brand={brand} active={active} category={category} availableStock={availableStock} quantity={quantity} id={id}></ModalItemCard>
+          <ModalItemCard products={products} handleShow={handleShow} handleClose={handleClose} show={show} name={name} imagen={imagen} description={description} price={price} brand={brand} active={active} category={category} availableStock={availableStock} quantity={quantity} id={id}></ModalItemCard>
       </ItemBodyCard>
     </Card> 
   );
