@@ -3,7 +3,7 @@ import { titleFont, textFont} from '../../styles/GlobalStyles';
 
 /* const image = '../../../public/images';
 
-const backgroundImageStyle = {
+const BackgroundImageStyle = {
   background: `linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('${image}/fondo.png')`,
 };
  */
@@ -166,4 +166,5 @@ export {
   CardContainer,
   TrendingItem,
   SectionWelcome,
+  BackgroundImageStyle,
 };
