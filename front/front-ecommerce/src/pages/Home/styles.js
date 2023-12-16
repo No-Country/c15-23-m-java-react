@@ -166,5 +166,4 @@ export {
   CardContainer,
   TrendingItem,
   SectionWelcome,
-  BackgroundImageStyle,
 };
