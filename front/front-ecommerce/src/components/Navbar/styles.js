@@ -5,7 +5,8 @@ const NavContainer = styled.nav `
 h2{ 
     font-weight: 400;
     img{
-      margin-right: 20px;
+      width: 100px;
+      margin-left: 4rem;
       cursor: pointer;
     }
    span{
@@ -13,15 +14,17 @@ h2{
       font-size: 12px;
     }
   }
-  padding: 15px;
+  width: 100%;
+  height: 60px;
   background-color: ${colors.primaryColor};
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 1.6rem;
   a{
     color: white;
     text-decoration: none;
-    margin-right: 2rem;
+    margin-right: 4rem;
   }
 
   .links-right{
