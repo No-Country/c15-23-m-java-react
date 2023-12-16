@@ -1,15 +1,13 @@
- const getProducts = async ()=>{  
-     try{
-         const url = 'https://product-service-uvfl.onrender.com/products/'
-         const prodJson = await fetch(url)
-         const prod = await prodJson.json()
-         return prod
-     }
+import { endPoints } from './endPoints';
 
-     catch (err) {
-         console.log(err);
-     }
- }
+const getProducts = async () => {
+  try {
+    const prodJson = await fetch(endPoints.products.getProducts);
+    const prod = await prodJson.json();
+    return prod;
+  } catch (err) {
+    console.log(err);
+  }
+};
 
- export {getProducts}
-
+export { getProducts };
