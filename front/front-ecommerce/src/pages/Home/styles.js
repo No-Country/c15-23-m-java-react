@@ -3,7 +3,7 @@ import { titleFont, textFont} from '../../styles/GlobalStyles';
 
 const image = '../../../public/images';
 
-const backgroundImageStyle = {
+const BackgroundImageStyle = {
   background: `linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('${image}/fondo.png')`,
 };
 
@@ -16,7 +16,7 @@ const MainContainer = styled.main`
 
 const SectionWelcome = styled.section`
     padding: 40px 0 60px 0;
-    ${backgroundImageStyle};
+    ${BackgroundImageStyle};
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
@@ -167,4 +167,5 @@ export {
   CardContainer,
   TrendingItem,
   SectionWelcome,
+  BackgroundImageStyle,
 };
