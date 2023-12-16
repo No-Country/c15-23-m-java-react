@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { getProducts } from '../../api/getProducts';
+import  imagenFondo  from '../../../public/images/fondo.png'
 import {
   MainContainer,
   Section,
@@ -28,7 +29,7 @@ const Home = () => {
 
   return (
     <MainContainer>
-      <SectionWelcome>
+      <SectionWelcome style={{backgroundImage:`linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),url(${imagenFondo})`}}>
         <WelcomeDiv>
           <TextoDiv>
             <strong>
