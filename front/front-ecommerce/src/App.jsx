@@ -6,15 +6,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <br />
-      <br />
-      <br />
-      <br />
       <Router />
-      <br />
-      <br />
-      <br />
-      <br />
       <Footer />
     </>
   );
