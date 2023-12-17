@@ -59,7 +59,8 @@ export const SearchBar = () => {
         />
       </InputDiv>
 
-      { isListVisible && filteredProducts.length > 0 && <ProductList products={filteredProducts} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />}
+      {isListVisible && filteredProducts.length > 0 && (loading ? <Loading /> : <ProductList products={filteredProducts} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />)}
+      {/* { isListVisible && filteredProducts.length > 0 && <ProductList products={filteredProducts} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />} */}
     </>
   );
 };
