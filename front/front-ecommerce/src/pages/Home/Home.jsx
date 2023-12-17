@@ -47,7 +47,7 @@ const Home = () => {
           </TextoDiv>
         </WelcomeDiv>
 
-        <SearchBar products={products} />
+        <SearchBar products={products} loading={loading} setLoading={setLoading} />
       </SectionWelcome>
 
       <Section>
