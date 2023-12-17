@@ -19,11 +19,16 @@ import ListCard from '../../components/ListCard/ListCard';
 import { SearchBar } from '../../components/Search/SearchBar';
 
 const Home = () => {
+  const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     getProducts()
-      .then((products) => setProducts(products))
-      .catch((err) => err);
+      .then((products) => {
+        setProducts(products);
+        setLoading(false);
+      })
+      .catch((err) => console.error(err));
   }, []);
 
   return (
