@@ -20,17 +20,27 @@ import { SearchBar } from '../../components/Search/SearchBar';
 import Loading from '../../components/Loading/Loading';
 
 const Home = () => {
-  const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  console.log(loading);
 
   useEffect(() => {
-    getProducts()
-      .then((products) => {
+    const fetchData = async () => {
+      try {
+        const products = await getProducts();
         setProducts(products);
         setLoading(false);
-      })
-      .catch((err) => console.error(err));
+      } catch (err) {
+        console.error(err);
+        setError('Error al cargar los productos. Intente de nuevo más tarde.');
+        setLoading(false);
+        console.log(err);
+      }
+    };
+    fetchData();
   }, []);
+
 
   return (
     <MainContainer>
@@ -67,7 +77,10 @@ const Home = () => {
             </i>
           </TrendingItem>
         </Categorias>
-        {loading ? <Loading /> : <ListCard products={products} />}
+        {loading ? (<Loading />) 
+        : error ? (<h1>{error}</h1>) 
+        : (<ListCard products={products} />
+        )}
       </Section>
     </MainContainer>
   );

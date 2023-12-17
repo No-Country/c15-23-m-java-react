@@ -89,7 +89,7 @@ export const StyledProductItem = styled.li`
   align-items: center;
   width: 50%;
   padding-inline: 4%;
-  border: 1px solid #56c9a0;
+  /* border: 1px solid #56c9a0; */
   margin: 5px;
   background-color: #d9d9d9;
   border-radius: 5px;

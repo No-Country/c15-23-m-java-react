@@ -40,7 +40,6 @@ export const SearchBar = ({loading, setLoading}) => {
     }
   };
 
-
   useEffect(() => {
     getProducts()
       .then((fetchedProducts) => {
@@ -49,8 +48,7 @@ export const SearchBar = ({loading, setLoading}) => {
         setLoading(false);
       })
       .catch((err) => console.error(err));
-  }, []);
-
+  });
 
   return (
     <>
@@ -62,8 +60,7 @@ export const SearchBar = ({loading, setLoading}) => {
         />
       </InputDiv>
 
-      {isListVisible && filteredProducts.length > 0 && (loading ? <Loading /> : <ProductList products={filteredProducts} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />)}
-      {/* { isListVisible && filteredProducts.length > 0 && <ProductList products={filteredProducts} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />} */}
+      {loading ? <Loading /> : ( isListVisible && filteredProducts.length > 0 && <ProductList products={filteredProducts} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />)}
     </>
   );
 };
