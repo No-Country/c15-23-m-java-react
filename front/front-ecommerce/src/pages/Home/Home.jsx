@@ -17,6 +17,7 @@ import {
 import Carousel from '../../components/Carousel/Carousel';
 import ListCard from '../../components/ListCard/ListCard';
 import { SearchBar } from '../../components/Search/SearchBar';
+import Loading from '../../components/Loading/Loading';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -66,7 +67,7 @@ const Home = () => {
             </i>
           </TrendingItem>
         </Categorias>
-        <ListCard products={products}></ListCard>
+        {loading ? <Loading /> : <ListCard products={products} />}
       </Section>
     </MainContainer>
   );
