@@ -13,19 +13,34 @@ import {
   CardContainer,
   TrendingItem,
   SectionWelcome,
-  BackgroundImageStyle,
 } from './styles';
 import Carousel from '../../components/Carousel/Carousel';
 import ListCard from '../../components/ListCard/ListCard';
 import { SearchBar } from '../../components/Search/SearchBar';
+import Loading from '../../components/Loading/Loading';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  console.log(loading);
+
   useEffect(() => {
-    getProducts()
-      .then((products) => setProducts(products))
-      .catch((err) => err);
+    const fetchData = async () => {
+      try {
+        const products = await getProducts();
+        setProducts(products);
+        setLoading(false);
+      } catch (err) {
+        console.error(err);
+        setError('Error al cargar los productos. Intente de nuevo más tarde.');
+        setLoading(false);
+        console.log(err);
+      }
+    };
+    fetchData();
   }, []);
+
 
   return (
     <MainContainer>
@@ -42,7 +57,7 @@ const Home = () => {
           </TextoDiv>
         </WelcomeDiv>
 
-        <SearchBar products={products} />
+        <SearchBar products={products} loading={loading} setLoading={setLoading} />
       </SectionWelcome>
 
       <Section>
@@ -62,7 +77,10 @@ const Home = () => {
             </i>
           </TrendingItem>
         </Categorias>
-        <ListCard products={products}></ListCard>
+        {loading ? (<Loading />) 
+        : error ? (<h1>{error}</h1>) 
+        : (<ListCard products={products} />
+        )}
       </Section>
     </MainContainer>
   );

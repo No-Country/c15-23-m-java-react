@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
 import { InputDiv } from '../Search/styles';
 import ProductList from './ProductList';
 import { getProducts } from '../../api/getProducts';
+import Loading from '../Loading/Loading';
 
-export const SearchBar = () => {
+export const SearchBar = ({loading, setLoading}) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -38,16 +40,15 @@ export const SearchBar = () => {
     }
   };
 
-
   useEffect(() => {
     getProducts()
       .then((fetchedProducts) => {
         setProducts(fetchedProducts);
         setFilteredProducts(fetchedProducts);
+        setLoading(false);
       })
       .catch((err) => console.error(err));
-  }, []);
-
+  });
 
   return (
     <>
@@ -59,7 +60,7 @@ export const SearchBar = () => {
         />
       </InputDiv>
 
-      { isListVisible && filteredProducts.length > 0 && <ProductList products={filteredProducts} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />}
+      {loading ? <Loading /> : ( isListVisible && filteredProducts.length > 0 && <ProductList products={filteredProducts} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />)}
     </>
   );
 };

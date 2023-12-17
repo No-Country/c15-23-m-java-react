@@ -5,13 +5,23 @@ import { NavLink } from 'react-router-dom';
 import { getUser } from '../../api/getUser'; 
 
 const Navbar = () => {
-  const [user, setUser] = useState(null) 
-     useEffect(()=>{   
-       getUser()
-      .then(user => setUser(user))
-      .catch(err => err)   
+
+const [user, setUser] = useState(null) 
+const [error, setError] = useState(null);
+
+useEffect(()=>{
+  const fetchData = async () => {
+    try {
+      const user = await getUser();
+      setUser(user);
+    } catch (err) {
+      console.error(err);
+      setError('Error al cargar usuario.');
+    }
+  };
+  fetchData();  
 }, [])
-  
+
   const [clicked, setClicked] = useState(false)
   
   const handleClick = () => {
@@ -31,11 +41,12 @@ const Navbar = () => {
           <NavLink to="/home-admin">Categorias</NavLink> */}
         </div>
          <div className={`links-right ${clicked ? 'active' : ''}`}>
-         {user && (
+         {error ? (<p>{error}</p>) :
+         (user && (
           <a>{user?.nombre?.charAt(0).toUpperCase() + user?.nombre?.slice(1)} {''} 
              {user?.apellido?.charAt(0).toUpperCase() + user?.apellido?.slice(1)} 
           </a>      
-         )}
+         ))}
         </div> 
         <div className='burguer'>
           <Burguer>
