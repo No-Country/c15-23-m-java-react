@@ -13,7 +13,6 @@ import {
   CardContainer,
   TrendingItem,
   SectionWelcome,
-  BackgroundImageStyle,
 } from './styles';
 import Carousel from '../../components/Carousel/Carousel';
 import ListCard from '../../components/ListCard/ListCard';
