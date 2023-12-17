@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
 import { InputDiv } from '../Search/styles';
 import ProductList from './ProductList';
 import { getProducts } from '../../api/getProducts';
 import Loading from '../Loading/Loading';
 
-export const SearchBar = (loading, setLoading) => {
+export const SearchBar = ({loading, setLoading}) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
