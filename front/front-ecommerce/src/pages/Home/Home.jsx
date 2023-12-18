@@ -18,13 +18,26 @@ import Carousel from '../../components/Carousel/Carousel';
 import ListCard from '../../components/ListCard/ListCard';
 import { SearchBar } from '../../components/Search/SearchBar';
 import Loading from '../../components/Loading/Loading';
+import Pagination from '../../components/Pagination/Pagination';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(3);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   console.log(loading);
-
+  const getProduct = (page, limit) => {
+    let array = [];
+    for(let i = (page - 1) * limit; i < (page * limit); i++){
+      array.push(products[i])
+    }
+    return array;
+  }
+  const getLength = () => {
+    return products.length
+  }
+  let totalPage = Math.ceil(getLength()/limit)
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -79,8 +92,9 @@ const Home = () => {
         </Categorias>
         {loading ? (<Loading />) 
         : error ? (<h1>{error}</h1>) 
-        : (<ListCard products={products} />
+        : (<ListCard products={getProduct(page, limit)} />
         )}
+        <Pagination totalPage = {totalPage} page = {page} limit = {limit} siblings = {1}></Pagination>
       </Section>
     </MainContainer>
   );
