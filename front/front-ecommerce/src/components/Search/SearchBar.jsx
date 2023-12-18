@@ -48,7 +48,7 @@ export const SearchBar = ({loading, setLoading}) => {
         setLoading(false);
       })
       .catch((err) => console.error(err));
-  });
+  },[]);
 
   return (
     <>
