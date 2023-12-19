@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
-import { NavContainer, BgDiv, Burguer } from './styles';
+import { NavContainer, BgDiv, Burguer, StyleIcon, StyleIconUserBger } from './styles';
 import Logo from '/images/logo.png'
 import { NavLink } from 'react-router-dom';
 import { getUser } from '../../api/getUser';
-import { FaUser } from 'react-icons/fa';
+
+import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
 
@@ -34,15 +35,18 @@ useEffect(()=>{
       <NavContainer>
         <h2><NavLink to="/home"><img width={80} src={Logo}></img></NavLink></h2>
         <div className={`links-left ${clicked ? 'active' : ''}`}>
+          
+          <NavLink><StyleIconUserBger><FaUserCircle /></StyleIconUserBger></NavLink>
           <NavLink to="/home">Inicio</NavLink>
           <NavLink to="/shop">Mi carrito</NavLink>
+
           {/* <NavLink to="/products">Productos</NavLink>
           <NavLink to="/purchase-history">Compras Realizadas</NavLink>
           <NavLink to="/user-profile">Perfil Usuario</NavLink>
           <NavLink to="/home-admin">Categorias</NavLink> */}
         </div>
          <div className={`links-right ${clicked ? 'active' : ''}`}>
-            {user? <FaUser/>: <></>}
+            {user ? <StyleIcon><FaUserCircle /></StyleIcon> : <></>}
          {error ? (<p>{error}</p>) :
          (user && (
            <a>
@@ -50,7 +54,9 @@ useEffect(()=>{
             {user?.apellido?.charAt(0).toUpperCase() + user?.apellido?.slice(1)} 
           </a>      
          ))}
+         
         </div> 
+        
         <div className='burguer'>
           <Burguer>
             <div onClick={handleClick}
@@ -62,6 +68,7 @@ useEffect(()=>{
             </div>
           </Burguer>
         </div>
+        
         <BgDiv className={`initial ${clicked ? ' active' : ''}`}></BgDiv>
       </NavContainer>
     </div>

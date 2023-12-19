@@ -87,7 +87,7 @@ export const StyledSocialIcon = styled.a`
   &:hover {
     background: white;
     border: 1px solid white;
-    color: #56c9a0;
+    color: black;
     box-shadow: 0 0 20px #fff;
   }
 

@@ -38,8 +38,8 @@ export const Footer = () => {
             <StyledColumn2>
                 <StyledText>
                     ¿Necesita ayuda? <br/>
-                    Nuestro equipo de soporte está disponible 24 <br/>
-                    horas al día, 7 días a la semana. <br/>
+                    Nuestro equipo de soporte está disponible <br/>
+                    24 horas al día, 7 días a la semana. <br/>
                 </StyledText>
             </StyledColumn2>
 
