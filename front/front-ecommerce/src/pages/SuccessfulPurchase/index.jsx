@@ -82,7 +82,7 @@ const SuccessfulPurchase = () => {
           </Summary>
         </Main>
         <SectionBtn>
-          <NavLink to='/'><button onClick={()=>emptyCart()}>Ir al Home</button></NavLink>
+          <NavLink to='/'><button onClick={()=>emptyCart()}>Ir al Inicio</button></NavLink>
         </SectionBtn>
       </>}
     </>

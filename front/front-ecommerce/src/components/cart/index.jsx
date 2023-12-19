@@ -46,7 +46,7 @@ const Cart = () => {
                     </ProductImg>
                     <div>
                       <p>
-                        {product.name}, {product.brand}
+                        {product.brand}
                       </p>
                       <p>{product.category}</p>
                       <p>

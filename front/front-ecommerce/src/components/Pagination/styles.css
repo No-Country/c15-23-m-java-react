@@ -14,3 +14,22 @@ li span:hover{
     border: #d9d9d9 solid 1px !important;
     color: black !important;
 }
+.box-p-sm{
+    display: none !important;
+}
+
+.box-p{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 576px) {
+    .box-p{
+        display: none !important;
+    }
+    .box-p-sm{
+        display: flex !important;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }   
+}

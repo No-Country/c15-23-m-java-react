@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
 import { categories } from "./categories";
 
-
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
@@ -16,7 +15,6 @@ import arrowRight from "/images/arrow-right.svg";
 
 
 function Carousel() {
-
 
   return (
     <Swiper

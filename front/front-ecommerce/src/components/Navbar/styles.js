@@ -22,7 +22,7 @@ h2{
   justify-content: space-between;
   font-size: 1.6rem;
   a{
-    color: white;
+    color: black;
     text-decoration: none;
     margin-right: 4rem;
   }
@@ -38,7 +38,7 @@ h2{
     transition: all .5s ease;
     z-index: 2;
     a{
-      color: white;
+      color: black;
       font-size: 2rem;
       font-family: ${titleFont};
       display: block;
@@ -51,31 +51,12 @@ h2{
         font-size: 1.2rem;
         font-weight: bold;
         font-family: ${titleFont};
-        color: white;
+        color: black;
         display: inline;      
       }
       display: block;
     }
   } 
-  ${'' /* .links-right.active{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    top: 54%;   
-    left: 0;
-    right: 0;
-    text-align: center;
-    a{
-      font-size: 2rem;
-      font-weight: bold;
-      font-family: ${titleFont};
-      margin-top: 1rem;
-      color: #213547;
-    }
-  } */}
   .links-left{
     position: absolute;
     top: -700px;
@@ -87,7 +68,7 @@ h2{
     transition: all .5s ease;
     z-index: 2;
     a{
-      color: white;
+      color: black;
       font-size: 2rem;
       font-family: ${titleFont};
       display: block;
@@ -137,7 +118,7 @@ const BgDiv = styled.div`
   top: -1000px;
   left: -1000px;
   width: 100%;
-  height: 100%;
+  height: 95%;
   z-index: 1;
   transition: all .6s ease ;
   

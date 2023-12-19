@@ -1,13 +1,6 @@
 import { styled } from 'styled-components';
 import { titleFont, textFont} from '../../styles/GlobalStyles';
 
-/* const image = '../../../public/images';
-
-const BackgroundImageStyle = {
-  background: `linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('${image}/fondo.png')`,
-};
- */
-
 const MainContainer = styled.main`
     display: flex;
     flex-direction: column;
