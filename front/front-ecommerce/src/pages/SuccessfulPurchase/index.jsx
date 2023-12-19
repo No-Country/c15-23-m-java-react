@@ -1,23 +1,38 @@
 import { OrderSummary } from '../../components/OrderSummary';
 import { Card, Content, Main, Section, Summary } from './styles';
-import { useContext } from 'react';
-import { AppContext } from '../../context/AppContext';
-import { useEffect, useState } from 'react'
-import { getUser } from '../../api/getUser'; 
+import { useEffect, useState } from 'react';
+import { useLocation, Navigate } from 'react-router-dom';
+import { getPurchaseById } from '../../api/transaction.sevice';
+import { getProductById } from '../../api/getProducts';
 
 const SuccessfulPurchase = () => {
-  const {
-    state: { cart }
-  } = useContext(AppContext);
-  const totalPrice = cart.reduce((acc, el) => 
-     acc + el.quantity * el.price, 0
-  )
-  const [user, setUser] = useState(null)
-       useEffect(()=>{   
-         getUser()
-        .then(user => setUser(user))
-        .catch(err => err)   
-  }, [])
+  const location = useLocation();
+  const [purchase, setPurchase] = useState({});
+
+  const getPurchaseInfo = async () => {
+    const id = location.pathname.slice(20);
+    const data = await getPurchaseById(id);
+    if (data === null) {
+      setPurchase(data);
+      return;
+    }
+    const products = await Promise.all(
+      data.items.map(async (item) => {
+        const product = await getProductById(item.productId);
+        return { ...product, quantity: item.quantity };
+      })
+    );
+    data.items = products;
+    setPurchase(data);
+  };
+
+  useEffect(() => {
+    getPurchaseInfo();
+  }, []);
+
+  if (purchase === null) {
+    return <Navigate to='/notFound' />;
+  }
   return (
     <Main>
       <Section>
@@ -33,23 +48,21 @@ const SuccessfulPurchase = () => {
             <div>
               <div>
                 <p>Resumen de la compra</p>
-                <p>Orden número: 38380 </p>
-                <p>Fecha: 20 Diciembre 2023 </p>
-                <p>Total: $ {totalPrice}</p>
+                <p>Orden número: {purchase?.id}</p>
+                <p>Fecha: {new Date().toLocaleDateString()} </p>
+                <p>Total: $ {purchase?.montoTotal}</p>
               </div>
               <div>
-                <p>Método de pago</p>
-                <p>Tarjeta de crédito</p>
+                <p>Datos del cliente</p>
+                <p>{purchase?.userUsername}</p>
+                <p>{purchase?.userEmail}</p>
               </div>
             </div>
 
             <div>
               <div>
-                <p>Dirección</p>
-                <p>{user && (
-                    <p>{user?.direccion?.charAt(0).toUpperCase() + user?.direccion?.slice(1)}
-               </p>)}
-              </p>
+                <p>Dirección de la tienda</p>
+                <p>16 Oak Street, Springfield, IL 62704</p>
               </div>
               <div>
                 <p>¿Alguna pregunta? </p>
@@ -61,7 +74,10 @@ const SuccessfulPurchase = () => {
         </Card>
       </Section>
       <Summary>
-        <OrderSummary />
+        <OrderSummary
+          cart={purchase?.items || []}
+          total={purchase?.montoTotal || 0}
+        />
       </Summary>
     </Main>
   );

@@ -86,11 +86,10 @@ const PaymentMethod = styled.div`
 
 const Main = styled.main`
   width: 100%;
-  padding: 40px 0;
   display: flex;
-  justify-content: center;
-  overflow-x: hidden;
   flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
 `;
 
 export { CheckoutContainer, ClientInfo, Main, PaymentMethod };

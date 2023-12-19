@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home/Home';
-import { NotFound } from '../pages/NotFound/NotFound'
+import { NotFound } from '../pages/NotFound/NotFound';
 import { ShoppingCart } from '../pages/ShoppingCart';
 import { Checkout } from '../pages/Checkout';
 import { SuccessfulPurchase } from '../pages/SuccessfulPurchase';
@@ -21,7 +21,7 @@ const Router = () => {
         <Route path='/*' element={<NotFound />} />
         <Route path='shop' element={<ShoppingCart />} />
         <Route path='checkout' element={<Checkout />} />
-        <Route path='successfulPurchase' element={<SuccessfulPurchase />} />
+        <Route path='successfulPurchase/:id' element={<SuccessfulPurchase />} />
         <Route path='home' element={<Home />} />
         {/* <Route path='login' element={<Login />} />
         <Route path='sign-up' element={<SignUp />} />
