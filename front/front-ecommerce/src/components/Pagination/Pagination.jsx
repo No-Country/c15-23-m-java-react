@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 import './styles.css';
 import _ from 'lodash'
@@ -34,14 +35,16 @@ const returnPaginationRange = (totalPage, page, limit, siblings) => {
 let array = returnPaginationRange(props.totalPage, props.page, props.limit, props.siblings)
   return (
     <ul className="pagination pagination-md pagination-lg justify-content-center">
-      <li className="page-item"><span className="page-link">&laquo;</span></li>
-      <li className="page-item"><span className="page-link">&lsaquo;</span></li>
+      <li className="page-item"><span onClick={() => props.onPageChange("&laquo;")} className="page-link">&laquo;</span></li>
+      <li className="page-item"><span onClick={() => props.onPageChange("&lsaquo;")} className="page-link">&lsaquo;</span></li>
       {array.map(value => (
-       <li key={value} className="page-item"><span className="page-link">{value}</span></li>
+       (value === props.page ? 
+       <li key={value} className="page-item active"><span onClick={() => props.onPageChange(value)} className="page-link">{value}</span></li>
+        : <li key={value} className="page-item"><span onClick={() => props.onPageChange(value)} className="page-link">{value}</span></li>)
 
       ))}
-      <li className="page-item"><span className="page-link">&rsaquo;</span></li>
-      <li className="page-item"><span className="page-link">&raquo;</span></li>   
+      <li className="page-item"><span onClick={() => props.onPageChange("&rsaquo;")} className="page-link">&rsaquo;</span></li>
+      <li className="page-item"><span onClick={() => props.onPageChange("&raquo;")} className="page-link">&raquo;</span></li>   
     </ul>
   )
 }

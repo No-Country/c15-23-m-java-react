@@ -22,8 +22,8 @@ import Pagination from '../../components/Pagination/Pagination';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
-  const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(3);
+  const [page, setPage] = useState(2);
+  const [limit, setLimit] = useState(5);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   console.log(loading);
@@ -38,6 +38,27 @@ const Home = () => {
     return products.length
   }
   let totalPage = Math.ceil(getLength()/limit)
+  function handlePageChange(value){
+    if(value === "&laquo" || value === "... " ){
+      setPage(1)
+    }
+    else if(value === "&lsaquo"){
+      if(page !== 1){
+        setPage(page - 1)
+      }
+    }
+    else if(value === "&rsaquo"){
+      if(page !== totalPage){
+        setPage(page + 1)
+      }
+    }
+    else if(value === "&raquo" || value === " ..."){
+      setPage(totalPage)
+    }
+    else{
+      setPage(value)
+    }
+  }
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -94,7 +115,8 @@ const Home = () => {
         : error ? (<h1>{error}</h1>) 
         : (<ListCard products={getProduct(page, limit)} />
         )}
-        <Pagination totalPage = {totalPage} page = {page} limit = {limit} siblings = {1}></Pagination>
+        <Pagination totalPage={totalPage} page={page} limit={limit} siblings={1}
+         onPageChange={handlePageChange}></Pagination>
       </Section>
     </MainContainer>
   );
