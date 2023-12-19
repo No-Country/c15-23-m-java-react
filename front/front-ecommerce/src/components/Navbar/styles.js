@@ -42,6 +42,7 @@ h2{
       font-size: 2rem;
       font-family: ${titleFont};
       display: block;
+      margin-left: 4px;
     }
     @media(min-width: 768px){
       padding: 5px;

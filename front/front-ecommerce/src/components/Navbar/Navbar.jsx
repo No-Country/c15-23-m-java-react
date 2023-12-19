@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { NavContainer, BgDiv, Burguer } from './styles';
 import Logo from '/images/logo.png'
 import { NavLink } from 'react-router-dom';
-import { getUser } from '../../api/getUser'; 
+import { getUser } from '../../api/getUser';
+import { FaUser } from 'react-icons/fa';
 
 const Navbar = () => {
 
@@ -41,10 +42,12 @@ useEffect(()=>{
           <NavLink to="/home-admin">Categorias</NavLink> */}
         </div>
          <div className={`links-right ${clicked ? 'active' : ''}`}>
+            <FaUser/>
          {error ? (<p>{error}</p>) :
          (user && (
-          <a>{user?.nombre?.charAt(0).toUpperCase() + user?.nombre?.slice(1)} {''} 
-             {user?.apellido?.charAt(0).toUpperCase() + user?.apellido?.slice(1)} 
+           <a>
+            {user?.nombre?.charAt(0).toUpperCase() + user?.nombre?.slice(1)} {''} 
+            {user?.apellido?.charAt(0).toUpperCase() + user?.apellido?.slice(1)} 
           </a>      
          ))}
         </div> 
