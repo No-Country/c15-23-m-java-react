@@ -26,15 +26,18 @@ const Home = () => {
   const [limit] = useState(6);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  console.log(loading);
+  /* console.log(loading); */
   const getProduct = (page, limit) => {
     let array = [];
     for(let i = (page - 1) * limit; i < (page * limit); i++){
-      array.push(products[i])
+      /* array.push(products[i]) */
+      console.log("Cantidad de paginas", array.push(products[i]))
+      
     }
     return array;
   }
   const getLength = () => {
+    console.log("Cantidad de productos", products.length)
     return products.length
   }
   let totalPage = Math.ceil(getLength() / limit)
