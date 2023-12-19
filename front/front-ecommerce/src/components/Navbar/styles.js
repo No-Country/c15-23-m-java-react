@@ -6,7 +6,7 @@ h2{
     font-weight: 400;
     img{
       width: 100px;
-      margin-left: 4rem;
+      margin-left: 1rem;
       cursor: pointer;
     }
    span{
@@ -24,7 +24,7 @@ h2{
   a{
     color: white;
     text-decoration: none;
-    margin-right: 4rem;
+    margin-right: 1.5rem;
   }
 
   .links-right{
@@ -39,12 +39,12 @@ h2{
     z-index: 2;
     a{
       color: white;
+      marginLeft: 1rem;
       font-size: 2rem;
       font-family: ${titleFont};
       display: block;
     }
     @media(min-width: 768px){
-      padding: 5px;
       position: initial;
       margin: 0;
       a{
@@ -127,7 +127,8 @@ h2{
   }
   .burguer{
     @media(min-width: 768px){
-      display: none;      
+      display: none;
+
     }
   }
 `
@@ -151,13 +152,13 @@ const BgDiv = styled.div`
 `
 const Burguer = styled.div`
 .nav-icon-5{
-  width: 35px;
-  height: 30px;
-  margin: 0px 10px;
+  width: 25px;
+  height: 25px;
+  margin-right: 1.5rem;
   position: relative;
   cursor: pointer;
   display: inline-block;
-  color: #213547;
+  color: black;
   z-index: 2; 
 }
 .nav-icon-5 span{
@@ -170,16 +171,16 @@ const Burguer = styled.div`
   transition-duration: 500ms; 
 }
 .nav-icon-5 span:nth-child(1){
-  top:0;
+  top: 2px;
   left: 0;
 }
 .nav-icon-5 span:nth-child(2){
-  top:13px;
+  top: 11px;
   left: 0px;
   opacity:1;
 }
 .nav-icon-5 span:nth-child(3){
-  bottom:0px;
+  bottom: 1px;
   left: 0px;
 }
 .nav-icon-5:not(.open):hover span:nth-child(1){
@@ -203,4 +204,17 @@ const Burguer = styled.div`
   top: 13px;
 }
 `
-export { NavContainer, BgDiv, Burguer };
+
+const StyleIcon = styled.div`
+  display: none;
+  margin-right: 1.5rem;
+  margin-bottom: 12px; 
+  font-size: 40px;
+
+  @media(min-width: 768px){
+    display: block;
+    
+  }
+`;
+
+export { NavContainer, BgDiv, Burguer, StyleIcon };
