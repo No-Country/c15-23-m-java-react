@@ -18,13 +18,48 @@ import Carousel from '../../components/Carousel/Carousel';
 import ListCard from '../../components/ListCard/ListCard';
 import { SearchBar } from '../../components/Search/SearchBar';
 import Loading from '../../components/Loading/Loading';
+import Pagination from '../../components/Pagination/Pagination';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
+  const [page, setPage] = useState(1);
+  const [limit] = useState(6);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  console.log(loading);
 
+  const getProduct = (page, limit) => {
+    const inicial = (page - 1) * limit;
+    const final = page * limit
+    const array = products.slice(inicial, final)
+    return array;   
+  }
+  
+  const getLength = () => { 
+    return products.length
+  }
+
+  let totalPage = Math.ceil(getLength() / limit)
+  function handlePageChange(value){
+    if(value === "&laquo;" || value === "... " ){
+      setPage(1)
+    }
+    else if(value === "&lsaquo;"){
+      if(page !== 1){
+        setPage(page - 1)
+      }
+    }
+    else if(value === "&rsaquo;"){
+      if(page !== totalPage){
+        setPage(page + 1)
+      }
+    }
+    else if(value === "&raquo;" || value === " ..."){
+      setPage(totalPage)
+    }
+    else{
+      setPage(value)
+    }
+  }
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -79,8 +114,10 @@ const Home = () => {
         </Categorias>
         {loading ? (<Loading />) 
         : error ? (<h1>{error}</h1>) 
-        : (<ListCard products={products} />
+        : (<ListCard products={getProduct(page, limit)} />
         )}
+        <Pagination totalPage={totalPage} page={page} limit={limit} siblings={1}
+         onPageChange={handlePageChange}></Pagination>
       </Section>
     </MainContainer>
   );

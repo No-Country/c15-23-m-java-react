@@ -1,0 +1,7 @@
+li span{
+    font-size: 15px !important;
+}
+
+li span:hover{
+    cursor: pointer;
+}

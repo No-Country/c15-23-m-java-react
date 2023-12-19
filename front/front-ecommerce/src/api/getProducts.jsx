@@ -7,6 +7,7 @@ const getProducts = async () => {
       throw new Error(`Error: ${prodJson.status} - ${prodJson.statusText}`);
     }
     const prod = await prodJson.json();
+    console.log(prod)
     return prod;
   } catch (err) {
       console.error(err);
