@@ -23,7 +23,7 @@ import Pagination from '../../components/Pagination/Pagination';
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(3);
+  const [limit] = useState(6);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   console.log(loading);
@@ -37,7 +37,7 @@ const Home = () => {
   const getLength = () => {
     return products.length
   }
-  let totalPage = Math.ceil(getLength()/limit)
+  let totalPage = Math.ceil(getLength() / limit)
   function handlePageChange(value){
     if(value === "&laquo;" || value === "... " ){
       setPage(1)
