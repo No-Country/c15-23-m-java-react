@@ -42,7 +42,7 @@ useEffect(()=>{
           <NavLink to="/home-admin">Categorias</NavLink> */}
         </div>
          <div className={`links-right ${clicked ? 'active' : ''}`}>
-            <FaUser/>
+            {user? <FaUser/>: <></>}
          {error ? (<p>{error}</p>) :
          (user && (
            <a>
