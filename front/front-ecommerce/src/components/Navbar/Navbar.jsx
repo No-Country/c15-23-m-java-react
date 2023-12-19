@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { NavContainer, BgDiv, Burguer, StyleIcon } from './styles';
+import { NavContainer, BgDiv, Burguer, StyleIcon, StyleIconUserBger } from './styles';
 import Logo from '/images/logo.png'
 import { NavLink } from 'react-router-dom';
-import { getUser } from '../../api/getUser'; 
+import { getUser } from '../../api/getUser';
 
 import { FaUserCircle } from "react-icons/fa";
 
@@ -35,23 +35,28 @@ useEffect(()=>{
       <NavContainer>
         <h2><NavLink to="/home"><img width={80} src={Logo}></img></NavLink></h2>
         <div className={`links-left ${clicked ? 'active' : ''}`}>
+          
+          <NavLink><StyleIconUserBger><FaUserCircle /></StyleIconUserBger></NavLink>
           <NavLink to="/home">Inicio</NavLink>
           <NavLink to="/shop">Mi carrito</NavLink>
+
           {/* <NavLink to="/products">Productos</NavLink>
           <NavLink to="/purchase-history">Compras Realizadas</NavLink>
           <NavLink to="/user-profile">Perfil Usuario</NavLink>
           <NavLink to="/home-admin">Categorias</NavLink> */}
         </div>
          <div className={`links-right ${clicked ? 'active' : ''}`}>
+            {user ? <StyleIcon><FaUserCircle /></StyleIcon> : <></>}
          {error ? (<p>{error}</p>) :
          (user && (
-          <a>{user?.nombre?.charAt(0).toUpperCase() + user?.nombre?.slice(1)} {''} 
-             {user?.apellido?.charAt(0).toUpperCase() + user?.apellido?.slice(1)}
+           <a>
+            {user?.nombre?.charAt(0).toUpperCase() + user?.nombre?.slice(1)} {''} 
+            {user?.apellido?.charAt(0).toUpperCase() + user?.apellido?.slice(1)} 
           </a>      
          ))}
          
         </div> 
-        <StyleIcon><FaUserCircle /></StyleIcon>
+        
         <div className='burguer'>
           <Burguer>
             <div onClick={handleClick}
@@ -63,6 +68,7 @@ useEffect(()=>{
             </div>
           </Burguer>
         </div>
+        
         <BgDiv className={`initial ${clicked ? ' active' : ''}`}></BgDiv>
       </NavContainer>
     </div>

@@ -43,6 +43,7 @@ h2{
       font-size: 2rem;
       font-family: ${titleFont};
       display: block;
+      margin-left: 4px;
     }
     @media(min-width: 768px){
       position: initial;
@@ -54,7 +55,7 @@ h2{
         color: white;
         display: inline;      
       }
-      display: block;
+      display: contents;
     }
   } 
   ${'' /* .links-right.active{
@@ -207,9 +208,9 @@ const Burguer = styled.div`
 
 const StyleIcon = styled.div`
   display: none;
-  margin-right: 1.5rem;
-  margin-bottom: 12px; 
-  font-size: 40px;
+  margin-right: ;
+  margin-bottom: 9px; 
+  font-size: 25px;
 
   @media(min-width: 768px){
     display: block;
@@ -217,4 +218,15 @@ const StyleIcon = styled.div`
   }
 `;
 
-export { NavContainer, BgDiv, Burguer, StyleIcon };
+const StyleIconUserBger = styled.div`
+  display: block;
+  font-size: 40px;
+  margin-left: 5px;
+
+  @media(min-width: 768px){
+    display: none;
+    
+  }
+`;
+
+export { NavContainer, BgDiv, Burguer, StyleIcon, StyleIconUserBger };
