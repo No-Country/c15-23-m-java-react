@@ -51,7 +51,7 @@
     1. Clonar el repositorio desde GitHub.
 
 ``` bash
-    https://github.com/kjnoviello/EZ-Market.git
+    https://github.com/No-Country/c15-23-m-java-react
 ```    
 
     2. Asegurarse que se está en la carpeta correcta para instala las dependencias.
