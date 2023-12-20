@@ -76,7 +76,6 @@ const Home = () => {
     fetchData();
   }, []);
 
-
   return (
     <MainContainer>
       <SectionWelcome style={{backgroundImage:`linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),url(${imagenFondo})`}}>
