@@ -2,10 +2,11 @@ import { OrderSummary } from '../../components/OrderSummary';
 import Loader from '../../components/LoadingOrder/LoadingOrder.jsx';
 
 import { Card, Content, Main, Section, Summary } from './styles';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useLocation, Navigate, NavLink } from 'react-router-dom';
 import { getPurchaseById } from '../../api/transaction.sevice';
 import { getProductById } from '../../api/getProducts';
+import { AppContext } from '../../context/AppContext';
 
 import { SectionBtn } from './styles';
 
@@ -13,6 +14,10 @@ const SuccessfulPurchase = () => {
   const location = useLocation();
   const [purchase, setPurchase] = useState({});
   const [loadingOrder, setLoadingOrder] = useState(false);
+  
+    const {
+      emptyCart,
+    } = useContext(AppContext);
 
   const getPurchaseInfo = async () => {
     setLoadingOrder(true);
