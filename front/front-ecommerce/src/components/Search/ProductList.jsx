@@ -24,7 +24,7 @@ const ProductList = ( filteredProducts ) => {
         <StyledProductItem key={id}>
           <StyledProductImage src={imageLink} alt={name} />
 
-          {name} <br /> {category}
+          {brand} <br /> {category}
 
           <ModalItemCard
             key={id}
