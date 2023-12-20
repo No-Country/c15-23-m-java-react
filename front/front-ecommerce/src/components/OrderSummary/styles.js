@@ -15,6 +15,7 @@ const OrderSummaryCard = styled.article`
     font-size: 2rem;
     font-family: ${titleFont};
     margin-bottom: 20px;
+    font-weight: bold;
   }
 `;
 const SummaryList = styled.div`
