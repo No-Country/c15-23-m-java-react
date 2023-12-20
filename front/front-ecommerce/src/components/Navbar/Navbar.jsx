@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NavContainer, BgDiv, Burguer, StyleIcon } from './styles';
+import { NavContainer, BgDiv, Burguer, StyleIcon, StyleIconUserBger } from './styles';
 import Logo from '/images/logo.png'
 import { NavLink } from 'react-router-dom';
 import { getUser } from '../../api/getUser';
@@ -39,6 +39,7 @@ useEffect(()=>{
       <NavContainer>
         <h2><NavLink to="/home"><img width={80} src={Logo}></img></NavLink></h2>
         <div className={`links-left ${clicked ? 'active' : ''}`}>
+          <NavLink><StyleIconUserBger><FaUserCircle /></StyleIconUserBger></NavLink>
           <NavLink to="/home" onClick={closeBurguer} >Inicio</NavLink>
           <NavLink to="/shop" onClick={closeBurguer}>Mi carrito</NavLink>
           {/* <NavLink to="/products">Productos</NavLink>
@@ -47,7 +48,7 @@ useEffect(()=>{
           <NavLink to="/home-admin">Categorias</NavLink> */}
         </div>
          <div className={`links-right ${clicked ? 'active' : ''}`}>
-            {user ? <StyleIcon><FaUserCircle /></StyleIcon> : <></>}
+            {user ? <StyleIcon><FaUserCircle /></StyleIcon> :  <></>}
          {error ? (<p>{error}</p>) :
          (user && (
            <a>
