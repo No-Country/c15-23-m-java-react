@@ -188,13 +188,11 @@ const Burguer = styled.div`
 
 const StyleIcon = styled.div`
   display: none;
-  margin-right: ;
   margin-bottom: 9px; 
   font-size: 25px;
 
   @media(min-width: 768px){
     display: block;
-    
   }
 `;
 
