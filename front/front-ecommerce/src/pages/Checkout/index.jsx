@@ -19,9 +19,8 @@ const Checkout = () => {
         .catch(err => err)   
   }, [])
   return (
-    <>
-      <Volver titulo="Resumen"/>
     <Main>
+      <Volver titulo="Resumen"/>
       <CheckoutContainer>
         <h2>Verificar</h2>
         <ClientInfo>
@@ -53,7 +52,6 @@ const Checkout = () => {
         <NavLink to='/successfulPurchase'>Confirmar compra</NavLink>
       </CheckoutContainer>
     </Main>
-    </>
   );
 };
 
