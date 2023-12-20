@@ -119,7 +119,7 @@ const BgDiv = styled.div`
   top: -1000px;
   left: -1000px;
   width: 100%;
-  height: 95%;
+  height: 90%;
   z-index: 1;
   transition: all .6s ease ;
   
