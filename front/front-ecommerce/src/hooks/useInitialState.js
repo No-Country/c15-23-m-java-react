@@ -106,7 +106,6 @@ const useInitialState = () => {
         setState({ ...state, user });
       } catch (err) {
         console.error(err);
-        setError('No se encuentra usuario');
       }
     };
     fetchData();

@@ -9,6 +9,7 @@ const CheckoutContainer = styled.section`
   flex-direction: column;
   align-items: center;
   align-self: center;
+  margin-bottom: 20px;
 
   h2 {
     font-size: 2.5rem;

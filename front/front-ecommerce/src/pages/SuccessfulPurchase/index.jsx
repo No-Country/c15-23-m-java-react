@@ -94,13 +94,10 @@ const SuccessfulPurchase = () => {
                 total={purchase?.montoTotal - purchase?.impuestos || 0}
               />
             </Summary>
+            <SectionBtn>
+              <NavLink to='/'>Ir al Inicio</NavLink>
+            </SectionBtn>
           </Main>
-
-          <SectionBtn>
-            <NavLink to='/'>
-              <button onClick={() => emptyCart()}>Ir al Inicio</button>
-            </NavLink>
-          </SectionBtn>
         </>
       )}
     </>

@@ -19,24 +19,9 @@ const Navbar = () => {
   const {
     state: { cart, user },
   } = useContext(AppContext);
-  console.log(cart);
 
-  /* const [user, setUser] = useState(null); */
   const [error, setError] = useState(null);
 
-  /* useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const user = await getUser();
-        setUser(user);
-      } catch (err) {
-        console.error(err);
-        setError('No se encuentra usuario');
-      }
-    };
-    fetchData();
-  }, []);
- */
   const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
