@@ -19,7 +19,7 @@ const OrderSummary = ({ cart, total }) => {
               <img alt='product image' src={product?.imageLink} />
             </ProductImage>
             <div>
-              <p>{product.name}</p>
+              <p>{product.brand}</p>
               <p>{product.category}</p>
             </div>
             <p>{product.quantity}</p>

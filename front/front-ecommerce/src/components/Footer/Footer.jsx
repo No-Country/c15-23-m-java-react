@@ -3,12 +3,13 @@ import {
     StyledFooterContainer, 
     StyledIconContactCall, 
     StyledIconContactEmail, 
-    StyledLeftColumn, 
     StyledLogo, 
-    StyledRightColumn, 
     StyledSocialIcon, 
     StyledSocialIconContainer, 
-    StyledText
+    StyledText,
+    StyledColumn1,
+    StyledColumn2,
+    StyledColumn3
 } from './styles';
 import logo from '../../../public/images/logo-ss.png';
 
@@ -20,7 +21,7 @@ export const Footer = () => {
   return (
     <>
        <StyledFooterContainer>
-            <StyledLeftColumn>
+            <StyledColumn1>
                 <StyledText>
                     <StyledLogo src={logo} alt='logo'/> <br/>
 
@@ -32,26 +33,27 @@ export const Footer = () => {
                         <StyledSocialIcon><FaTwitter /></StyledSocialIcon>
                     </StyledSocialIconContainer>
                 </StyledText>
-            </StyledLeftColumn>
+            </StyledColumn1>
 
-            <StyledRightColumn>
+            <StyledColumn2>
                 <StyledText>
                     ¿Necesita ayuda? <br/>
-                    Nuestro equipo de soporte está disponible 24 <br/>
-                    horas al día, 7 días a la semana. <br/>
-
-                    <StyledIconContainer>
-                        <StyledIconContactCall /> 
-                        (+123) 000 111 222 333
-                    </StyledIconContainer>
-                    <br/>
-                    <StyledIconContainer>
-                        <StyledIconContactEmail />
-                        support@shopswiftly.com
-                    </StyledIconContainer>
-                    
+                    Nuestro equipo de soporte está disponible <br/>
+                    24 horas al día, 7 días a la semana. <br/>
                 </StyledText>
-            </StyledRightColumn>
+            </StyledColumn2>
+
+            <StyledColumn3>
+                <StyledIconContainer>
+                    <StyledIconContactCall /> 
+                    (+123) 000 111 222 333
+                </StyledIconContainer>
+                   <br /> <br />
+                <StyledIconContainer>
+                    <StyledIconContactEmail />
+                    support@shopswiftly.com
+                </StyledIconContainer>
+            </StyledColumn3>
         </StyledFooterContainer> 
             
       

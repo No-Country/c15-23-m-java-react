@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { textFont, titleFont } from '../../styles/GlobalStyles';
+import { textFont, titleFont, colors } from '../../styles/GlobalStyles';
 
 const Main = styled.main`
   width: 100%;
@@ -69,4 +69,38 @@ const Summary = styled.section`
   align-items: center;
 `;
 
-export { Card, Content, Main, Section, Summary };
+
+const SectionBtn = styled.button`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  padding: 0px 20px 20px 20px;
+  background-color: white;
+  & a{
+    text-decoration: none;
+  }
+  & button {
+    text-decoration: none;
+    margin: 0 5px;
+    width: 120px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    background-color: ${colors.primaryColor};
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background-color: ${colors.buttonHover};
+    }
+    &:disabled {
+      opacity: 0.5;
+    }
+}
+`;
+
+export { Card, Content, Main, Section, Summary, SectionBtn };

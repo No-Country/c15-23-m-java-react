@@ -1,41 +1,43 @@
 import { styled } from 'styled-components';
-import { titleFont, textFont } from '../../styles/GlobalStyles';
+import { titleFont, textFont} from '../../styles/GlobalStyles';
+
+/* const image = '../../../public/images';
+
+const BackgroundImageStyle = {
+  background: `linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('${image}/fondo.png')`,
+};
+ */
 
 const MainContainer = styled.main`
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  background-color: #56c9a0;
-
-  @media (max-width: 768px) {
-    padding: 0px;
-    padding-block: 20px;
-  }
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 `;
 
 const SectionWelcome = styled.section`
-  padding: 40px 0 60px 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url('../../../public/images/fondo.png');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center center;
+    padding: 40px 0 60px 0;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
 
-  @media (max-width: 900px) {
-    padding: 0px;
-    padding-block: 20px;
-    margin-inline: 0px;
-    width: 100%;
-    height: 100%;
-  }
+ 
+    @media (max-width: 900px){
+        padding: 0px;
+        padding-block: 20px;
+        margin-inline: 0px;
+        width: 100%;
+        height: 100%;
+    }
 `;
 
 const Section = styled.section`
   // margin-block: 10px;
   background-color: #f0f0f0;
+
   @media (max-width: 900px) {
     margin-inline: 0px;
     padding-inline: 0px;
+    z-index: -1;
   }
 `;
 
@@ -166,4 +168,5 @@ export {
   CardContainer,
   TrendingItem,
   SectionWelcome,
+  
 };

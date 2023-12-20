@@ -1,0 +1,16 @@
+li span{
+    font-size: 15px !important;
+}
+
+li span:hover{
+    cursor: pointer;
+}
+
+.active>.page-link{
+    background-color: #56c9a0 !important;
+}
+
+.page-link {
+    border: #d9d9d9 solid 1px !important;
+    color: black !important;
+}
