@@ -26,9 +26,11 @@ const SectionWelcome = styled.section`
 const Section = styled.section`
   // margin-block: 10px;
   background-color: #f0f0f0;
+
   @media (max-width: 900px) {
     margin-inline: 0px;
     padding-inline: 0px;
+    z-index: -1;
   }
 `;
 
