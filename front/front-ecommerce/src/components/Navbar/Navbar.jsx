@@ -5,14 +5,22 @@ import {
   Burguer,
   StyleIcon,
   StyleIconUserBger,
+  CartIcon,
 } from './styles';
 import Logo from '/images/logo.png';
 import { NavLink } from 'react-router-dom';
 import { getUser } from '../../api/getUser';
-
 import { FaUserCircle } from 'react-icons/fa';
+import { FaShoppingCart } from 'react-icons/fa';
+import { useContext } from 'react';
+import { AppContext } from '../../context/AppContext';
 
 const Navbar = () => {
+  const {
+    state: { cart },
+  } = useContext(AppContext);
+  console.log(cart);
+
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
 
@@ -57,7 +65,13 @@ const Navbar = () => {
             Inicio
           </NavLink>
           <NavLink to='/shop' onClick={closeBurguer}>
-            Mi carrito
+            <CartIcon>
+              <p>Mi carrito</p>
+              <div>
+                <FaShoppingCart />
+                {!!cart.length && <span>{cart.length}</span>}
+              </div>
+            </CartIcon>
           </NavLink>
           {/* <NavLink to="/products">Productos</NavLink>
           <NavLink to="/purchase-history">Compras Realizadas</NavLink>

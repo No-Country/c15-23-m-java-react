@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { textFont, titleFont, colors } from '../../styles/GlobalStyles';
 
 const Main = styled.main`
+  margin-bottom: 50px;
   width: 100%;
   display: grid;
   min-height: 100vh;
@@ -69,7 +70,6 @@ const Summary = styled.section`
   align-items: center;
 `;
 
-
 const SectionBtn = styled.button`
   display: flex;
   justify-content: center;
@@ -77,7 +77,7 @@ const SectionBtn = styled.button`
   border: none;
   padding: 0px 20px 20px 20px;
   background-color: white;
-  & a{
+  & a {
     text-decoration: none;
   }
   & button {
@@ -101,7 +101,7 @@ const SectionBtn = styled.button`
     &:disabled {
       opacity: 0.5;
     }
-}
+  }
 `;
 
 export { Card, Content, Main, Section, Summary, SectionBtn };

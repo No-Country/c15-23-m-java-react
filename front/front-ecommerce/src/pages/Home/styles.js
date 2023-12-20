@@ -113,11 +113,15 @@ const ImgDiv = styled.div`
 const Categorias = styled.div`
   height: 80px;
   display: flex;
-  font-size: 2rem;
+
   font-family: ${titleFont};
   align-items: center;
   justify-content: center;
   margin-block: 20px;
+  h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
 `;
 
 const CardContainer = styled.div`

@@ -1,5 +1,40 @@
 import { styled } from 'styled-components';
-import { titleFont, colors } from '../../styles/GlobalStyles';
+import { titleFont, colors, textFont } from '../../styles/GlobalStyles';
+
+const CartIcon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  div {
+    position: relative;
+    svg {
+      font-size: 2rem;
+    }
+    span {
+      top: 0;
+      right: -10px;
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.1rem;
+      font-weight: bold;
+      font-family: ${titleFont};
+      @media (min-width: 768px) {
+        top: -5px;
+      }
+    }
+  }
+  p {
+    margin-bottom: 0;
+    margin-right: 5px;
+  }
+`;
 
 const NavContainer = styled.nav`
   position: fixed;
@@ -80,13 +115,18 @@ const NavContainer = styled.nav`
       margin: 0;
       margin-right: auto;
       a {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         font-weight: bold;
         font-family: ${titleFont};
         color: #213547;
         display: inline;
       }
+
       display: block;
+      display: flex;
+      width: 30%;
+      justify-content: space-evenly;
+      align-items: center;
     }
   }
   .links-left.active {
@@ -206,4 +246,4 @@ const StyleIconUserBger = styled.div`
   }
 `;
 
-export { NavContainer, BgDiv, Burguer, StyleIcon, StyleIconUserBger };
+export { NavContainer, BgDiv, Burguer, StyleIcon, StyleIconUserBger, CartIcon };
