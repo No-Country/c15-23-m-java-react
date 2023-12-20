@@ -11,12 +11,11 @@ import { makePurchase } from '../../api/transaction.sevice';
 
 const Checkout = () => {
   const {
-    state: { cart },
+    state: { cart, user },
   } = useContext(AppContext);
 
   const navigate = useNavigate();
 
-  const [user, setUser] = useState(null);
   const [topping, setTopping] = useState('Efectivo');
 
   const total = cart.reduce((acc, el) => acc + el.quantity * el.price, 0);
@@ -53,11 +52,6 @@ const Checkout = () => {
     }
   };
 
-  useEffect(() => {
-    getUser()
-      .then((user) => setUser(user))
-      .catch((err) => err);
-  }, []);
   return (
     <>
       <Main>
@@ -118,7 +112,6 @@ const Checkout = () => {
         </CheckoutContainer>
       </Main>
     </>
-
   );
 };
 

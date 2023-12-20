@@ -17,14 +17,14 @@ import { AppContext } from '../../context/AppContext';
 
 const Navbar = () => {
   const {
-    state: { cart },
+    state: { cart, user },
   } = useContext(AppContext);
   console.log(cart);
 
-  const [user, setUser] = useState(null);
+  /* const [user, setUser] = useState(null); */
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+  /* useEffect(() => {
     const fetchData = async () => {
       try {
         const user = await getUser();
@@ -36,7 +36,7 @@ const Navbar = () => {
     };
     fetchData();
   }, []);
-
+ */
   const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {

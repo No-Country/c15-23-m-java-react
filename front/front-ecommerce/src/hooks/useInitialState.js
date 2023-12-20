@@ -1,10 +1,9 @@
 import React from 'react';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import { getUser } from '../api/getUser';
 
 const initialState = {
-  user: [
-    {}
-  ],
+  user: null,
   cart: [],
 };
 
@@ -13,7 +12,9 @@ const useInitialState = () => {
 
   //When the customer adds a product, the quantity of that product is 1 by default
   const addToCart = (payload) => {
-    const existingProductIndex = state.cart.findIndex((product) => product.id === payload.id);
+    const existingProductIndex = state.cart.findIndex(
+      (product) => product.id === payload.id
+    );
 
     if (existingProductIndex !== -1) {
       // El producto ya está en el carrito, incrementa la cantidad
@@ -23,16 +24,15 @@ const useInitialState = () => {
         cart: newCart,
       });
       Swal.fire({
-        title: "Ya esta agregado al carrito!",
-        icon: "error",
-        position: "center",
+        title: 'Ya esta agregado al carrito!',
+        icon: 'error',
+        position: 'center',
         toast: true,
         showConfirmButton: false,
         timer: 2000,
         heightAuto: false,
         padding: '50px 50px',
       });
-
     } else {
       // El producto no está en el carrito, agrégalo con cantidad 1
       const products = { ...payload, quantity: 1 };
@@ -41,9 +41,9 @@ const useInitialState = () => {
         cart: [...state.cart, products],
       });
       Swal.fire({
-        title: "Producto agregado!",
-        icon: "success",
-        position: "top-end",
+        title: 'Producto agregado!',
+        icon: 'success',
+        position: 'top-end',
         toast: true,
         showConfirmButton: false,
         timer: 2000,
@@ -58,18 +58,18 @@ const useInitialState = () => {
       text: `Esta seguro que quiere eliminarlo del carrito?`,
       icon: 'question',
       confirmButtonText: 'Si',
-      confirmButtonColor: "rgba(86, 201, 160, 1)"
-  }).then((result) => {
+      confirmButtonColor: 'rgba(86, 201, 160, 1)',
+    }).then((result) => {
       if (result.isConfirmed) {
         setState({ ...state, cart: newCart });
         Swal.fire({
-          title: "Eliminado del carrito!",
-          icon: "success",
-          position: "top-end",
+          title: 'Eliminado del carrito!',
+          icon: 'success',
+          position: 'top-end',
           toast: true,
           showConfirmButton: false,
           timer: 1700,
-        })
+        });
       }
     });
   };
@@ -94,10 +94,23 @@ const useInitialState = () => {
     setState({ ...state, cart: newCart });
   };
 
-
-  const emptyCart = () =>{
+  const emptyCart = () => {
     setState({ ...state, cart: [] });
-  }
+  };
+
+  //The request for the user data is made only once
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const user = await getUser();
+        setState({ ...state, user });
+      } catch (err) {
+        console.error(err);
+        setError('No se encuentra usuario');
+      }
+    };
+    fetchData();
+  }, []);
 
   return {
     addToCart,
@@ -109,4 +122,4 @@ const useInitialState = () => {
   };
 };
 
-export { useInitialState};
+export { useInitialState };
