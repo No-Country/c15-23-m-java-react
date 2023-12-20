@@ -190,9 +190,10 @@ const StyleIcon = styled.div`
   display: none;
   margin-bottom: 9px; 
   font-size: 25px;
-
+  
   @media(min-width: 768px){
     display: block;
+    
   }
 `;
 
@@ -202,8 +203,7 @@ const StyleIconUserBger = styled.div`
   margin-left: 5px;
 
   @media(min-width: 768px){
-    display: none;
-    
+    display: none; 
   }
 `;
 

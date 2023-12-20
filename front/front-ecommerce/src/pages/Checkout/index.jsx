@@ -118,6 +118,7 @@ const Checkout = () => {
         </CheckoutContainer>
       </Main>
     </>
+
   );
 };
 
