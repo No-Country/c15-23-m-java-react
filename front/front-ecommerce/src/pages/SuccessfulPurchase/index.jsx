@@ -14,10 +14,8 @@ const SuccessfulPurchase = () => {
   const location = useLocation();
   const [purchase, setPurchase] = useState({});
   const [loadingOrder, setLoadingOrder] = useState(false);
-  
-    const {
-      emptyCart,
-    } = useContext(AppContext);
+
+  const { emptyCart } = useContext(AppContext);
 
   const getPurchaseInfo = async () => {
     setLoadingOrder(true);
@@ -93,7 +91,7 @@ const SuccessfulPurchase = () => {
             <Summary>
               <OrderSummary
                 cart={purchase?.items || []}
-                total={purchase?.montoTotal || 0}
+                total={purchase?.montoTotal - purchase?.impuestos || 0}
               />
             </Summary>
           </Main>
