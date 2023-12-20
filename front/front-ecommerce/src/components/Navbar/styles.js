@@ -190,20 +190,20 @@ const StyleIcon = styled.div`
   display: none;
   margin-bottom: 9px; 
   font-size: 25px;
-
+  
   @media(min-width: 768px){
     display: block;
+    
   }
 `;
 
 const StyleIconUserBger = styled.div`
-  display: block;
+  display: none;
   font-size: 40px;
   margin-left: 5px;
 
   @media(min-width: 768px){
-    display: none;
-    
+    display: none; 
   }
 `;
 
