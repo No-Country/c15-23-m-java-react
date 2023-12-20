@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NavContainer, BgDiv, Burguer, StyleIcon, StyleIconUserBger } from './styles';
+import { NavContainer, BgDiv, Burguer, StyleIcon } from './styles';
 import Logo from '/images/logo.png'
 import { NavLink } from 'react-router-dom';
 import { getUser } from '../../api/getUser';
