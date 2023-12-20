@@ -95,7 +95,7 @@ const SuccessfulPurchase = () => {
               />
             </Summary>
             <SectionBtn>
-              <NavLink to='/'>Ir al Inicio</NavLink>
+              <NavLink to='/' onClick={()=>emptyCart()}>Ir al Inicio</NavLink>
             </SectionBtn>
           </Main>
         </>
