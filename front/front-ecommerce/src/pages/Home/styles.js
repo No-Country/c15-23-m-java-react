@@ -1,26 +1,26 @@
 import { styled } from 'styled-components';
-import { titleFont, textFont} from '../../styles/GlobalStyles';
+import { titleFont, textFont } from '../../styles/GlobalStyles';
 
 const MainContainer = styled.main`
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 `;
 
 const SectionWelcome = styled.section`
-    padding: 40px 0 60px 0;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
+  padding: 40px 0 60px 0;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
 
- 
-    @media (max-width: 900px){
-        padding: 0px;
-        padding-block: 20px;
-        margin-inline: 0px;
-        width: 100%;
-        height: 100%;
-    }
+  @media (max-width: 900px) {
+    padding: 0px;
+    padding-block: 20px;
+    margin-inline: 0px;
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const Section = styled.section`
@@ -161,5 +161,4 @@ export {
   CardContainer,
   TrendingItem,
   SectionWelcome,
-  
 };
