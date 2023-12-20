@@ -2,21 +2,22 @@ import { Main, CheckoutContainer, ClientInfo, PaymentMethod } from './styles';
 import Button from '../../assets/elementos/Boton';
 import { FaUser } from 'react-icons/fa';
 import { OrderSummary } from '../../components/OrderSummary';
-import { useNavigate } from 'react-router-dom';
-import { useEffect, useState, useContext } from 'react';
-import { getUser } from '../../api/getUser';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { useState, useContext } from 'react';
+import Loader from '../../components/Loading/Loading';
 import Volver from '../../components/Volver/Volver';
 import { AppContext } from '../../context/AppContext';
 import { makePurchase } from '../../api/transaction.sevice';
 
 const Checkout = () => {
   const {
-    state: { cart },
+    state: { cart, user },
+    emptyCart,
   } = useContext(AppContext);
 
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
-  const [user, setUser] = useState(null);
   const [topping, setTopping] = useState('Efectivo');
 
   const total = cart.reduce((acc, el) => acc + el.quantity * el.price, 0);
@@ -46,18 +47,20 @@ const Checkout = () => {
   const handlePurchase = async () => {
     const data = parseData();
     try {
+      setLoading(true);
       const { id } = await makePurchase(data);
+      setLoading(false);
+      emptyCart();
       navigate(`/successfulPurchase/${id}`);
     } catch (err) {
       console.error(err);
     }
   };
 
-  useEffect(() => {
-    getUser()
-      .then((user) => setUser(user))
-      .catch((err) => err);
-  }, []);
+  if (!cart.length) {
+    return <Navigate to='/shop' />;
+  }
+
   return (
     <>
       <Main>
@@ -116,9 +119,9 @@ const Checkout = () => {
           </PaymentMethod>
           <Button onClick={handlePurchase}>Confirmar compra</Button>
         </CheckoutContainer>
+        {loading && <Loader />}
       </Main>
     </>
-
   );
 };
 

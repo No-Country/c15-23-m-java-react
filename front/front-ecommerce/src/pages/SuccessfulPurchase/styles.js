@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { textFont, titleFont, colors } from '../../styles/GlobalStyles';
 
 const Main = styled.main`
+  margin-top: 40px;
   width: 100%;
   display: grid;
   min-height: 100vh;
@@ -59,6 +60,13 @@ const Content = styled.div`
       font-weight: bold;
       font-family: ${titleFont};
     }
+    p {
+      max-width: 140px;
+      word-wrap: break-word;
+      @media (min-width: 900px) {
+        min-width: 200px;
+      }
+    }
   }
 `;
 
@@ -69,18 +77,14 @@ const Summary = styled.section`
   align-items: center;
 `;
 
-
-const SectionBtn = styled.button`
+const SectionBtn = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
   border: none;
   padding: 0px 20px 20px 20px;
-  background-color: white;
-  & a{
-    text-decoration: none;
-  }
-  & button {
+
+  & a {
     text-decoration: none;
     margin: 0 5px;
     width: 120px;
@@ -101,7 +105,10 @@ const SectionBtn = styled.button`
     &:disabled {
       opacity: 0.5;
     }
-}
+  }
+  @media (min-width: 900px) {
+    grid-column: 1 / 3;
+  }
 `;
 
 export { Card, Content, Main, Section, Summary, SectionBtn };
