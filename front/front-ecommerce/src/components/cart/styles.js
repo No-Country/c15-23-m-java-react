@@ -15,6 +15,7 @@ const CartContainer = styled.article`
     padding: 20px;
     font-size: 2.5rem;
     font-family: ${titleFont};
+    text-align: center;
   }
 `;
 

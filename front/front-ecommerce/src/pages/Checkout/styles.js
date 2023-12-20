@@ -11,10 +11,11 @@ const CheckoutContainer = styled.section`
   align-self: center;
   
   h2 {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     font-family: ${titleFont};
+    font-weight: bold;
     margin-bottom: 20px;
-    color: #29b081;
+    color: black;
   }
   a {
     width: 100%;
@@ -86,12 +87,12 @@ const PaymentMethod = styled.div`
 `;
 
 const Main = styled.main`
+ padding: 40px 0 40px 0;
   width: 100%;
-  padding: 40px 0;
   display: flex;
-  justify-content: center;
-  overflow-x: hidden;
   flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
 `;
 
 export { CheckoutContainer, ClientInfo, Main, PaymentMethod };
