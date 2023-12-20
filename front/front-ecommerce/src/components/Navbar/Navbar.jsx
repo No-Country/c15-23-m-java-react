@@ -30,16 +30,17 @@ useEffect(()=>{
     //Cuando esta true lo pasa a false y vice versa
     setClicked(!clicked)
   }
+
+  const closeBurguer = () => {
+    setClicked(false)
+  }
   return (
     <div>
       <NavContainer>
         <h2><NavLink to="/home"><img width={80} src={Logo}></img></NavLink></h2>
         <div className={`links-left ${clicked ? 'active' : ''}`}>
-          
-          <NavLink><StyleIconUserBger><FaUserCircle /></StyleIconUserBger></NavLink>
-          <NavLink to="/home">Inicio</NavLink>
-          <NavLink to="/shop">Mi carrito</NavLink>
-
+          <NavLink to="/home" onClick={closeBurguer} >Inicio</NavLink>
+          <NavLink to="/shop" onClick={closeBurguer}>Mi carrito</NavLink>
           {/* <NavLink to="/products">Productos</NavLink>
           <NavLink to="/purchase-history">Compras Realizadas</NavLink>
           <NavLink to="/user-profile">Perfil Usuario</NavLink>

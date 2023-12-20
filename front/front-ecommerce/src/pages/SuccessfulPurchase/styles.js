@@ -91,6 +91,7 @@ const SectionBtn = styled.button`
     font-size: 1.8rem;
     background-color: ${colors.primaryColor};
     color: white;
+    font-weight: 700;
     border-radius: 5px;
     border: none;
     cursor: pointer;
