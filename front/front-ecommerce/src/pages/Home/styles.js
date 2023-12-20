@@ -30,7 +30,7 @@ const Section = styled.section`
   @media (max-width: 900px) {
     margin-inline: 0px;
     padding-inline: 0px;
-    z-index: -1;
+    z-index: 0;
   }
 `;
 
