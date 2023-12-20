@@ -91,7 +91,7 @@ export const StyledProductItem = styled.li`
   padding-inline: 4%;
   /* border: 1px solid #56c9a0; */
   margin: 5px;
-  background-color: #d9d9d9;
+  background-color: white;
   border-radius: 5px;
   @media (max-width: 768px) {
     width: 80%;
