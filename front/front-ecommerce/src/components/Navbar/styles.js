@@ -198,7 +198,7 @@ const StyleIcon = styled.div`
 `;
 
 const StyleIconUserBger = styled.div`
-  display: none;
+  display: block;
   font-size: 40px;
   margin-left: 5px;
 
