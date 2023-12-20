@@ -18,7 +18,7 @@ useEffect(()=>{
       setUser(user);
     } catch (err) {
       console.error(err);
-      setError('Error al cargar usuario.');
+      setError('No se encuentra usuario');
     }
   };
   fetchData();  
