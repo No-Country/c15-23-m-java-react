@@ -22,6 +22,24 @@ html{
   font-size: 62.5%;
 }
 
+/* //width */
+::-webkit-scrollbar {
+	width: 7px;
+	height: 5px;
+}
+/* //Track */
+::-webkit-scrollbar-track {
+	border-radius: 10px;
+}
+/* // Handle */
+::-webkit-scrollbar-thumb {
+	background: ${colors.primaryColor};
+	border-radius: 10px;
+}
+
+
+
+
 `;
 
 export { GlobalStyles, textFont, titleFont, colors };
