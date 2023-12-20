@@ -4,7 +4,7 @@ const makePurchase = async (data) => {
   try {
     const response = await fetch(endPoints.transactions.url, {
       method: 'POST',
-      mode: 'cors',
+      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json',
       },
