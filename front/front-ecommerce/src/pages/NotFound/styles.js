@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { textFont } from '../../styles/GlobalStyles';
 
 const ContainerNotFound = styled.div`
-
     color: black;
     text-align: center;
     font-size: 16px;

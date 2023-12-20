@@ -44,6 +44,7 @@ const AddButton = styled.button`
     justify-content: center;
     align-items: center;
     font-size: 1.8rem;
+    font-weight: 500;
     background-color: rgba(86, 201, 160, 1);
     color: white;
     border-radius: 5px;

@@ -34,7 +34,8 @@ const returnPaginationRange = (totalPage, page, limit, siblings) => {
 
 let array = returnPaginationRange(products.totalPage, products.page, products.limit, products.siblings)
   return (
-    <ul className="pagination pagination-md pagination-lg justify-content-center">
+    <>
+    <ul className="box-p pagination pagination-md pagination-lg justify-content-center">
       <li className="page-item"><span onClick={() => products.onPageChange("&laquo;")} className="page-link">&laquo;</span></li>
       <li className="page-item"><span onClick={() => products.onPageChange("&lsaquo;")} className="page-link">&lsaquo;</span></li>
       {array.map(value => (
@@ -46,6 +47,19 @@ let array = returnPaginationRange(products.totalPage, products.page, products.li
       <li className="page-item"><span onClick={() => products.onPageChange("&rsaquo;")} className="page-link">&rsaquo;</span></li>
       <li className="page-item"><span onClick={() => products.onPageChange("&raquo;")} className="page-link">&raquo;</span></li>   
     </ul>
+    <ul className="box-p-sm pagination pagination-md pagination-sm justify-content-center">
+      <li className="page-item"><span onClick={() => products.onPageChange("&laquo;")} className="page-link">&laquo;</span></li>
+      <li className="page-item"><span onClick={() => products.onPageChange("&lsaquo;")} className="page-link">&lsaquo;</span></li>
+      {array.map(value => (
+       (value === products.page ? 
+       <li key={value} className="page-item active"><span onClick={() => products.onPageChange(value)} className="page-link">{value}</span></li>
+        : <li key={value} className="page-item"><span onClick={() => products.onPageChange(value)} className="page-link">{value}</span></li>)
+
+      ))}
+      <li className="page-item"><span onClick={() => products.onPageChange("&rsaquo;")} className="page-link">&rsaquo;</span></li>
+      <li className="page-item"><span onClick={() => products.onPageChange("&raquo;")} className="page-link">&raquo;</span></li>   
+    </ul>
+    </>
   )
 }
 
