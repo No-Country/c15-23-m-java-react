@@ -8,16 +8,24 @@ import Volver from '../../components/Volver/Volver';
 
 const Checkout = () => {
     const [user, setUser] = useState(null)
+    const [error, setError] = useState(null);
     const [topping, setTopping] = useState("Efectivo")
     const onOptionChange = e => {
       console.log(e.target.value)
       setTopping(e.target.value)
     } 
-       useEffect(()=>{   
-         getUser()
-        .then(user => setUser(user))
-        .catch(err => err)   
-  }, [])
+    useEffect(()=>{
+      const fetchData = async () => {
+        try {
+          const user = await getUser();
+          setUser(user);
+        } catch (err) {
+          console.error(err);
+          setError('No se encuentra usuario');
+        }
+      };
+      fetchData();  
+    }, [])
   return (
     <Main>
       <Volver titulo="Resumen"/>
@@ -25,11 +33,13 @@ const Checkout = () => {
         <h2>Verificar</h2>
         <ClientInfo>
           <FaUser />
-          {user && (
-          <p>{user?.nombre?.charAt(0).toUpperCase() + user?.nombre?.slice(1)} {''} 
-             {user?.apellido?.charAt(0).toUpperCase() + user?.apellido?.slice(1)} 
-          </p>      
-         )}
+          {error ? (<p>{error}</p>) :
+         (user && (
+           <a>
+            {user?.nombre?.charAt(0).toUpperCase() + user?.nombre?.slice(1)} {''} 
+            {user?.apellido?.charAt(0).toUpperCase() + user?.apellido?.slice(1)} 
+          </a>      
+         ))}
         </ClientInfo>
         <OrderSummary />
         <PaymentMethod>
