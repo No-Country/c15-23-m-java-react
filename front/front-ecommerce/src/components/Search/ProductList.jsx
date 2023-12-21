@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ModalItemCard from "../Modal/Modal";
-import { StyledProductImage, StyledProductItem, StyledProductList } from "./styles";
+import { StyledProductImage, StyledProductItem, StyledProductList, StyledProductName } from "./styles";
 
 const ProductList = ( filteredProducts ) => {
   const [showModal, setShowModal] = useState({});
@@ -23,9 +23,10 @@ const ProductList = ( filteredProducts ) => {
       {foundProducts.map(({ name, imageLink, description, price, brand, active, category, availableStock, quantity, id }) => (
         <StyledProductItem key={id}>
           <StyledProductImage src={imageLink} alt={name} />
-
-          {brand} <br /> {category}
-
+          <StyledProductName>
+            <div><p>{name}</p></div>
+            <div><p>{category}</p></div>
+          </StyledProductName>
           <ModalItemCard
             key={id}
             foundProducts={foundProducts}

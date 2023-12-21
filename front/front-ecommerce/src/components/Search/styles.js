@@ -118,6 +118,12 @@ export const StyledProductItem = styled.li`
   }
 `;
 
+export const StyledProductName = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+`;
+
 export const StyledProductImage = styled.img`
   max-width: 100px;
   height: 100px;
