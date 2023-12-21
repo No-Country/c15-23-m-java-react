@@ -1,6 +1,8 @@
 package c15_23_m_java_react.com.user_service.UserService;
 
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -18,6 +20,7 @@ public class UserService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
+	@Transactional
 	public UserEntity createUser(UserEntity user) 
 	{
         String encodedPassword = passwordEncoder.encode(user.getPassword());
@@ -36,6 +39,7 @@ public class UserService {
 		return userRepository.save(user);
 	}
 	
+	@Transactional
 	public UserEntity changeUserStatus(Long id, Boolean newStatus) 
 	{
 	    UserEntity user = userRepository.findById(id).orElse(null);
@@ -46,15 +50,12 @@ public class UserService {
 	    return user;
 	}
 
+	@Transactional
 	public void deleteUser(Long id) 
 	{
 	    userRepository.deleteById(id);
 	}
 
-	
-	
-	
-	
 	public boolean authenticateUser(String username, String password) 
 	{
         UserEntity user = userRepository.findByUsername(username);
@@ -64,15 +65,7 @@ public class UserService {
         }
         return false;
     }
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	public UserEntity getUserbyUsername(String username)
 	{
 		return userRepository.findByUsername(username);

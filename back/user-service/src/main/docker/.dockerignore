@@ -1,0 +1,53 @@
+#Build artifacts and logs:
+
+target/
+build/
+logs/
+*.log
+
+#Dependency directories:
+
+node_modules/
+bower_components/
+Version control system directories:
+
+.git/
+.svn/
+.hg/
+
+#IDE/Editor specific files:
+
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+*.sublime-*
+.vscode/
+
+#Operating system generated files:
+
+.DS_Store
+Thumbs.db
+
+#Other common files to exclude:
+
+*.war
+*.jar
+*.class
+*.bak
+*.tmp
+*.swp
+Dockerfile*
+docker-compose*.yml
+Test-related files:
+
+test-output/
+test-results/
+
+#Dependency management directories:
+
+.mvn/
+.gradle/

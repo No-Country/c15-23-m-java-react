@@ -12,22 +12,22 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-	@Bean
+    @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
             .csrf().disable()
             .authorizeHttpRequests((authz) -> authz
-                .antMatchers("/users/**").permitAll()
+                .antMatchers("/", "/swagger-ui.html/**", "/swagger-ui/**", "/v3/api-docs/**", "/actuator/**", "/users/**").permitAll()
                 .anyRequest().authenticated()
             )
-            .httpBasic(); // O usa formLogin(), jwt() para una configuración más avanzada
+            .httpBasic(); // Or use formLogin(), jwt() for a more advanced configuration
         
         return http.build();
     }
-	
-	@Bean
-	PasswordEncoder passwordEncoder()
-	{
-		return new BCryptPasswordEncoder();
-	}
+    
+    @Bean
+    PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 }
+

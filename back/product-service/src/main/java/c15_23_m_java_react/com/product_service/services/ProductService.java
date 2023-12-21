@@ -37,14 +37,15 @@ public class ProductService {
     }
 
     public ResponseEntity<Product> getProductById(Long id) {
-        try{
-
-            Product productFound = productRepository.findById(id).get();
-            return new ResponseEntity<>(productFound, HttpStatus.FOUND);
-        } catch (Exception e){
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        Optional<Product> productOptional = productRepository.findById(id);
+        if (productOptional.isPresent()) {
+            return new ResponseEntity<>(productOptional.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    
+    
 
     public ResponseEntity<List<Product>> getProductsByName(String name) {
         try {
