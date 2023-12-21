@@ -1,32 +1,51 @@
 spring:
+  application:
+    name: user-service
   main:
     show-banner: false
   server:
-    port: 8086
+    port: ${SERVER_PORT:8084}
   datasource:
-    url: jdbc:mysql://localhost:3306/users_db?allowPublicKeyRetrieval=true&useSSL=false&useTimezone=true&serverTimezone=GMT&characterEncoding=UTF-8
-    username: root
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${SPRING_DATASOURCE_URL_USERSDB}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
     properties:
       hibernate:
+        default_schema: users_db
         format_sql: true
         use_sql_comments: true
-        type: trace
-  thymeleaf:
-    cache: false
-
+  security:
+    user:
+      name: ${SECURITY_USER_NAME:user}
+      password: ${SECURITY_USER_PASSWORD:password}
 debug: true
 
 logging:
   level:
     org:
       hibernate:
+        SQL: DEBUG
         type:
           descriptor:
             sql: trace
 
+springdoc:
+  swagger-ui:
+    use-root-path: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_URL}

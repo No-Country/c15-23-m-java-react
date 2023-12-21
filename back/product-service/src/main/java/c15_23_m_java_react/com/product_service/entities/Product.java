@@ -1,9 +1,12 @@
 package c15_23_m_java_react.com.product_service.entities;
 
+
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="products")
+@Table(name="products", schema = "products_db")
 public class Product {
 
     @Id
@@ -11,29 +14,42 @@ public class Product {
     @Column (name = "product_id")
     private Long id;
 
+    @NotNull
     private String name;
 
+    @NotNull
     private String brand;
 
+    @NotNull
     private String description;
 
+    @NotNull
     private Double price;
 
+    @NotNull
     private Integer availableStock;
 
+    @NotNull
     private Boolean active;
 
     //se calcula el precio descontado en frontend
+    @NotNull
     private Double discount;
 
     //Si puede tener varios tipos entonces debería hacer una relación con otra tabla
+    @NotNull
     private String category;
 
+    @NotNull
     private Double height;
 
+    @NotNull
     private Double width;
 
-    //TODO: {private String imageLink} Buscar una forma de almacenar el link de una imagen
+    @Column(length = 750)
+    private String imageLink;
+
+
 
     public Product() {
     }
@@ -124,5 +140,13 @@ public class Product {
 
     public void setWidth(Double width) {
         this.width = width;
+    }
+
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
     }
 }

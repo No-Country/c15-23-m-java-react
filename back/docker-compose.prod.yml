@@ -1,0 +1,115 @@
+version: "3.8"
+
+services:
+  eureka-server:
+    build:
+      context: ./eureka-server
+      dockerfile: src/main/docker/Dockerfile
+    image: docisjp/eureka-server:latest
+    restart: always
+    ports:
+      - "8761:8761"
+    networks:
+      - backend-network
+
+  user-service:
+    build:
+      context: ./user-service
+      dockerfile: src/main/docker/Dockerfile
+    image: docisjp/user-service:latest
+    restart: always
+    ports:
+      - "8084:8084"
+    depends_on:
+      - eureka-server
+      - shopswiftly_db
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: ${EUREKA_SERVER_URL}
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    networks:
+      - backend-network
+
+  product-service:
+    build:
+      context: ./product-service
+      dockerfile: src/main/docker/Dockerfile
+    image: docisjp/product-service:latest
+    restart: always
+    ports:
+      - "8086:8086"
+    depends_on:
+      - eureka-server
+      - shopswiftly_db
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: ${EUREKA_SERVER_URL}
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    networks:
+      - backend-network
+
+  transaction-service:
+    build:
+      context: ./transaction-service
+      dockerfile: src/main/docker/Dockerfile
+    image: docisjp/transaction-service:latest
+    restart: always
+    ports:
+      - "8085:8085"
+    depends_on:
+      - eureka-server
+      - shopswiftly_db
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: ${EUREKA_SERVER_URL}
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    networks:
+      - backend-network
+
+  shopswiftly_db:
+    image: "postgres:latest"
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./initdb/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+    networks:
+      - backend-network
+
+  api-gateway:
+    build:
+      context: ./api-gateway
+      dockerfile: src/main/docker/Dockerfile
+    image: docisjp/api-gateway:latest
+    restart: always
+    ports:
+      - "8083:8083"
+    depends_on:
+      - eureka-server
+      - shopswiftly_db
+      - user-service
+      - product-service
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: ${EUREKA_SERVER_URL}
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_EXPIRATION_MS: ${JWT_EXPIRATION_MS}
+      USER_SERVICE_URL: ${USER_SERVICE_URL}
+      PRODUCT_SERVICE_URL: ${PRODUCT_SERVICE_URL}
+      TRANSACTION_SERVICE_URL: ${TRANSACTION_SERVICE_URL}
+    networks:
+      - backend-network
+
+volumes:
+  postgres_data:
+
+networks:
+  backend-network:
+    driver: bridge

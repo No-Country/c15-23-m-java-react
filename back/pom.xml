@@ -13,6 +13,7 @@
         <spring-boot.version>2.7.18</spring-boot.version>
         <spring-cloud.version>2021.0.3</spring-cloud.version>
         <dockerfile.maven.plugin.version>1.4.13</dockerfile.maven.plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencyManagement>
@@ -47,5 +48,24 @@
         <!-- Agregar otros módulos aquí -->
     </modules>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.profiles.active>dev</spring.profiles.active>
+            </properties>
+            <!-- Other configuration specific to development -->
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <spring.profiles.active>prod</spring.profiles.active>
+            </properties>
+            <!-- Other configuration specific to production -->
+        </profile>
+    </profiles>
     
 </project>

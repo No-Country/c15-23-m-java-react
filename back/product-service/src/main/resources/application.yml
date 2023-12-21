@@ -1,6 +1,51 @@
-# See http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 spring:
-  thymeleaf.cache: false
-  main.show-banner: false
+  application:
+    name: product-service
+  main:
+    show-banner: false
   server:
-  port: 8086
+    port: ${SERVER_PORT:8086}
+  datasource:
+    url: ${SPRING_DATASOURCE_URL_PRODUCTSDB}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        default_schema: products_db
+        format_sql: true
+        use_sql_comments: true
+  security:
+    user:
+      name: ${SECURITY_USER_NAME:user}
+      password: ${SECURITY_USER_PASSWORD:password}
+debug: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql: trace
+
+springdoc:
+  swagger-ui:
+    use-root-path: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_URL}
