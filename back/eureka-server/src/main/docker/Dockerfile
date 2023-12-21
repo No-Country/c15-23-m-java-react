@@ -17,4 +17,4 @@ EXPOSE 8761
 WORKDIR /opt/eureka-server/
 
 # Configure the container to run the Eureka server application
-ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-Xms512m", "-Xmx1g", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/opt/eureka-server/app.jar"]

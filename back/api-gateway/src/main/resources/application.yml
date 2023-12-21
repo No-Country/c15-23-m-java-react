@@ -1,6 +1,30 @@
-# See http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 spring:
-  thymeleaf.cache: false
-  main.show-banner: false
+  main:
+    web-application-type: reactive
+  application:
+    name: api-gateway
   server:
-  port: 8083
+    port: ${SERVER_PORT:8083}
+
+# JWT configuration
+jwt:
+  secret: ${JWT_SECRET}
+  expiration:
+    ms: ${JWT_EXPIRATION_MS}
+
+# Placeholder for user service URL
+user-service:
+  url: ${USER_SERVICE_URL}
+
+product-service:
+  url: ${PRODUCT_SERVICE_URL}
+
+transaction-service:
+  url: ${TRANSACTION_SERVICE_URL}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_URL}
+  instance:
+    preferIpAddress: true

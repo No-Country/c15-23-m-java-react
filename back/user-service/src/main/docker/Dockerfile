@@ -2,7 +2,7 @@
 FROM openjdk:17-jdk-slim
 
 # Update package list, install netcat and mysql-client, and clean up
-RUN apt-get update && apt-get install -y netcat default-mysql-client && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y netcat curl && rm -rf /var/lib/apt/lists/*
 
 # Create a volume pointing to /tmp
 VOLUME /tmp
@@ -27,5 +27,5 @@ WORKDIR /opt/user-service/
 
 # Configure the container to run the application
 # Using the exec form of ENTRYPOINT and CMD
-ENTRYPOINT ["/bin/sh", "-c", "/wait-for-it.sh users_db:3306 --"]
-CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-Xms512m", "-Xmx1g", "-jar", "app.jar"]
+ENTRYPOINT ["/bin/sh", "-c", "/wait-for-it.sh && java -Djava.security.egd=file:/dev/./urandom -Xms512m -Xmx1g -jar /opt/user-service/app.jar"]
+CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-Xms512m", "-Xmx1g", "-jar", "/opt/user-service/app.jar"]

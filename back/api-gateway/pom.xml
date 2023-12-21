@@ -19,7 +19,7 @@
 
     <properties>
         <java.version>17</java.version>
-        <docker.image.prefix>api-gateway</docker.image.prefix>
+        <docker.image.prefix>docisjp</docker.image.prefix>
     </properties>
 
     <dependencies>
@@ -63,7 +63,7 @@
 			        </execution>
 			    </executions>
 			    <configuration>
-			        <mainClass>c15_23_m_java_react.com.user_service.ApiGatewayApp</mainClass>
+			        <mainClass>c15_23_m_java_react.com.api_gateway.ApiGatewayApp</mainClass>
 			    </configuration>
 			</plugin>
 

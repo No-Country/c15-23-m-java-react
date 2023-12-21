@@ -8,6 +8,7 @@
         <groupId>c15-23-m-java-react</groupId>
         <artifactId>com.ecommerce</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     
@@ -18,73 +19,179 @@
 
     <properties>
         <java.version>17</java.version>
-        <docker.image.prefix>transaction-service</docker.image.prefix>
+        <docker.image.prefix>docisjp</docker.image.prefix>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--<docker.image.prefix>transaction-service</docker.image.prefix>-->
     </properties>
 
     <dependencies>
-        <!-- Eureka Client -->
+
+		<!-- Eureka Client -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		<!-- Spring Cloud Config Server -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-server</artifactId>
+		</dependency>
+
+        <!-- Spring Cloud Open Feign -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
-        
-        <!-- Spring Cloud Config Server -->
+
+		<!-- Spring Boot Starter Web, incluye Tomcat y spring-webmvc -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- Spring Boot Actuator, to check health on APIs endpoints  -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+
+		<!-- Spring Boot Starter Data JPA, incluye Hibernate -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!-- Spring Boot Starter Security -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+        <!-- Spring Boot Starter Security TEST -->        
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <scope>test</scope>
         </dependency>
-        <!-- Otras dependencias necesarias para el proyecto -->
+
+        <!-- SLF4J API -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.30</version>
+        </dependency>
+        <!-- Logback Classic -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+
+		<!-- Open API, para documentar las APIs -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+
+
+		<!-- Open API, dependencia para hacer un bypass al security -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-security</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+
+		<!-- Open API, para forzar la version de webjars -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>webjars-locator-core</artifactId>
+			<version>0.50</version>
+		</dependency>
+
+		<!-- JUnit- Para realizar test unit -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Spring Boot Starter Test para hacer las pruebas -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- PostgreSQL connector -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.19</version>
+		</dependency>
+
+        <!-- ModelMapper -->
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>2.4.4</version> 
+        </dependency>
+
+		<!-- Otras dependencias necesarias para el proyecto -->
+
     </dependencies>
 
-   <build>
-		<plugins>
-			<!-- Plugin de Spring Boot Maven para empaquetado y ejecución -->
-			<plugin>
-			    <groupId>org.springframework.boot</groupId>
-			    <artifactId>spring-boot-maven-plugin</artifactId>
-			    <version>2.7.18</version> 
-			    <executions>
-			        <execution>
-			            <goals>
-			                <goal>repackage</goal>
-			            </goals>
-			        </execution>
-			    </executions>
-			    <configuration>
-			        <mainClass>c15_23_m_java_react.com.user_service.TransactionApp</mainClass>
-			    </configuration>
-			</plugin>
+    <build>
+        <plugins>
+            <!-- Plugin de Spring Boot Maven para empaquetado y ejecución -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.7.18</version> 
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>c15_23_m_java_react.com.transaction_service.TransactionApp</mainClass>
+                </configuration>
+            </plugin>
 
-			<!-- Plugin de Maven -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version> <!-- La última versión de maven -->
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-				</configuration>
+            <!-- Plugin de Maven -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version> <!-- La última versión de maven -->
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
 
-			</plugin>
+            </plugin>
 
-			<!-- Plugin de Docker -->
-			<plugin>
-					<groupId>io.fabric8</groupId>
-					<artifactId>docker-maven-plugin</artifactId>
-					<version>0.43.4</version>
-					<configuration>
-						<images>
-							<image>
-							<name>${docker.image.prefix}/${project.artifactId}:${project.version}</name>
-							<build>
-								<contextDir>${project.basedir}</contextDir> <!-- This sets the context to the project root -->
-                    			<dockerFile>${project.basedir}/src/main/docker/Dockerfile</dockerFile> <!-- This points to the Dockerfile location -->
-							</build>
-							</image>
-						</images>
-					</configuration>
-			</plugin>
-		</plugins>
-	</build>
+            <!-- Plugin de Docker -->
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.43.4</version>
+                <configuration>
+                    <images>
+                        <image>
+                            <name>${docker.image.prefix}/${project.artifactId}:${project.version}</name>
+                            <build>
+                                <contextDir>${project.basedir}</contextDir> <!-- This sets the context to the project root -->
+                                <dockerFile>${project.basedir}/src/main/docker/Dockerfile</dockerFile> <!-- This points to the Dockerfile location -->
+                            </build>
+                        </image>
+                    </images>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

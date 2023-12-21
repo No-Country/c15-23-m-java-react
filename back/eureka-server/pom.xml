@@ -34,6 +34,11 @@
 	        <groupId>org.springframework.cloud</groupId>
 	        <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 	    </dependency>
+		<!-- Spring Boot Actuator for health checks and metrics -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 	    <!-- Otras dependencias necesarias para el proyecto -->
     </dependencies>
 
@@ -52,7 +57,7 @@
 			        </execution>
 			    </executions>
 			    <configuration>
-			        <mainClass>c15_23_m_java_react.com.user_service.EurekaServerApplication</mainClass>
+			        <mainClass>c15_23_m_java_react.com.eureka_server.EurekaServerApplication</mainClass>
 			    </configuration>
 			</plugin>
 

@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 VOLUME /tmp
 
 # Copy the application's jar file into the container
-COPY target/api-gatewayr-0.0.1-SNAPSHOT.jar /opt/api-gateway/app.jar
+COPY target/api-gateway-0.0.1-SNAPSHOT.jar /opt/api-gateway/app.jar
 
 # Environment variable for server port, adjust if necessary
 ENV SERVER_PORT=8083

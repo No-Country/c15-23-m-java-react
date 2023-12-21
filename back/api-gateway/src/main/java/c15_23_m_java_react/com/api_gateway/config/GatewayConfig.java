@@ -1,5 +1,6 @@
 package c15_23_m_java_react.com.api_gateway.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
@@ -11,11 +12,28 @@ import org.springframework.web.cors.reactive.CorsWebFilter;
 @Configuration
 public class GatewayConfig {
 
+    @Value("${user-service.url}")
+    private String userServiceURL;
+
+    
+    @Value("${product-service.url}")
+    private String productServiceURL; 
+    
+    
+    @Value("${transaction-service.url}")
+    private String transactionServiceURL;
+
     @Bean
     RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route("path_route", r -> r.path("/users/**", "/products/**", "/transactions/**")
-                        .uri("http://microservice-uri"))
+                .route("user_route", r -> r.path("/users/**")
+                        .uri(userServiceURL)) 
+                
+                .route("product_route", r -> r.path("/products/**") 
+                        .uri(productServiceURL))
+
+                .route("transaction_route", r -> r.path("/transactions/**") 
+                        .uri(transactionServiceURL))
                 // ... other routes for each microservice
                 .build();
     }
@@ -28,6 +46,7 @@ public class GatewayConfig {
         corsConfig.addAllowedMethod("PUT");
         corsConfig.addAllowedMethod("DELETE");
         corsConfig.addAllowedMethod("OPTIONS");
+        corsConfig.addAllowedOriginPattern("*");
         corsConfig.addAllowedOrigin("http://localhost:3000");
         corsConfig.addAllowedOrigin("https://c15-23-m-java-react.vercel.app");
         corsConfig.addAllowedHeader("*");

@@ -1,6 +1,10 @@
-# See http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 spring:
   thymeleaf.cache: false
   main.show-banner: false
   server:
   port: 8081
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration:
+    ms: ${JWT_EXPIRATION_MS}

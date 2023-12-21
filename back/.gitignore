@@ -112,4 +112,21 @@ replay_pid*
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/eclipse,java,visualstudiocode
+# Me olvide de agregar el .env
+.env
+.env.dev
+.env.prod
+.project
+
+
+target/
+
+### NetBeans ###
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/

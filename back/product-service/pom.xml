@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -11,56 +11,117 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>c15-23-m-java-react</groupId>
-    <artifactId>product-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version> <!-- Actualizado según la recomendación -->
-    <packaging>jar</packaging>
+	<artifactId>product-service</artifactId>
+	<packaging>jar</packaging>
 
-    <name>product-service</name>
+	<name>product-service</name>
 
-    <properties>
-        <java.version>17</java.version>
-        <docker.image.prefix>product-service</docker.image.prefix>
-    </properties>
+	<properties>
+		<java.version>17</java.version>
+		<docker.image.prefix>docisjp</docker.image.prefix>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
-    <dependencies>
+	<dependencies>
 
-        <!--Launcher -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+		<!-- Eureka Client -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
 
-        <!-- Spring Boot Starter Data JPA para conectar base de datos -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <!-- Spring Cloud Config Server -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
-        </dependency>
-        <!-- Otras dependencias necesarias para el proyecto -->
-    </dependencies>
+		<!-- Spring Cloud Config Server -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-server</artifactId>
+		</dependency>
 
-   <build>
+		<!-- Spring Boot Starter Web, incluye Tomcat y spring-webmvc -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- Spring Boot Actuator, to check health on APIs endpoints  -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+
+		<!-- Spring Boot Starter Data JPA, incluye Hibernate -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!-- Spring Boot Starter Security -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<!-- Open API, para documentar las APIs -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+
+
+		<!-- Open API, dependencia para hacer un bypass al security -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-security</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+
+		<!-- Open API, para forzar la version de webjars -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>webjars-locator-core</artifactId>
+			<version>0.50</version>
+		</dependency>
+
+		<!-- JUnit- Para realizar test unit -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- Spring Boot Starter Test para hacer las pruebas -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- PostgreSQL connector -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.19</version>
+		</dependency>
+		<!-- Otras dependencias necesarias para el proyecto -->
+
+	</dependencies>
+
+	<build>
 		<plugins>
 			<!-- Plugin de Spring Boot Maven para empaquetado y ejecución -->
 			<plugin>
-			    <groupId>org.springframework.boot</groupId>
-			    <artifactId>spring-boot-maven-plugin</artifactId>
-			    <version>2.7.18</version> 
-			    <executions>
-			        <execution>
-			            <goals>
-			                <goal>repackage</goal>
-			            </goals>
-			        </execution>
-			    </executions>
-			    <configuration>
-			        <mainClass>c15_23_m_java_react.com.user_service.ProductApp</mainClass>
-			    </configuration>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.7.18</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>c15_23_m_java_react.com.product_service.ProductApp</mainClass>
+				</configuration>
 			</plugin>
 
 			<!-- Plugin de Maven -->
@@ -77,22 +138,21 @@
 
 			<!-- Plugin de Docker -->
 			<plugin>
-					<groupId>io.fabric8</groupId>
-					<artifactId>docker-maven-plugin</artifactId>
-					<version>0.43.4</version>
-					<configuration>
-						<images>
-							<image>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.43.4</version>
+				<configuration>
+					<images>
+						<image>
 							<name>${docker.image.prefix}/${project.artifactId}:${project.version}</name>
 							<build>
 								<contextDir>${project.basedir}</contextDir> <!-- This sets the context to the project root -->
-                    			<dockerFile>${project.basedir}/src/main/docker/Dockerfile</dockerFile> <!-- This points to the Dockerfile location -->
+								<dockerFile>${project.basedir}/src/main/docker/Dockerfile</dockerFile> <!-- This points to the Dockerfile location -->
 							</build>
-							</image>
-						</images>
-					</configuration>
+						</image>
+					</images>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
