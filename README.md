@@ -46,73 +46,72 @@ Terminación SSL y Agregación de Solicitudes: Mejora la seguridad y el rendimie
 
 ## Demo
 
-```bash
-    https://c15-23-m-java-react.vercel.app/home
-```
+[Demo ShopSwiftly](https://c15-23-m-java-react.vercel.app/home)
 
 ## Estado
 
-    El estado del proyecto se encuentra como un MVP robusto. Actualmente soporta el uso desde dispositivos móviles, tablets, laptops y PCs.
-    Contiene una Arquitectura de microservicios, que permite el desarrollo ágil y fácil despliegue de nuevas funcionalidades.
+El estado del proyecto se encuentra como un MVP robusto. Actualmente soporta el uso desde dispositivos móviles, tablets, laptops y PCs.
+Contiene una Arquitectura de microservicios, que permite el desarrollo ágil y fácil despliegue de nuevas funcionalidades.
 
 ## Tecnologias
 
-    * Frontend:
-        **HTML + CSS**
-        **Javascript**
-        **React.Js**
-        **Vite Js**
+- Frontend:
+  **HTML + CSS**
+  **Javascript**
+  **React.Js**
+  **Vite Js**
 
-    * Backend:
-        **Java**
-        **Spring Boot**
-        **Postgres SQL**
+- Backend:
+  **Java**
+  **Spring Boot**
+  **Postgres SQL**
 
-    * QA:
-        ** **
+- QA:
+  ***
 
 ## Dependencias Frontend:
 
-    * "bootstrap" - Utilizado en su mayoría para dar estilos a ciertos componentes.
-    * "react-bootstrap" - Se utilizan varios componentes ya predefinidos.
-    * "styled-components" - Se uso en la gran mayoría para los estilos personalizados de los componentes.
-    * "sweetalert2" - Para dar mensajes a los usuarios con estilos mas detallados mejorando la UX.
-    * "swiper" - Utilizado para el carousel de categorías.
-    * "react-loader-spinner" - Para efectos de loading al conectar a la BD y dar un mejora de UX.
-    * "react-router-dom" y "react-dom" - Para establecer el enrutamiento y la navegación.
-    * "react-icons" - Libreria de donde se obtienen todos los iconos.
+- "bootstrap" - Utilizado en su mayoría para dar estilos a ciertos componentes.
+- "react-bootstrap" - Se utilizan varios componentes ya predefinidos.
+- "styled-components" - Se uso en la gran mayoría para los estilos personalizados de los componentes.
+- "sweetalert2" - Para dar mensajes a los usuarios con estilos mas detallados mejorando la UX.
+- "swiper" - Utilizado para el carousel de categorías.
+- "react-loader-spinner" - Para efectos de loading al conectar a la BD y dar un mejora de UX.
+- "react-router-dom" y "react-dom" - Para establecer el enrutamiento y la navegación.
+- "react-icons" - Libreria de donde se obtienen todos los iconos.
 
 ## Dependencias Backend:
 
-    * "Maven" - Como gestor de dependencias
-     - Eureka Client
-     - Spring Cloud Config Server
-     - Spring Boot Starter Web, incluye Tomcat y spring-webmvc
-     - Spring Boot Actuator, para confirmar la salud de los endpoints
-     - Spring Boot Starter Data JPA
-     - Spring Boot Starter Security
-     - Open API, para documentar las APIs
-     - JUnit, para realizar test unit
-     - Spring Boot Starter Test para hacer las pruebas
-     - PostgreSQL connector
+- "Maven" - Como gestor de dependencias
 
-    * "Docker" - Como container con su plugin
+  - Eureka Client
+  - Spring Cloud Config Server
+  - Spring Boot Starter Web, incluye Tomcat y spring-webmvc
+  - Spring Boot Actuator, para confirmar la salud de los endpoints
+  - Spring Boot Starter Data JPA
+  - Spring Boot Starter Security
+  - Open API, para documentar las APIs
+  - JUnit, para realizar test unit
+  - Spring Boot Starter Test para hacer las pruebas
+  - PostgreSQL connector
+
+- "Docker" - Como container con su plugin
 
 ## Uso de la app-web
 
-    1. Clonar el repositorio desde GitHub.
+1. Clonar el repositorio desde GitHub.
 
 ```bash
-    https://github.com/No-Country/c15-23-m-java-react
+   git clone https://github.com/No-Country/c15-23-m-java-react
 ```
 
-    2. Asegurarse que se está en la carpeta correcta para instala las dependencias.
+2. Asegurarse que se está en la carpeta correcta para instala las dependencias.
 
 ```bash
     npm install
 ```
 
-    3. Ejecuta el proyecto.
+3. Ejecuta el proyecto.
 
 ```bash
     npm run dev
