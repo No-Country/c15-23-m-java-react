@@ -5,8 +5,11 @@ const Card = styled.div`
     text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
     max-width: 340px;
     margin: 20px;
+    background-color: white;
+    border-radius: 10px;
     &:hover{
         box-shadow: 5px 5px 20px white;
         transition: all 0.2s linear;
@@ -17,22 +20,28 @@ const Card = styled.div`
 const ItemBodyCard = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 2rem 0;
+    // padding: 2rem 0;
     background-color: white;
     gap: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 250px;
+    @media (max-width: 570px){
+        height: 300px;
+    }
     & p{
-        font-size: 16px;
-        font-family: ${textFont}
+        font-size: 14px;
+        font-family: ${textFont};
+        padding-inline: 10px;
     }
     & div{
-        width: 80px;
-        justify-content: center;
+        justify-content: end;
+        margin-bottom: 10px;
         display: flex;
-        width:100%;
-        & a{
-            & button{
+        align-self: center;
+        & button{
                 background-color: #56c9a0;
-                width:100%;
+                width: 120px;
                 border: none;
                 color: #fff;
                 border-radius: 10px;
@@ -45,12 +54,11 @@ const ItemBodyCard = styled.div`
                 &:hover{
                     background-color: #39ad84;
                 }
-            }
         }
     }
 `;
 
-const ItemTitleCard = styled.div` 
+const ItemTitleCard = styled.div`
     padding: 0.3rem 1rem;
     font-size: 22px;
     font-family: ${titleFont}
@@ -58,15 +66,21 @@ const ItemTitleCard = styled.div`
 
 const ItemImgCard = styled.div`
     overflow: hidden;
-    max-width: 338px;
+    background-color: white;
+    padding:20px;
+    width: 100%;
     & img{
         transform: scale(1);
         transition: all 0.2s ease-in-out;
-        width: 350xp;
-        height: 280px;
+        border: none;
+        width: 220px;
+        height: 320px;
         &:hover{
-            transform: scale(1.8);
+            transform: scale(1.1);
         }
+    } 
+    @media (max-width: 570px){
+        text-align: center;
     }
 `;
 

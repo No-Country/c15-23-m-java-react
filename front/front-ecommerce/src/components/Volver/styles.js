@@ -1,14 +1,17 @@
 import { styled } from 'styled-components';
-import { titleFont, textFont } from '../../styles/GlobalStyles';
+import { colors, titleFont } from '../../styles/GlobalStyles';
 
 const ContainerVolver = styled.div`
   width: 95%;
-  margin: 40px;
-  background-color: #d9d9d9;
+  margin: 20px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  //box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: ${colors.primaryLightColor};
   color: black;
   padding-inline: 40px;
   @media (max-width: 576px) {
-    margin-inline: 0px;
+    margin-inline: 10px;
     padding-inline: 20px;
   }
 `;

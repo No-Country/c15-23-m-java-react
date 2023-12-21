@@ -17,7 +17,6 @@ const TableContainer = styled.article`
 const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
-  align-items: center;
   color: ${colors.primaryText};
 `;
 
@@ -29,8 +28,10 @@ const TableHead = styled.thead`
   font-size: 1.4rem;
   text-transform: uppercase;
   background-color: ${colors.primaryLightColor};
+
   tr {
     th {
+      text-align: center;
       min-width: 120px;
     }
     th:nth-last-child(2),
@@ -48,7 +49,7 @@ const TableHead = styled.thead`
 `;
 
 const ImgCell = styled(ProductImage)`
-  margin-right: 5px;
+  margin: 0;
   width: 40px;
   height: 40px;
   background-color: ${colors.primaryLightColor};
@@ -78,6 +79,7 @@ const TableItem = styled.tr`
         max-width: 200px;
         overflow: hidden;
         text-overflow: ellipsis;
+        margin: 0;
       }
     }
   }
@@ -103,7 +105,7 @@ const Delete = styled.button`
   background-color: transparent;
   color: darkred;
   font-family: ${textFont};
-  font-size: 1.3rem;
+  font-size: 2.5rem;
   cursor: pointer;
   &:hover {
     font-weight: bold;

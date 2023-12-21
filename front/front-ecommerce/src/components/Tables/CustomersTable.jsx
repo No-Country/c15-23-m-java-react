@@ -6,7 +6,7 @@ import {
   TableHead,
   TableItem,
 } from './styles';
-
+import { TiDelete } from 'react-icons/ti';
 const fields = ['ID', 'Nombre', 'Apellido', 'Email', 'Estado', '', ''];
 
 const customers = [
@@ -72,7 +72,9 @@ const CustomersTable = () => {
                 <Edit href='#'>Editar</Edit>
               </td>
               <td>
-                <Delete>Eliminar</Delete>
+                <Delete>
+                  <TiDelete />
+                </Delete>
               </td>
             </TableItem>
           ))}

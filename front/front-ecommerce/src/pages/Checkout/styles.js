@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { textFont, titleFont } from '../../styles/GlobalStyles';
+import { colors, textFont, titleFont } from '../../styles/GlobalStyles';
 
 const CheckoutContainer = styled.section`
   width: 100%;
@@ -8,12 +8,31 @@ const CheckoutContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: center;
+  margin-bottom: 20px;
 
   h2 {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     font-family: ${titleFont};
+    font-weight: bold;
     margin-bottom: 20px;
-    color: #29b081;
+    color: black;
+  }
+  a {
+    width: 100%;
+    background-color: ${colors.primaryColor};
+    color: white;
+    border-radius: 10px;
+    font-family: ${textFont};
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    &:hover {
+      background-color: ${colors.buttonHover};
+    }
   }
 
   @media (min-width: 900px) {
@@ -38,6 +57,7 @@ const ClientInfo = styled.div`
     font-family: ${textFont};
     font-size: 1.4rem;
     margin-left: 10px;
+    margin-bottom: 0;
   }
 `;
 
@@ -68,11 +88,12 @@ const PaymentMethod = styled.div`
 `;
 
 const Main = styled.main`
+  padding: 40px 0 40px 0;
   width: 100%;
-  padding: 40px 0;
   display: flex;
-  justify-content: center;
-  overflow-x: hidden;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 `;
 
 export { CheckoutContainer, ClientInfo, Main, PaymentMethod };

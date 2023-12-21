@@ -4,11 +4,9 @@ import { NavLink } from 'react-router-dom';
 
 const SignUp = () => {
   return (
-  
        <FormContainerSignUp action="" onSubmit={(e) => {
             e.preventDefault()
         }}>
-       
         <h2>Registrate</h2>
         <div>
         <label>Ingrese su nombre</label>
@@ -35,7 +33,7 @@ const SignUp = () => {
         <br />
         </div>
         <div>
-           <p>¿Ya tienes una cuenta? Haga click aqúi para iniciar sesión</p>
+           <p>¿Ya tienes una cuenta? Haga click <NavLink to="/login" style={{textDecoration:'none', color: 'black'}}><strong>aqúi</strong></NavLink> para iniciar sesión</p>
         </div>
         <NavLink to="/home"><Boton type="submit">
            Registrar

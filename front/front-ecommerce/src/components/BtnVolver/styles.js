@@ -1,8 +1,8 @@
 import { styled } from 'styled-components';
-import { textFont } from '../../styles/GlobalStyles';
+import { textFont, colors } from '../../styles/GlobalStyles';
 
 const Button = styled.button`
-  background-color: #d9d9d9;;
+  background-color: ${colors.primaryColor};
   border: none;
   color: #fff;
   cursor: pointer;
@@ -10,19 +10,20 @@ const Button = styled.button`
   font-weight: 700;
   padding: 15px;
   text-align: center;
-  margin-inline: 20px;
   border-radius: 10px;
   font-family: ${textFont};
-  color: black;
   align-items: center;
   display: flex;
   p {
     padding-inline: 15px;
     font-family: ${textFont};
-    margin: 0px
+    margin: 0px;
   }
-  &:hover{
-      background-color: #39ad84;
+  &:hover {
+    background-color: #39ad84;
+  }
+  @media (max-width: 576px) {
+    margin: 0 auto;
   }
 `;
 

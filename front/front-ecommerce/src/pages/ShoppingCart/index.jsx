@@ -1,11 +1,11 @@
-import { Cart } from '../../components/cart';
+import { Cart } from '../../components/cart/index';
 import Volver from '../../components/Volver/Volver';
 import { Main } from './styles';
 
 const ShoppingCart = () => {
   return (
     <Main>
-      <Volver />
+      <Volver titulo="Mi Carrito"/>
       <Cart />
     </Main>
   );
