@@ -21,6 +21,8 @@
 - [Integrantes](#integrantes)
 - [Documentación Adicional](#documentación-adicional)
 
+To read this document in English, click [here](README.EN.md).
+
 ## Introducción y Visión General
 
 ## ¿Qué es una Plataforma SaaS?
@@ -119,17 +121,15 @@ Contiene una Arquitectura de microservicios, que permite el desarrollo ágil y f
 
 ## Integrantes:
 
-```
-* Alan Rios Front-end developer Tech Leader
-* Diego Herrera Prado Front-end developer
-* Mariana Rausch Front-end developer
-* Federico Blanco Front-end developer
-* Kevin Joel Noviello Front-end developer
-* Juan Pablo Godoy Back-end developer Tech Leader
-* Lucas Von Elm Back-end developer
-* Leon Asturizaga Back-end developer
-* Diego Persi Analista QA
-```
+- Alan Rios Front-end developer Tech Leader
+- Diego Herrera Prado Front-end developer
+- Mariana Rausch Front-end developer
+- Federico Blanco Front-end developer
+- Kevin Joel Noviello Front-end developer
+- Juan Pablo Godoy Back-end developer Tech Leader
+- Lucas Von Elm Back-end developer
+- Leon Asturizaga Back-end developer
+- Diego Persi Analista QA
 
 ## Documentación Adicional
 
