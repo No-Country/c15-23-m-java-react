@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { titleFont, colors, textFont } from '../../styles/GlobalStyles';
+import { titleFont, colors } from '../../styles/GlobalStyles';
 
 const CartIcon = styled.div`
   display: flex;
@@ -240,7 +240,7 @@ const StyleIconUserBger = styled.div`
   display: block;
   font-size: 40px;
   margin-left: 5px;
-
+  margin-top: 150px;
   @media (min-width: 768px) {
     display: none;
   }
