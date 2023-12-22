@@ -134,10 +134,10 @@ It features a Microservices Architecture, allowing agile development and easy de
 - [Kevin Joel Noviello](https://www.linkedin.com/in/kevinjoelnoviello/) : Front-end developer
 - [Mariana Rausch](https://www.linkedin.com/in/marianarausch/) : Front-end developer
 - Federico Blanco: Front-end developer
-- Juan Pablo Godoy: Back-end developer Tech Leader
-- Lucas Von Elm: Back-end developer
-- Leon Asturizaga: Back-end developer
-- Diego Persi: Analista QA
+- [Juan Pablo Godoy](https://www.linkedin.com/in/godoypablojuan/): Back-end developer Tech Leader
+- [Lucas Von Elm](https://www.linkedin.com/in/lucasvonelm/): Back-end developer
+- [Leon Asturizaga](https://www.linkedin.com/in/leon-asturizaga-94a80377/) Back-end developer
+- [Diego Persi](https://www.linkedin.com/in/diegonicolaspersi/) : Analista QA
 
 ## Additional Documentation
 
