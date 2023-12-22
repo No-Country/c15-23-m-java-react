@@ -9,6 +9,7 @@
 - [Instalación](#instalación)
 - [Dependencias](#dependencias)
 - [Desarrolladores](#desarrolladores)
+- [Atribuciones](#atribuciones)
 
 ## Acerca del Proyecto
 
@@ -39,6 +40,8 @@ Actualmente, el sistema se encuentra en su versión de Producto Mínimo Viable (
 - Reserva de compras para recoger en la tienda.
 
 ## Demo
+
+![App Screenshot](/shop-swiftly-demo.gif)
 
 ## Próximos Pasos
 
@@ -121,3 +124,7 @@ En futuras versiones, se tienen planeadas las siguientes mejoras y característi
 ### Federico Blanco
 
 - Github: [fwhite-dev](https://github.com/fwhite-dev)
+
+## Atribuciones
+
+Ilustraciones en línea por [Storyset](https://storyset.com/online")

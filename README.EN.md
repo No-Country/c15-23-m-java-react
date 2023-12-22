@@ -52,7 +52,9 @@ SSL Termination and Request Aggregation: Enhances security and performance throu
 
 [ShopSwiftly Demo](https://c15-23-m-java-react.vercel.app/home)
 
-## Status
+![App Screenshot](/shop-swiftly-demo.gif)
+
+## Proyect Status
 
 The project is currently in a robust MVP stage, supporting use on mobile devices, tablets, laptops, and PCs.
 It features a Microservices Architecture, allowing agile development and easy deployment of new functionalities.

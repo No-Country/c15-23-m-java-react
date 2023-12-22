@@ -52,7 +52,9 @@ Terminación SSL y Agregación de Solicitudes: Mejora la seguridad y el rendimie
 
 [Demo ShopSwiftly](https://c15-23-m-java-react.vercel.app/home)
 
-## Estado
+![App Screenshot](/shop-swiftly-demo.gif)
+
+## Estado del Proyecto
 
 El estado del proyecto se encuentra como un MVP robusto. Actualmente soporta el uso desde dispositivos móviles, tablets, laptops y PCs.
 Contiene una Arquitectura de microservicios, que permite el desarrollo ágil y fácil despliegue de nuevas funcionalidades.
