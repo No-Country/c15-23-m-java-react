@@ -69,7 +69,8 @@ Contiene una Arquitectura de microservicios, que permite el desarrollo ágil y f
   **Postgres SQL**
 
 - QA:
-  ***
+  **Google Sheets**
+  **Google Docs**
 
 ## Dependencias Frontend:
 
@@ -93,6 +94,7 @@ Contiene una Arquitectura de microservicios, que permite el desarrollo ágil y f
   - Spring Boot Starter Data JPA
   - Spring Boot Starter Security
   - Open API, para documentar las APIs
+
   - JUnit, para realizar test unit
   - Spring Boot Starter Test para hacer las pruebas
   - PostgreSQL connector
