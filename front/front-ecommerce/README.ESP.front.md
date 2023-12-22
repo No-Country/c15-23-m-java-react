@@ -9,6 +9,7 @@
 - [Instalación](#instalación)
 - [Dependencias](#dependencias)
 - [Desarrolladores](#desarrolladores)
+- [Atribuciones](#atribuciones)
 
 ## Acerca del Proyecto
 
@@ -123,3 +124,7 @@ En futuras versiones, se tienen planeadas las siguientes mejoras y característi
 ### Federico Blanco
 
 - Github: [fwhite-dev](https://github.com/fwhite-dev)
+
+## Atribuciones
+
+Ilustraciones en línea por [Storyset](https://storyset.com/online")

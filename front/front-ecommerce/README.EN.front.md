@@ -9,6 +9,7 @@
 - [Installation](#installation)
 - [Dependencies](#dependencies)
 - [Developers](#developers)
+- [Attributions](#attributions)
 
 ## About the Project
 
@@ -125,3 +126,7 @@ In future versions, the following improvements and features are planned:
 ### Federico Blanco
 
 - Github: [fwhite-dev](https://github.com/fwhite-dev)
+
+## Attributions
+
+Online illustrations by [Storyset](https://storyset.com/online")
