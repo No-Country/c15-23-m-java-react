@@ -71,7 +71,7 @@ Contiene una Arquitectura de microservicios, que permite el desarrollo ágil y f
 - QA:
   **Google Sheets**
   **Google Docs**
-  [Link a la carpeta que contiene las pruebas realizadas al proyecto] (https://drive.google.com/drive/folders/1kILhvs33RAEJF1ffFSXsqXbweCiu95Ct?usp=drive_link)
+  [Link a la carpeta que contiene las pruebas realizadas al proyecto](https://drive.google.com/drive/folders/1kILhvs33RAEJF1ffFSXsqXbweCiu95Ct?usp=drive_link)
 
 ## Dependencias Frontend:
 
