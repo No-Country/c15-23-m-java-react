@@ -25,6 +25,8 @@ To read this document in English, click [here](README.EN.md).
 
 ## Introducción y Visión General
 
+**ShopSwiftly** es un sistema de comercio electrónico diseñado específicamente para tiendas pequeñas y medianas. Proporciona a los comerciantes una plataforma intuitiva y atractiva para expandir su alcance, permitiéndoles vender sus productos en línea. La aplicación se ofrece como un servicio de software (SaaS) mediante un modelo de suscripción.
+
 ## ¿Qué es una Plataforma SaaS?
 
 SaaS, o Software como Servicio, es un modelo de entrega de aplicaciones de software donde el software se aloja en la nube y se accede a través de internet. Es un modelo basado en suscripción donde los usuarios pagan por usar el software sin necesidad de instalación, mantenimiento ni altos costos iniciales. Las plataformas SaaS son altamente escalables, lo que significa que pueden crecer con un negocio y son accesibles desde cualquier lugar con una conexión a internet.
@@ -58,31 +60,33 @@ Contiene una Arquitectura de microservicios, que permite el desarrollo ágil y f
 ## Tecnologias
 
 - Frontend:
-  **HTML + CSS**
-  **Javascript**
-  **React.Js**
-  **Vite Js**
+
+  - **Javascript**
+  - **React.Js**
+  - **Styled components**
+  - **Vite Js**
 
 - Backend:
-  **Java**
-  **Spring Boot**
-  **Postgres SQL**
+
+  - **Java**
+  - **Spring Boot**
+  - **Postgres SQL**
 
 - QA:
-  **Google Sheets**
-  **Google Docs**
-  [Link a la carpeta que contiene las pruebas realizadas al proyecto](https://drive.google.com/drive/folders/1kILhvs33RAEJF1ffFSXsqXbweCiu95Ct?usp=drive_link)
+  - **Google Sheets**
+  - **Google Docs**
+  - [Link a la carpeta que contiene las pruebas realizadas al proyecto](https://drive.google.com/drive/folders/1kILhvs33RAEJF1ffFSXsqXbweCiu95Ct?usp=drive_link)
 
 ## Dependencias Frontend:
 
-- "bootstrap" - Utilizado en su mayoría para dar estilos a ciertos componentes.
-- "react-bootstrap" - Se utilizan varios componentes ya predefinidos.
-- "styled-components" - Se uso en la gran mayoría para los estilos personalizados de los componentes.
-- "sweetalert2" - Para dar mensajes a los usuarios con estilos mas detallados mejorando la UX.
-- "swiper" - Utilizado para el carousel de categorías.
-- "react-loader-spinner" - Para efectos de loading al conectar a la BD y dar un mejora de UX.
-- "react-router-dom" y "react-dom" - Para establecer el enrutamiento y la navegación.
-- "react-icons" - Libreria de donde se obtienen todos los iconos.
+- "bootstrap": Utilizado en su mayoría para dar estilos a ciertos componentes.
+- "react-bootstrap": Se utilizan varios componentes ya predefinidos.
+- "styled-components": Se uso en la gran mayoría para los estilos personalizados de los componentes.
+- "sweetalert2": Para dar mensajes a los usuarios con estilos mas detallados mejorando la UX.
+- "swiper": Utilizado para el carousel de categorías.
+- "react-loader-spinner": Para efectos de loading al conectar a la BD y dar un mejora de UX.
+- "react-router-dom" y "react-dom": Para establecer el enrutamiento y la navegación.
+- "react-icons": Libreria de donde se obtienen todos los iconos.
 
 ## Dependencias Backend:
 
@@ -121,17 +125,17 @@ Contiene una Arquitectura de microservicios, que permite el desarrollo ágil y f
     npm run dev
 ```
 
-## Integrantes:
+## Contribuidores:
 
-- Alan Rios Front-end developer Tech Leader
-- Diego Herrera Prado Front-end developer
-- Mariana Rausch Front-end developer
-- Federico Blanco Front-end developer
-- Kevin Joel Noviello Front-end developer
-- Juan Pablo Godoy Back-end developer Tech Leader
-- Lucas Von Elm Back-end developer
-- Leon Asturizaga Back-end developer
-- Diego Persi Analista QA
+- [Alan Rios](https://www.linkedin.com/in/alan-rios/) : Front-end developer Tech Leader
+- [Diego Herrera](https://www.linkedin.com/in/diego-hp/) : Front-end developer
+- [Kevin Joel Noviello](https://www.linkedin.com/in/kevinjoelnoviello/) : Front-end developer
+- [Mariana Rausch](https://www.linkedin.com/in/marianarausch/) : Front-end developer
+- Federico Blanco: Front-end developer
+- Juan Pablo Godoy: Back-end developer Tech Leader
+- Lucas Von Elm: Back-end developer
+- Leon Asturizaga: Back-end developer
+- Diego Persi: Analista QA
 
 ## Documentación Adicional
 
@@ -142,4 +146,6 @@ Si desea leer con mas detalle información del Backend, lo invitamos a seguir un
 
 Si desea leer con mas detalle información del Frontend, lo invitamos a seguir uno de estos links:
 
-- [Documentación del Frontend](front/README.ESP.FrontEnd.md)
+- [Documentación Frontend (Español)](front/front-ecommerce/README.ESP.front.md)
+
+- [Documentación Frontend (Inglés)](front/front-ecommerce/README.EN.front.md)
