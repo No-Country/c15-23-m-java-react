@@ -69,7 +69,8 @@ Contiene una Arquitectura de microservicios, que permite el desarrollo ágil y f
   **Postgres SQL**
 
 - QA:
-  ***
+  **Google Sheets**
+  **Google Docs**
 
 ## Dependencias Frontend:
 
