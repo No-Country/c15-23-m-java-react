@@ -40,6 +40,8 @@ Actualmente, el sistema se encuentra en su versión de Producto Mínimo Viable (
 
 ## Demo
 
+![App Screenshot](/shop-swiftly-demo.gif)
+
 ## Próximos Pasos
 
 En futuras versiones, se tienen planeadas las siguientes mejoras y características:

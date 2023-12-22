@@ -42,6 +42,8 @@ Currently, the system is in its Minimum Viable Product (MVP) version, allowing c
 
 ## Demo
 
+![App Screenshot](/shop-swiftly-demo.gif)
+
 ## Following Steps
 
 In future versions, the following improvements and features are planned:
