@@ -52,7 +52,7 @@ SSL Termination and Request Aggregation: Enhances security and performance throu
 
 [ShopSwiftly Demo](https://c15-23-m-java-react.vercel.app/home)
 
-![App Screenshot](https://drive.google.com/file/d/1IyX4rOyVwTZtyXR4ZQQQ2vXinIbL8St4/view?usp=sharing)
+![App Screenshot](/shop-swiftly-demo.gif)
 
 ## Proyect Status
 
