@@ -16,17 +16,17 @@
 
 ## Main Features
 
-**Intuitive Platform for Customers:**
-Provides customers with an easy and appealing online shopping experience. They can view products, search for items, see details, add products to the cart, and reserve purchases.
+- **Intuitive Platform for Customers:**
+  Provides customers with an easy and appealing online shopping experience. They can view products, search for items, see details, add products to the cart, and reserve purchases.
 
-**Comprehensive Management for Sellers:**
-Enables store owners to easily manage their products, customers, and sales. The simplified administration interface facilitates daily management.
+- **Comprehensive Management for Sellers:**
+  Enables store owners to easily manage their products, customers, and sales.
 
-**Multi-Device Support:**
-Responsive web application for a variety of mobile devices, desktops, and tablets.
+- **Multi-Device Support:**
+  Responsive web application for a variety of mobile devices, desktops, and tablets.
 
-**Business Model:**
-The product follows a subscription model where businesses acquire the platform according to their needs and capacity. This approach provides flexibility and scalability to adapt to different business sizes.
+- **Business Model:**
+  The product follows a subscription model where businesses acquire the platform according to their needs and capacity. This approach provides flexibility and scalability to adapt to different business sizes.
 
 ## Project Status
 
