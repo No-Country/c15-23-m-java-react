@@ -77,7 +77,7 @@ Contiene una Arquitectura de microservicios, que permite el desarrollo ágil y f
 - QA:
   - **Google Sheets**
   - **Google Docs**
-  - [Link a la carpeta que contiene las pruebas realizadas al proyecto](https://drive.google.com/drive/folders/1kILhvs33RAEJF1ffFSXsqXbweCiu95Ct?usp=drive_link)
+  - [Link Directorio de pruebas del proyecto](https://drive.google.com/drive/folders/1kILhvs33RAEJF1ffFSXsqXbweCiu95Ct?usp=sharing)
 
 ## Dependencias Frontend:
 
@@ -137,7 +137,7 @@ Contiene una Arquitectura de microservicios, que permite el desarrollo ágil y f
 - Juan Pablo Godoy: Back-end developer Tech Leader
 - Lucas Von Elm: Back-end developer
 - Leon Asturizaga: Back-end developer
-- Diego Persi: Analista QA
+- [Diego Persi](https://www.linkedin.com/in/diegonicolaspersi/) : Analista QA
 
 ## Documentación Adicional
 
