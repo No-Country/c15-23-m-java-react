@@ -25,7 +25,7 @@ const useInitialState = () => {
       });
       Swal.fire({
         title: 'Ya esta agregado al carrito!',
-        icon: 'error',
+        icon: 'info',
         position: 'center',
         toast: true,
         showConfirmButton: false,
