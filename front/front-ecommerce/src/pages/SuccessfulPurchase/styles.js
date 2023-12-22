@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { textFont, titleFont, colors } from '../../styles/GlobalStyles';
 
 const Main = styled.main`
-  margin-top: 40px;
+  margin-top: 80px;
   width: 100%;
   display: grid;
   min-height: 100vh;

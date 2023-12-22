@@ -16,15 +16,15 @@
 
 ## Características Principales
 
-**Plataforma Intuitiva para Clientes:**
-Ofrece a los clientes una experiencia de compra en línea fácil y atractiva. Pueden visualizar productos, buscar artículos, ver detalles, añadir productos al carrito y reservar compras.
+- **Plataforma Intuitiva para Clientes:**
+  Ofrece a los clientes una experiencia de compra en línea fácil y atractiva. Pueden visualizar productos, buscar artículos, ver detalles, añadir productos al carrito y reservar compras.
 
-**Gestión Integral para Vendedores:** Permite a los dueños de tiendas administrar fácilmente sus productos, clientes y ventas. La interfaz de administración simplificada facilita la gestión diaria.
+- **Gestión Integral para Vendedores:** Permite a los dueños de tiendas administrar fácilmente sus productos, clientes y ventas.
 
-**Soporte en distintos dispositivos:**
-Aplicación Web responsiva para una gran variedad de dispositivos móviles, de escritorio y tablets.
+- **Soporte en distintos dispositivos:**
+  Aplicación Web responsiva para una gran variedad de dispositivos móviles, de escritorio y tablets.
 
-**Modelo de Negocio:** El producto sigue un modelo de suscripción donde las empresas adquieren la plataforma según sus necesidades y capacidad. Este enfoque proporciona flexibilidad y escalabilidad para adaptarse a diferentes tamaños de negocio.
+- **Modelo de Negocio:** El producto sigue un modelo de suscripción donde las empresas adquieren la plataforma según sus necesidades y capacidad. Este enfoque proporciona flexibilidad y escalabilidad para adaptarse a diferentes tamaños de negocio.
 
 ## Estado del Proyecto
 
