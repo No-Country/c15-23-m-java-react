@@ -18,7 +18,7 @@
 - [Dependencias Frontend](#dependencias-frontend)
 - [Dependencias Backend](#dependencias-backend)
 - [Uso de la App-Web](#uso-de-la-app-web)
-- [Integrantes](#integrantes)
+- [Integrantes](#contribuidores)
 - [Documentación Adicional](#documentación-adicional)
 
 To read this document in English, click [here](README.EN.md).
