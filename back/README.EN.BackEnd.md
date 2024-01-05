@@ -27,6 +27,7 @@
   To read this document in Spanish, click [here](README.ESP.BackEnd.md).
 
 ## Introduction and Overview
+ShopSwiftly is an e-commerce system specifically designed for small and medium-sized stores. It provides merchants with an intuitive and attractive platform to expand their reach, allowing them to sell their products online. The application is offered as a software service (SaaS) through a subscription model.
 
 ## What is a SaaS Platform?
 
